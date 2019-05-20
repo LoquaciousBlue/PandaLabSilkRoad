@@ -9,8 +9,10 @@ public class Player {
   private int tongue;
   private int cash;
   private int alive;
+  private double FoodMult;
+  private double tradeRate;
 
-  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive) {
+  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive, double FoodMult, double tradeRate) {
     this.food = food;
     this.bullets = bullets;
     this.clothing = clothing;
@@ -19,10 +21,12 @@ public class Player {
     this.wheel = wheel;
     this.tongue = tongue;
     this.axle = axle;
+    this.FoodMult = FoodMult;
+    this.tradeRate = tradeRate;
   }
 
   public Player() {
-    this(0, 0, 0, 0, 0, 0, 800, 5);
+    this(0, 0, 0, 0, 0, 0, 800, 5, 1, 1);
   }
 
   public int getFood() {
@@ -58,6 +62,14 @@ public class Player {
     return axle;
   }
 
+  public double getFoodMult() {
+    return FoodMult;
+  }
+
+  public double getTradeRate() {
+    return tradeRate;
+  }
+
   public void setFood(int food) {
     this.food = food;
   }
@@ -88,6 +100,14 @@ public class Player {
 
   public void setWheel(int wheel) {
     this.wheel = wheel;
+  }
+
+  public void setFoodMult(double FoodMult) {
+    this.FoodMult = FoodMult;
+  }
+
+  public void setTradeRate(double tradeRate) {
+    this.tradeRate = tradeRate;
   }
 
 }
