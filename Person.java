@@ -10,20 +10,20 @@
 public class Person {
 	//Vars to be used in describing a person
 	private String name;
-	private boolean Typhoid; //Going to keep track of sickness via integer values
-	private boolean Cholera;
-	private boolean Dysentery;
-	private boolean Diphtheria;
+	private boolean BubonicPlague; //Going to keep track of sickness via integer values
+	private boolean Smallpox;
+	private boolean Anthrax;
+	private boolean Leprosy;
 	private boolean Measles;
 	private int health;
 	private boolean alive;
 
-	public Person(String name, boolean Typhoid, boolean Cholera, boolean Dysentery, boolean Diphtheria, boolean Measles, int health, boolean alive) {
+	public Person(String name, boolean BubonicPlague, boolean Smallpox, boolean Anthrax, boolean Leprosy, boolean Measles, int health, boolean alive) {
 		this.name = name;
-		this.Typhoid = Typhoid;
-		this.Cholera = Cholera;
-		this.Dysentery = Dysentery;
-		this.Diphtheria = Diphtheria;
+		this.BubonicPlague = BubonicPlague;
+		this.Smallpox = Smallpox;
+		this.Anthrax = Anthrax;
+		this.Leprosy = Leprosy;
 		this.Measles = Measles;
 		this.health = health;
 		this.alive = alive;
@@ -36,20 +36,20 @@ public class Person {
 		return name;
 	}
 
-	public boolean getTyphoid() {
-		return Typhoid;
+	public boolean getBubonicPlague() {
+		return BubonicPlague;
 	}
 
-	public boolean getCholera() {
-		return Cholera;
+	public boolean getSmallpox() {
+		return Smallpox;
 	}
 
-	public boolean getDysentery() {
-		return Dysentery;
+	public boolean getAnthrax() {
+		return Anthrax;
 	}
 
-	public boolean getDiphtheria() {
-		return Diphtheria;
+	public boolean getLeprosy() {
+		return Leprosy;
 	}
 
 	public boolean getMeasles() {
@@ -64,20 +64,20 @@ public class Person {
 		return alive;
 	}
 
-	public void setTyphoid(boolean Typhoid) {
-		this.Typhoid = Typhoid;
+	public void setBubonicPlague(boolean BubonicPlague) {
+		this.BubonicPlague = BubonicPlague;
 	}
 
-	public void setCholera(boolean Cholera) {
-		this.Cholera = Cholera;
+	public void setSmallpox(boolean Smallpox) {
+		this.Smallpox = Smallpox;
 	}
 
-	public void setDysentery(boolean Dysentery) {
-		this.Dysentery = Dysentery;
+	public void setAnthrax(boolean Anthrax) {
+		this.Anthrax = Anthrax;
 	}
 
-	public void setDiptheria(boolean Diphtheria) {
-		this.Diphtheria = Diphtheria;
+	public void setDiptheria(boolean Leprosy) {
+		this.Leprosy = Leprosy;
 	}
 
 	public void setMeasles(boolean Measles) {

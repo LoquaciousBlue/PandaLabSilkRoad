@@ -19,23 +19,20 @@ public class Time {
     this.season = season;
   }
 
-  public int getDay(int day) {
+  public int getDay() {
     return day;
   }
 
-  public int getSeason(int season) {
+  public int getSeason() {
     return season;
   }
 
   public void newDay() {
     day++;
-    if (day == 90) {
+    if (day >= 90) {
       day = 0;
       season++;
     }
   }
-
-
-
 
 }
