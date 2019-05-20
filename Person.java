@@ -32,6 +32,11 @@ public class Person {
 	public Person(String name) {
 		this(name, true, true, true, true, true, 100, true);
 	}
+
+	public Person() {
+		this("", true, true, true, true, true, 100, true);
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -62,6 +67,10 @@ public class Person {
 
 	public boolean isAlive() {
 		return alive;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setBubonicPlague(boolean BubonicPlague) {
