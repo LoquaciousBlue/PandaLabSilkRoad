@@ -10,16 +10,15 @@
 public class Person {
 	//Vars to be used in describing a person
 	private String name;
-	private int Typhoid; //Going to keep track of sickness via integer values
-	private int Cholera;
-	private int Dysentery;
-	private int Diphtheria;
-	private int Measles;
+	private boolean Typhoid; //Going to keep track of sickness via integer values
+	private boolean Cholera;
+	private boolean Dysentery;
+	private boolean Diphtheria;
+	private boolean Measles;
 	private int health;
 	private boolean alive;
-	private int sickness;
 
-	public Person(String name, int Typhoid, int Cholera, int Dysentery, int Diphtheria, int Measles, int health, boolean alive, int sickness) {
+	public Person(String name, boolean Typhoid, boolean Cholera, boolean Dysentery, boolean Diphtheria, boolean Measles, int health, boolean alive) {
 		this.name = name;
 		this.Typhoid = Typhoid;
 		this.Cholera = Cholera;
@@ -28,33 +27,32 @@ public class Person {
 		this.Measles = Measles;
 		this.health = health;
 		this.alive = alive;
-		this.sickness = sickness;
 	}
 
 	public Person(String name) {
-		this(name, 0, 0, 0, 0, 0, 100, true, 0);
+		this(name, true, true, true, true, true, 100, true);
 	}
 	public String getName() {
 		return name;
 	}
 
-	public int getTyphoid() {
+	public boolean getTyphoid() {
 		return Typhoid;
 	}
 
-	public int getCholera() {
+	public boolean getCholera() {
 		return Cholera;
 	}
 
-	public int getDysentery() {
+	public boolean getDysentery() {
 		return Dysentery;
 	}
 
-	public int getDiphtheria() {
+	public boolean getDiphtheria() {
 		return Diphtheria;
 	}
 
-	public int getMeasles() {
+	public boolean getMeasles() {
 		return Measles;
 	}
 
@@ -65,28 +63,24 @@ public class Person {
 	public boolean isAlive() {
 		return alive;
 	}
-	//Temporary main ailmant
-	public int getSickness() {
-		return sickness;
-	}
 
-	public void setTyphoid(int Typhoid) {
+	public void setTyphoid(boolean Typhoid) {
 		this.Typhoid = Typhoid;
 	}
 
-	public void setCholera(int Cholera) {
+	public void setCholera(boolean Cholera) {
 		this.Cholera = Cholera;
 	}
 
-	public void setDysentery(int Dysentery) {
+	public void setDysentery(boolean Dysentery) {
 		this.Dysentery = Dysentery;
 	}
 
-	public void setDiptheria(int Diphtheria) {
+	public void setDiptheria(boolean Diphtheria) {
 		this.Diphtheria = Diphtheria;
 	}
 
-	public void setMeasles(int Measles) {
+	public void setMeasles(boolean Measles) {
 		this.Measles = Measles;
 	}
 
@@ -98,7 +92,4 @@ public class Person {
 		this.alive = alive;
 	}
 
-	public void setSickness(int sickness) {
-		this.sickness = sickness;
-	}
 }

@@ -1,24 +1,28 @@
-import java.util.ArrayList;
+
 
 public class Player {
   private int food;
   private int bullets;
   private int clothing;
-  private int misc;
+  private int wheel;
+  private int axle;
+  private int tongue;
   private int cash;
   private int alive;
 
-  public Player(int food, int bullets, int clothing, int misc, int cash, int alive) {
+  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive) {
     this.food = food;
     this.bullets = bullets;
     this.clothing = clothing;
-    this.misc = misc;
     this.cash = cash;
     this.alive = alive;
+    this.wheel = wheel;
+    this.tongue = tongue;
+    this.axle = axle;
   }
 
   public Player() {
-    this(0, 0, 0, 0, 400, 5);
+    this(0, 0, 0, 0, 0, 0, 800, 5);
   }
 
   public int getFood() {
@@ -33,9 +37,6 @@ public class Player {
     return clothing;
   }
 
-  public int getMisc() {
-    return misc;
-  }
 
   public int getCash() {
     return cash;
@@ -43,6 +44,18 @@ public class Player {
 
   public int getAlive() {
     return alive;
+  }
+
+  public int getWheel() {
+    return wheel;
+  }
+
+  public int getTongue() {
+    return tongue;
+  }
+
+  public int getAxle() {
+    return axle;
   }
 
   public void setFood(int food) {
@@ -57,16 +70,24 @@ public class Player {
     this.clothing = clothing;
   }
 
-  public void setMisc(int misc) {
-    this.misc = misc;
-  }
-
   public void setCash(int getCash) {
     this.cash = cash;
   }
 
   public void setAlive(int alive) {
     this.alive = alive;
+  }
+
+  public void setTongue(int tongue) {
+    this.tongue = tongue;
+  }
+
+  public void setAxle(int axle) {
+    this.axle = axle;
+  }
+
+  public void setWheel(int wheel) {
+    this.wheel = wheel;
   }
 
 }
