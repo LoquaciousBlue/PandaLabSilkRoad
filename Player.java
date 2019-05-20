@@ -11,8 +11,11 @@ public class Player {
   private int alive;
   private double FoodMult;
   private double tradeRate;
+  private double paceCoef;
+  private double rationCoef;
+  private int distance;
 
-  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive, double FoodMult, double tradeRate) {
+  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance) {
     this.food = food;
     this.bullets = bullets;
     this.clothing = clothing;
@@ -23,10 +26,13 @@ public class Player {
     this.axle = axle;
     this.FoodMult = FoodMult;
     this.tradeRate = tradeRate;
+    this.paceCoef = paceCoef;
+    this.rationCoef = rationCoef;
+    this.distance = distance;
   }
 
   public Player() {
-    this(0, 0, 0, 0, 0, 0, 800, 5, 1, 1);
+    this(0, 0, 0, 0, 0, 0, 800, 5, 1, 1, 1, 3, 0);
   }
 
   public int getFood() {
@@ -70,6 +76,18 @@ public class Player {
     return tradeRate;
   }
 
+  public double getPaceCoef() {
+    return paceCoef;
+  }
+
+  public double getRationCoef() {
+    return rationCoef;
+  }
+
+  public int getDistance() {
+    return distance;
+  }
+
   public void setFood(int food) {
     this.food = food;
   }
@@ -108,6 +126,18 @@ public class Player {
 
   public void setTradeRate(double tradeRate) {
     this.tradeRate = tradeRate;
+  }
+
+  public void setPaceCoef(double paceCoef) {
+    this.paceCoef = paceCoef;
+  }
+
+  public void setRationCoef(double rationCoef) {
+    this.rationCoef = rationCoef;
+  }
+
+  public void setDistance(int distance) {
+    this.distance = distance;
   }
 
 }
