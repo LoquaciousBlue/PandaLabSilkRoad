@@ -7,15 +7,17 @@ public class Player {
   private int wheel;
   private int axle;
   private int tongue;
-  private int cash;
+  private double cash;
   private int alive;
   private double FoodMult;
   private double tradeRate;
   private double paceCoef;
   private double rationCoef;
   private int distance;
+  private int oxen;
 
-  public Player(int food, int bullets, int clothing, int wheel, int axle, int tongue, int cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance) {
+  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance) {
+    this.oxen = oxen;
     this.food = food;
     this.bullets = bullets;
     this.clothing = clothing;
@@ -32,7 +34,11 @@ public class Player {
   }
 
   public Player() {
-    this(0, 0, 0, 0, 0, 0, 800, 5, 1, 1, 1, 3, 0);
+    this(0, 0, 0, 0, 0, 0, 0, 800, 5, 1, 1, 1, 3, 0);
+  }
+
+  public int getOxen() {
+    return oxen;
   }
 
   public int getFood() {
@@ -48,7 +54,7 @@ public class Player {
   }
 
 
-  public int getCash() {
+  public double getCash() {
     return cash;
   }
 
@@ -100,7 +106,7 @@ public class Player {
     this.clothing = clothing;
   }
 
-  public void setCash(int getCash) {
+  public void setCash(double cash) {
     this.cash = cash;
   }
 
@@ -138,6 +144,14 @@ public class Player {
 
   public void setDistance(int distance) {
     this.distance = distance;
+  }
+
+  public void setOxen(int oxen) {
+    this.oxen = oxen;
+  }
+
+  public void spend(double dock) {
+    this.cash = cash - dock;
   }
 
 }

@@ -1,14 +1,16 @@
 public class Time {
   private int day;
   private int season;
+  private int stores;
 
-  public Time(int day, int season) {
+  public Time(int day, int season, int stores) {
     this.day = day;
     this.season = season;
+    this.stores = stores;
   }
 
   public Time() {
-    this(0,0);
+    this(0,0,0);
   }
 
   public void setDay(int day) {
@@ -19,8 +21,20 @@ public class Time {
     this.season = season;
   }
 
+  public void setStores(int stores) {
+    this.stores = stores;
+  }
+
+  public void addStore() {
+    stores++;
+  }
+
   public int getDay() {
     return day;
+  }
+
+  public int getStore() {
+    return stores;
   }
 
   public int getSeason() {
