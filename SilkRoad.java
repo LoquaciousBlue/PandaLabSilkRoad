@@ -243,6 +243,29 @@ public class SilkRoad {
     System.out.println("How many do you want to buy?");
   }
 
+  public void ShopInfo() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Food is necessary to keep your group moving along. Without food, your party will get sick or worse.");
+    System.out.println("");
+    System.out.println("Clothes are needed to keep your party warm. Without clothing, your party will get sick or worse.");
+    System.out.println("");
+    System.out.println("Ammunition is needed to hunt animals for food. ");
+    System.out.println("");
+    System.out.println("Oxen are needed to pull the wagon. Without them, you will be going at a snails pace.");
+    System.out.println("");
+    System.out.println("Wheels, Tongues, and Axels are spare parts for the wagon incase other parts break.");
+    System.out.println("If you can't replace the part, you won't be getting anywhere fast.");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type anything to return to shop menu");
+  }
+
 
 
 
@@ -358,6 +381,7 @@ public class SilkRoad {
     game.PreBuyMenu();
     String unused = scanner.nextLine();
 
+
     double foodCost = player.getTradeRate()*(.25+.1*calender.getStore());
 
     double clothesCost = player.getTradeRate()*(10+5*calender.getStore());
@@ -385,14 +409,22 @@ public class SilkRoad {
     String wheeln;
     String axlen;
 
+    int cfoodn = 0;
+    int cclothesn = 0;
+    int cbulletn = 0;
+    int coxn = 0;
+    int cwheeln = 0;
+    int caxlen = 0;
+    int ctonguen = 0;
 
     while (true) {
+
       if (item.compareTo("1") == 0) {
         game.clearScreen();
         game.BuyMenu2("food", player.getCash(), foodCost);
         foodn = scanner.nextLine();
         if (isInteger(foodn) == true) {
-          int cfoodn = Integer.parseInt(foodn);
+           cfoodn = Integer.parseInt(foodn);
           if (cfoodn > 0) {
             player.setFood(cfoodn);
           }
@@ -403,7 +435,7 @@ public class SilkRoad {
         game.BuyMenu2("clothes", player.getCash(), clothesCost);
         clothesn = scanner.nextLine();
         if (isInteger(clothesn) == true) {
-          int cclothesn = Integer.parseInt(clothesn);
+           cclothesn = Integer.parseInt(clothesn);
           if (cclothesn > 0) {
             player.setClothing(cclothesn);
           }
@@ -414,7 +446,7 @@ public class SilkRoad {
         game.BuyMenu2("bullets", player.getCash(), bulletCost);
         bulletn = scanner.nextLine();
         if (isInteger(bulletn) == true) {
-          int cbulletn = Integer.parseInt(bulletn);
+           cbulletn = Integer.parseInt(bulletn);
           if (cbulletn > 0) {
             player.setBullets(cbulletn*20);
           }
@@ -425,8 +457,8 @@ public class SilkRoad {
         game.BuyMenu2("oxen", player.getCash(), oxCost);
         oxn = scanner.nextLine();
         if (isInteger(oxn) == true) {
-          int coxn = Integer.parseInt(oxn);
-          if (coxn >= 2 && 8 >= coxn) {
+           coxn = Integer.parseInt(oxn);
+          if (coxn >= 0 && 8 >= coxn) {
             player.setOxen(coxn);
           }
         }
@@ -436,7 +468,7 @@ public class SilkRoad {
         game.BuyMenu2("wheel", player.getCash(), wheelCost);
         wheeln = scanner.nextLine();
         if (isInteger(wheeln) == true) {
-          int cwheeln = Integer.parseInt(wheeln);
+           cwheeln = Integer.parseInt(wheeln);
           if (cwheeln > 0 && 3 >= cwheeln) {
             player.setWheel(cwheeln);
           }
@@ -447,7 +479,7 @@ public class SilkRoad {
         game.BuyMenu2("tongue", player.getCash(), tongueCost);
         tonguen = scanner.nextLine();
         if (isInteger(tonguen) == true) {
-          int ctonguen = Integer.parseInt(tonguen);
+           ctonguen = Integer.parseInt(tonguen);
           if (ctonguen > 0 && 3 >= ctonguen) {
             player.setTongue(ctonguen);
           }
@@ -458,17 +490,24 @@ public class SilkRoad {
         game.BuyMenu2("axle", player.getCash(), axleCost);
         axlen = scanner.nextLine();
         if (isInteger(axlen) == true) {
-          int caxlen = Integer.parseInt(axlen);
+          caxlen = Integer.parseInt(axlen);
           if (caxlen > 0 && 3 >= caxlen) {
             player.setAxle(caxlen);
           }
         }
       }
+
+      if (item.compareTo("8") == 0) {
+        game.clearScreen();
+        game.ShopInfo();
+        String weird = scanner.nextLine();
+      }
+
       if ((item.compareTo("Ready") == 0) && player.getCash() > current && player.getOxen() >= 2 && player.getClothing() >= 5) {
         player.spend(current);
         break;
       }
-      current = cfoodn*foodCost + clothesCost*cclothesn + bulletCost*cbulletn + oxCost*coxn + tongueCost*ctonguen + wheelCost*cwheeln + axleCost*caxlen;
+      current = player.getFood()*foodCost + clothesCost*player.getClothing() + bulletCost*player.getBullets() + oxCost*player.getOxen() + tongueCost*player.getTongue() + wheelCost*player.getWheel() + axleCost*player.getAxle();
       game.clearScreen();
       game.BuyMenu1(player.getFood(), foodCost*player.getTradeRate(), player.getClothing(), clothesCost*player.getTradeRate(), player.getBullets(), bulletCost*player.getTradeRate(), player.getOxen(), oxCost*player.getTradeRate(), player.getWheel(), wheelCost*player.getTradeRate(), player.getTongue(), tongueCost*player.getTradeRate(), player.getAxle(), axleCost*player.getTradeRate(), player.getCash(), current);
       item = scanner.nextLine();
