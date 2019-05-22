@@ -154,4 +154,32 @@ public class Player {
     this.cash = cash - dock;
   }
 
+  public void buyWheel(int w1) {
+    this.wheel = wheel + w1;
+  }
+
+  public void buyAxle(int a1) {
+    this.axle = axle + a1;
+  }
+
+  public void buyTongue(int t1) {
+    this.tongue = tongue + t1;
+  }
+
+  public void buyFood(int a1) {
+    this.food = food + a1;
+  }
+
+  public void buyAmmo(int a1) {
+    this.bullets = bullets + a1;
+  }
+
+  public void buyOxen(int Ox) {
+    this.oxen = oxen + Ox;
+  }
+
+  public void buyClothing(int c1) {
+    this.clothing = c1 + clothing;
+  }
+
 }

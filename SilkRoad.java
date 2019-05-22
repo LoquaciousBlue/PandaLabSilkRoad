@@ -37,6 +37,44 @@ public class SilkRoad {
     System.out.println("Enter 'Ready' when you're ready to begin your adventure");
   }
 
+  public void Start(Scanner scanner, SilkRoad game) {
+    game.clearScreen();
+    game.clearScreen();
+    game.StartScreen();
+    String Stemp = scanner.nextLine();
+    while (Stemp.compareTo("Ready") != 0) {
+      game.clearScreen();
+      game.StartScreen();
+      Stemp = scanner.nextLine();
+    }
+  }
+
+  public void Role(Scanner scanner, Player player, SilkRoad game) {
+    String role = "initial";
+    while (true) {
+        if (role.compareTo("1") == 0) {
+          player.setCash(1200);
+          break;
+        }
+        if (role.compareTo("2") == 0) {
+          player.setFoodMult(1.25);
+          break;
+        }
+        if (role.compareTo("3") == 0) {
+          player.setTradeRate(.8);
+          break;
+        }
+        if (role.compareTo("4") == 0) {
+          game.clearScreen();
+          game.RoleInfo();
+          String unused = scanner.nextLine();
+        }
+        game.clearScreen();
+        game.RolePick();
+        role = scanner.nextLine();
+    }
+  }
+
   public void RolePick() {
     System.out.println("==================================================================================================================");
     System.out.println("");
@@ -85,6 +123,56 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("Type anything to return to choice menu");
   }
+
+  public void People(Scanner scanner, Person p1, Person p2, Person p3, Person p4, Person p5, SilkRoad game) {
+    String name = "initial";
+    String name2 = "";
+    while (true) {
+      if (name.compareTo("1") == 0) {
+        game.clearScreen();
+        game.GroupNamesDisplay2(1, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+        name2 = scanner.nextLine();
+        p1.setName(name2);
+      }
+      if (name.compareTo("2") == 0) {
+        game.clearScreen();
+        game.GroupNamesDisplay2(2, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+        name2 = scanner.nextLine();
+        p2.setName(name2);
+      }
+      if (name.compareTo("3") == 0) {
+        game.clearScreen();
+        game.GroupNamesDisplay2(3, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+        name2 = scanner.nextLine();
+        p3.setName(name2);
+      }
+      if (name.compareTo("4") == 0) {
+        game.clearScreen();
+        game.GroupNamesDisplay2(4, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+        name2 = scanner.nextLine();
+        p4.setName(name2);
+      }
+      if (name.compareTo("5") == 0) {
+        game.clearScreen();
+        game.GroupNamesDisplay2(5, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+        name2 = scanner.nextLine();
+        p5.setName(name2);
+      }
+      if ((name.compareTo("Ready") == 0) && (p1.getName().compareTo("") != 0) && (p2.getName().compareTo("") != 0) && (p3.getName().compareTo("") != 0) && (p4.getName().compareTo("") != 0) && (p5.getName().compareTo("") != 0)) {
+        break;
+      }
+      game.clearScreen();
+      game.GroupNamesDisplay1(p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
+      name = scanner.nextLine();
+    }
+  }
+
+  public void FirstBuy(Scanner scanner, SilkRoad game) {
+    game.clearScreen();
+    game.PreBuyMenu();
+    String unused = scanner.nextLine();
+  }
+
 
   public void GroupNamesDisplay1(String name1, String name2, String name3, String name4, String name5) {
     System.out.println("==================================================================================================================");
@@ -181,42 +269,194 @@ public class SilkRoad {
       return true;
   }
 
+  public void Buy(Scanner scanner, SilkRoad game, Time calender, Player player) {
+    game.clearScreen();
+
+    double foodCost = player.getTradeRate()*(.25+.1*(calender.getStore()-1));
+
+    double clothesCost = player.getTradeRate()*(10+5*(calender.getStore()-1));
+
+    double bulletCost = player.getTradeRate()*(2+.25*(calender.getStore()-1));
+
+    double oxCost = player.getTradeRate()*(40+5*(calender.getStore()-1));
+
+    double tongueCost = player.getTradeRate()*(10+2*(calender.getStore()-1));
+
+    double wheelCost = player.getTradeRate()*(10+2*(calender.getStore()-1));
+
+    double axleCost = player.getTradeRate()*(10+2*(calender.getStore()-1));
+
+    double initial = player.getCash();
+
+    String item = "100";
+    double current = 0;
+
+    String foodn;
+    String clothesn;
+    String bulletn;
+    String tonguen;
+    String oxn;
+    String wheeln;
+    String axlen;
+
+    int cfoodn = 0;
+    int cclothesn = 0;
+    int cbulletn = 0;
+    int coxn = 0;
+    int cwheeln = 0;
+    int caxlen = 0;
+    int ctonguen = 0;
+
+    int fcfoodn = 0;
+    int fcclothesn = 0;
+    int fcbulletn = 0;
+    int fcoxn = 0;
+    int fcwheeln = 0;
+    int fcaxlen = 0;
+    int fctonguen = 0;
+
+    while (true) {
+      if (item.compareTo("1") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("a pound of food", player.getCash(), foodCost);
+        foodn = scanner.nextLine();
+        if (isInteger(foodn) == true) {
+           cfoodn = Integer.parseInt(foodn);
+          if (cfoodn >= 0) {
+            fcfoodn = cfoodn;
+          }
+        }
+      }
+      if (item.compareTo("2") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("a set of clothes", player.getCash(), clothesCost);
+        clothesn = scanner.nextLine();
+        if (isInteger(clothesn) == true) {
+           cclothesn = Integer.parseInt(clothesn);
+          if (cclothesn >= 0) {
+            fcclothesn = cclothesn;
+          }
+        }
+      }
+      if (item.compareTo("3") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("a box of bullets (20 Bulelts)", player.getCash(), bulletCost);
+        bulletn = scanner.nextLine();
+        if (isInteger(bulletn) == true) {
+           cbulletn = Integer.parseInt(bulletn);
+          if (cbulletn >= 0) {
+            fcbulletn = cbulletn;
+          }
+        }
+      }
+      if (item.compareTo("4") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("an oxen", player.getCash(), oxCost);
+        oxn = scanner.nextLine();
+        if (isInteger(oxn) == true) {
+           coxn = Integer.parseInt(oxn);
+          if (coxn >= 0 && 8 >= coxn && ((coxn + player.getOxen()) <= 8)) {
+            fcoxn = coxn;
+          }
+        }
+      }
+      if (item.compareTo("5") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("a wheel", player.getCash(), wheelCost);
+        wheeln = scanner.nextLine();
+        if (isInteger(wheeln) == true) {
+           cwheeln = Integer.parseInt(wheeln);
+          if (cwheeln > 0 && 3 >= cwheeln && ((cwheeln + player.getWheel()) <= 3)) {
+            fcwheeln = cwheeln;
+          }
+        }
+      }
+      if (item.compareTo("6") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("a tongue", player.getCash(), tongueCost);
+        tonguen = scanner.nextLine();
+        if (isInteger(tonguen) == true) {
+           ctonguen = Integer.parseInt(tonguen);
+          if (ctonguen > 0 && 3 >= ctonguen && ((ctonguen + player.getTongue()) <= 3)) {
+            fctonguen = ctonguen;
+          }
+        }
+      }
+      if (item.compareTo("7") == 0) {
+        game.clearScreen();
+        game.BuyMenu2("an axle", player.getCash(), axleCost);
+        axlen = scanner.nextLine();
+        if (isInteger(axlen) == true) {
+          caxlen = Integer.parseInt(axlen);
+          if (caxlen > 0 && 3 >= caxlen && ((caxlen + player.getAxle()) <= 3)) {
+            fcaxlen = caxlen;
+          }
+        }
+      }
+
+      if (item.compareTo("8") == 0) {
+        game.clearScreen();
+        game.ShopInfo();
+        String weird = scanner.nextLine();
+      }
+
+      if ((item.compareTo("Ready") == 0) && initial > current && ((fcoxn + player.getOxen()) >= 2) && ((fcclothesn + player.getClothing()) >= 5)) {
+        player.buyFood(fcfoodn);
+        player.buyClothing(fcclothesn);
+        player.buyAmmo(fcbulletn*20);
+        player.buyOxen(fcoxn);
+        player.buyWheel(fcwheeln);
+        player.buyTongue(fctonguen);
+        player.buyAxle(fcaxlen);
+
+        player.spend(current);
+        current = 0;
+        break;
+      }
+      current = fcfoodn*foodCost + clothesCost*fcclothesn + bulletCost*fcbulletn + oxCost*fcoxn + tongueCost*fctonguen + wheelCost*fcwheeln + axleCost*fcaxlen;
+      game.clearScreen();
+      game.BuyMenu1(player.getFood() + fcfoodn, foodCost*player.getTradeRate(), player.getClothing() + fcclothesn, clothesCost*player.getTradeRate(), player.getBullets() + 20*fcbulletn, bulletCost*player.getTradeRate(), player.getOxen() + fcoxn, oxCost*player.getTradeRate(), player.getWheel() + fcwheeln, wheelCost*player.getTradeRate(), player.getTongue() + fctonguen, tongueCost*player.getTradeRate(), player.getAxle() + fcaxlen, axleCost*player.getTradeRate(), player.getCash(), current);
+      item = scanner.nextLine();
+    }
+  }
+
 
   public void BuyMenu1(int foodAmount, double foodCost, int clothes, double clothesCost, int bullets, double bulletCost, int oxen, double oxCost, int wheels, double wheelCost, int tongues, double tongueCost, int axles, double axleCost, double initial, double current) {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("What would you like to buy adventurer?");
     System.out.println("");
-    System.out.println("");
     System.out.println(" 1. Food: "+foodAmount+" lb");
-    System.out.println("Costs "+foodCost+" per pound");
+    System.out.printf("Costs: $%.2f per pound", foodCost);
+    System.out.println("");
     System.out.println("");
     System.out.println(" 2. Clothes: "+clothes+" sets");
-    System.out.println("Costs "+clothesCost+" per set");
+    System.out.printf("Costs: $%.2f per set\n",clothesCost);
     System.out.println("Min: 5");
     System.out.println("");
     System.out.println(" 3. Ammunition: "+bullets+" bullets");
-    System.out.println("Costs "+bulletCost+" per box (20 bullets)");
+    System.out.printf("Costs: $%.2f per box (20 bullets)\n",bulletCost);
     System.out.println("");
     System.out.println(" 4. Oxen: "+oxen);
-    System.out.println("Costs "+oxCost+" per ox");
+    System.out.printf("Costs: $%.2f per ox\n",oxCost);
     System.out.println("Max: 8 & Min: 2");
     System.out.println("");
-    System.out.println(" 5. Cart Wheels: "+wheels);
-    System.out.println("Costs "+wheelCost+" per wheel");
+    System.out.println(" 5. Wheels: "+wheels);
+    System.out.printf("Costs: $%.2f per wheel\n", wheelCost);
     System.out.println("Max: 3");
     System.out.println("");
     System.out.println(" 6. Tongues: "+tongues);
-    System.out.println("Costs "+tongueCost+" per tongue");
+    System.out.printf("Costs: $%.2f per tongue\n", tongueCost);
     System.out.println("Max: 3");
     System.out.println("");
     System.out.println(" 7. Axles: "+axles);
-    System.out.println("Costs "+axleCost+" per wheel");
+    System.out.printf("Costs: $%.2f per axle\n", axleCost);
     System.out.println("Max: 3");
     System.out.println("");
-    System.out.println(" 8. Need help buying stuff?");
+    System.out.printf(" 8. Need help buying stuff?");
     System.out.println("");
-    System.out.println("You started with: $"+initial);
+    System.out.println("");
+    System.out.println("You have: $"+initial);
     System.out.println("Your bill is current: $"+current);
     System.out.println("");
     System.out.println("==================================================================================================================");
@@ -231,16 +471,16 @@ public class SilkRoad {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
-    System.out.println("You have $"+money);
+    System.out.println("You have: $"+money);
     System.out.println("");
     System.out.println("");
-    System.out.println("The price of "+item+" is "+cost+"");
+    System.out.println("The price of "+item+" is $"+cost+"");
     System.out.println("");
     System.out.println("");
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
-    System.out.println("How many do you want to buy?");
+    System.out.println("How many units do you want to buy?");
   }
 
   public void ShopInfo() {
@@ -266,270 +506,37 @@ public class SilkRoad {
     System.out.println("Type anything to return to shop menu");
   }
 
-
-
-
-
   public static void clearScreen() {
       System.out.print("\033[H\033[2J");
       System.out.flush();
   }
 
-
-
   public static void main (String args[]) {
 
     //Creating all objects but Persons
     SilkRoad game = new SilkRoad();
-    game.clearScreen();
-    game.clearScreen();
-    game.StartScreen();
     Player player = new Player();
     Time calender = new Time();
     Scanner scanner = new Scanner(System.in);
-    String Stemp = scanner.nextLine();
-
-
-    /**
-    While loop holding player until they type Ready
-    */
-    while (Stemp.compareTo("Ready") != 0) {
-      game.clearScreen();
-      game.StartScreen();
-      Stemp = scanner.nextLine();
-    }
-
-    /**
-    While loop looking for players choice in role
-    */
-
-    String role = "initial";
-    while (true) {
-        if (role.compareTo("1") == 0) {
-          player.setCash(1200);
-          break;
-        }
-        if (role.compareTo("2") == 0) {
-          player.setFoodMult(1.25);
-          break;
-        }
-        if (role.compareTo("3") == 0) {
-          player.setTradeRate(.8);
-          break;
-        }
-        if (role.compareTo("4") == 0) {
-          game.clearScreen();
-          game.RoleInfo();
-          String unused = scanner.nextLine();
-        }
-        game.clearScreen();
-        game.RolePick();
-        role = scanner.nextLine();
-    }
-
-    /**
-    While loop to make names for people
-    */
     Person p1 = new Person();
     Person p2 = new Person();
     Person p3 = new Person();
     Person p4 = new Person();
     Person p5 = new Person();
 
-    String name = "initial";
-    String name2 = "";
-    while (true) {
-      if (name.compareTo("1") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(1, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p1.setName(name2);
-      }
-      if (name.compareTo("2") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(2, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p2.setName(name2);
-      }
-      if (name.compareTo("3") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(3, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p3.setName(name2);
-      }
-      if (name.compareTo("4") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(4, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p4.setName(name2);
-      }
-      if (name.compareTo("5") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(5, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p5.setName(name2);
-      }
-      if ((name.compareTo("Ready") == 0) && (p1.getName().compareTo("") != 0) && (p2.getName().compareTo("") != 0) && (p3.getName().compareTo("") != 0) && (p4.getName().compareTo("") != 0) && (p5.getName().compareTo("") != 0)) {
-        break;
-      }
-      game.clearScreen();
-      game.GroupNamesDisplay1(p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-      name = scanner.nextLine();
-    }
+    game.Start(scanner, game);
 
-    game.clearScreen();
-    game.PreBuyMenu();
-    String unused = scanner.nextLine();
+    game.Role(scanner, player, game);
 
+    game.People(scanner, p1, p2, p3, p4, p5, game);
 
-    double foodCost = player.getTradeRate()*(.25+.1*calender.getStore());
+    game.FirstBuy(scanner, game);
 
-    double clothesCost = player.getTradeRate()*(10+5*calender.getStore());
+    game.Buy(scanner, game, calender, player);
 
-    double bulletCost = player.getTradeRate()*(2+.25*calender.getStore());
+    
 
-    double oxCost = player.getTradeRate()*(40+5*calender.getStore());
-
-    double tongueCost = player.getTradeRate()*(10+2*calender.getStore());
-
-    double wheelCost = player.getTradeRate()*(10+2*calender.getStore());
-
-    double axleCost = player.getTradeRate()*(10+2*calender.getStore());
-
-    double initial = player.getCash();
-
-    String item = "100";
-    double current = 0;
-
-    String foodn;
-    String clothesn;
-    String bulletn;
-    String tonguen;
-    String oxn;
-    String wheeln;
-    String axlen;
-
-    int cfoodn = 0;
-    int cclothesn = 0;
-    int cbulletn = 0;
-    int coxn = 0;
-    int cwheeln = 0;
-    int caxlen = 0;
-    int ctonguen = 0;
-
-    while (true) {
-
-      if (item.compareTo("1") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("food", player.getCash(), foodCost);
-        foodn = scanner.nextLine();
-        if (isInteger(foodn) == true) {
-           cfoodn = Integer.parseInt(foodn);
-          if (cfoodn > 0) {
-            player.setFood(cfoodn);
-          }
-        }
-      }
-      if (item.compareTo("2") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("clothes", player.getCash(), clothesCost);
-        clothesn = scanner.nextLine();
-        if (isInteger(clothesn) == true) {
-           cclothesn = Integer.parseInt(clothesn);
-          if (cclothesn > 0) {
-            player.setClothing(cclothesn);
-          }
-        }
-      }
-      if (item.compareTo("3") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("bullets", player.getCash(), bulletCost);
-        bulletn = scanner.nextLine();
-        if (isInteger(bulletn) == true) {
-           cbulletn = Integer.parseInt(bulletn);
-          if (cbulletn > 0) {
-            player.setBullets(cbulletn*20);
-          }
-        }
-      }
-      if (item.compareTo("4") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("oxen", player.getCash(), oxCost);
-        oxn = scanner.nextLine();
-        if (isInteger(oxn) == true) {
-           coxn = Integer.parseInt(oxn);
-          if (coxn >= 0 && 8 >= coxn) {
-            player.setOxen(coxn);
-          }
-        }
-      }
-      if (item.compareTo("5") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("wheel", player.getCash(), wheelCost);
-        wheeln = scanner.nextLine();
-        if (isInteger(wheeln) == true) {
-           cwheeln = Integer.parseInt(wheeln);
-          if (cwheeln > 0 && 3 >= cwheeln) {
-            player.setWheel(cwheeln);
-          }
-        }
-      }
-      if (item.compareTo("6") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("tongue", player.getCash(), tongueCost);
-        tonguen = scanner.nextLine();
-        if (isInteger(tonguen) == true) {
-           ctonguen = Integer.parseInt(tonguen);
-          if (ctonguen > 0 && 3 >= ctonguen) {
-            player.setTongue(ctonguen);
-          }
-        }
-      }
-      if (item.compareTo("7") == 0) {
-        game.clearScreen();
-        game.BuyMenu2("axle", player.getCash(), axleCost);
-        axlen = scanner.nextLine();
-        if (isInteger(axlen) == true) {
-          caxlen = Integer.parseInt(axlen);
-          if (caxlen > 0 && 3 >= caxlen) {
-            player.setAxle(caxlen);
-          }
-        }
-      }
-
-      if (item.compareTo("8") == 0) {
-        game.clearScreen();
-        game.ShopInfo();
-        String weird = scanner.nextLine();
-      }
-
-      if ((item.compareTo("Ready") == 0) && player.getCash() > current && player.getOxen() >= 2 && player.getClothing() >= 5) {
-        player.spend(current);
-        break;
-      }
-      current = player.getFood()*foodCost + clothesCost*player.getClothing() + bulletCost*player.getBullets() + oxCost*player.getOxen() + tongueCost*player.getTongue() + wheelCost*player.getWheel() + axleCost*player.getAxle();
-      game.clearScreen();
-      game.BuyMenu1(player.getFood(), foodCost*player.getTradeRate(), player.getClothing(), clothesCost*player.getTradeRate(), player.getBullets(), bulletCost*player.getTradeRate(), player.getOxen(), oxCost*player.getTradeRate(), player.getWheel(), wheelCost*player.getTradeRate(), player.getTongue(), tongueCost*player.getTradeRate(), player.getAxle(), axleCost*player.getTradeRate(), player.getCash(), current);
-      item = scanner.nextLine();
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    while()
 
 
 

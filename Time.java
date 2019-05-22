@@ -10,7 +10,7 @@ public class Time {
   }
 
   public Time() {
-    this(0,0,0);
+    this(0,0,1);
   }
 
   public void setDay(int day) {
