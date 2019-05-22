@@ -620,7 +620,7 @@ public class SilkRoad {
   }
 
 
-  public void TravelMenu(Player player, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+  public void TravelMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
@@ -644,10 +644,24 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("Type Anything to trave a days worth of time");
     System.out.println("Type 'Menu' for your on road Menu:");
-
   }
 
-  public void OnRoadMenu(Player player, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    public void Travel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      String isMenu = "";
+      while (isMenu.compareTo("Menu") != 0) {
+        game.clearScreen();
+        game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+        isMenu = scanner.nextLine();
+        if (isMenu.compareTo("Menu") != 0) {
+          calender.newDay();
+        }
+      }
+      game.clearScreen();
+      game.OnRoadMenu();
+      game.OnRoadInput(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    }
+
+  public void OnRoadMenu() {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
@@ -676,7 +690,45 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("");
     System.out.println("Enter which action you want to perform:");
+  }
 
+
+
+  public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    String season = "initial";
+    while (true) {
+        if (season.compareTo("1") == 0) {
+          game.clearScreen();
+          game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
+        }
+        if (season.compareTo("2") == 0) {
+
+        }
+        if (season.compareTo("3") == 0) {
+
+        }
+        if (season.compareTo("4") == 0) {
+
+        }
+        if (season.compareTo("5") == 0) {
+
+        }
+        if (season.compareTo("6") == 0) {
+
+        }
+        if (season.compareTo("7") == 0) {
+
+        }
+        if (season.compareTo("8") == 0) {
+
+        }
+        if (season.compareTo("9") == 0) {
+
+        }
+        game.clearScreen();
+        game.OnRoadMenu();
+        season = scanner.nextLine();
+    }
   }
 
 

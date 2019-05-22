@@ -27,30 +27,7 @@ public class Tester {
 
     game.Season(scanner, calender, game);
 
-
-
-
-
-    int temp = calender.getDay();
-    System.out.println(temp);
-    calender.setDay(100);
-    temp = calender.getDay();
-    System.out.println(temp);
-    calender.newDay();
-    System.out.println(calender.getSeason());
-    System.out.println(calender.getDay());
-    try
-    {
-        Thread.sleep(1000);
-    }
-    catch(InterruptedException ex)
-    {
-        Thread.currentThread().interrupt();
-    }
-    System.out.println(temp);
-
-
-
+    game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
 
 

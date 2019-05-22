@@ -15,6 +15,8 @@ public class DemoTester {
     Person p4 = new Person();
     Person p5 = new Person();
 
+    game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    /**
     while(true) {
       game.clearScreen();
       game.TravelMenu(player, calender, game, p1, p2, p3, p4, p5);
@@ -29,7 +31,7 @@ public class DemoTester {
       p4.setHealth(temp-4);
       String boop = scanner.nextLine();
     }
-
+    */
 
     /**
     while(calender.getSeason() != 3 && calender.getDay() != 91) {
