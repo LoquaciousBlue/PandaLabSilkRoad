@@ -646,6 +646,61 @@ public class SilkRoad {
     System.out.println("Type 'Menu' for your on road Menu:");
   }
 
+  public void TravelMenu2(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("                            Travel Menu: (Auto Traveling)");
+    System.out.println("");
+    System.out.println(calender.getDate());
+    System.out.println("");
+    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("");
+    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
+    System.out.println("");
+    System.out.println("Food: "+ player.getFood());
+    System.out.println("");
+    System.out.println("Traveled Miles: ");
+    System.out.println("");
+    System.out.println("Next Landmark: ");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+  }
+
+  public void TravelMenu3(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("                            Travel Menu: (Resting)");
+    System.out.println("");
+    System.out.println(calender.getDate());
+    System.out.println("");
+    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("");
+    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
+    System.out.println("");
+    System.out.println("Food: "+ player.getFood());
+    System.out.println("");
+    System.out.println("Traveled Miles: ");
+    System.out.println("");
+    System.out.println("Next Landmark: ");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+  }
+
+    public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      calender.newDay();
+      //Create random events via calender
+      //Create travel time here
+
+    }
+
     public void Travel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       String isMenu = "";
       while (isMenu.compareTo("Menu") != 0) {
@@ -653,7 +708,7 @@ public class SilkRoad {
         game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
         isMenu = scanner.nextLine();
         if (isMenu.compareTo("Menu") != 0) {
-          calender.newDay();
+          game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
       }
       game.clearScreen();
@@ -692,6 +747,109 @@ public class SilkRoad {
     System.out.println("Enter which action you want to perform:");
   }
 
+  public void AutoTravelMenu() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("By auto-traveling, you will travel for a set number of days");
+    System.out.println("You should note that you won't have access to the travel menu during this period");
+    System.out.println("You will still be informed of random events or coming across a city");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type a number to travel that many days.");
+    System.out.println("Type 'Menu' if you want to return");
+  }
+
+  public void RestMenu() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("By resting, you will allow members of your party to heal from ailments");
+    System.out.println("You should note that you won't have access to the travel menu during this period");
+    System.out.println("You will still be informed of random events or coming across a city");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type a number to rest that many days.");
+    System.out.println("Type 'Menu' if you want to return");
+  }
+
+  public void AutoTravel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.AutoTravelMenu();
+    String travel = scanner.nextLine();
+    if (travel.compareTo("Menu") == 0) {
+      return;
+    }
+    if (isInteger(travel) != true) {
+      return;
+    }
+    int traveldays = Integer.parseInt(travel);
+
+    for(int i = 0; traveldays > i; i++) {
+      game.clearScreen();
+      game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      try
+      {
+          Thread.sleep(1000);
+      }
+      catch(InterruptedException ex)
+      {
+          Thread.currentThread().interrupt();
+      }
+    }
+    game.clearScreen();
+    game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    try
+    {
+        Thread.sleep(1000);
+    }
+    catch(InterruptedException ex)
+    {
+        Thread.currentThread().interrupt();
+    }
+  }
+
+  public void Rest(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.RestMenu();
+    String rest = scanner.nextLine();
+    if (rest.compareTo("Menu") == 0) {
+      return;
+    }
+    if (isInteger(rest) != true) {
+      return;
+    }
+    int restdays = Integer.parseInt(rest);
+
+    for(int i = 0; restdays > i; i++) {
+      game.clearScreen();
+      game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      try
+      {
+          Thread.sleep(1000);
+      }
+      catch(InterruptedException ex)
+      {
+          Thread.currentThread().interrupt();
+      }
+    }
+    game.clearScreen();
+    game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    try
+    {
+        Thread.sleep(1000);
+    }
+    catch(InterruptedException ex)
+    {
+        Thread.currentThread().interrupt();
+    }
+  }
 
 
   public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
@@ -702,7 +860,8 @@ public class SilkRoad {
           game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("2") == 0) {
-
+          game.clearScreen();
+          game.AutoTravel(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("3") == 0) {
 
@@ -717,7 +876,8 @@ public class SilkRoad {
 
         }
         if (season.compareTo("7") == 0) {
-
+            game.clearScreen();
+            game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("8") == 0) {
 
