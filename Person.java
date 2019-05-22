@@ -97,8 +97,16 @@ public class Person {
 		this.health = health;
 	}
 
-	public void getAlive(boolean alive) {
+	public void setAlive(boolean alive) {
 		this.alive = alive;
+	}
+
+	public void checkKill() {
+		if (health <= 0) {
+			alive = false;
+			health = 0;
+		}
+		
 	}
 
 }

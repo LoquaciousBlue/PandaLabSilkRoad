@@ -200,7 +200,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("");
     System.out.println("When every party member is named, type 'Ready'");
-    System.out.println("Once each member's name is set, it cannot be undone");
+    System.out.println("");
     System.out.println("Enter the corresponding number to change the");
     System.out.println("party member's name:");
 
@@ -340,7 +340,7 @@ public class SilkRoad {
       }
       if (item.compareTo("3") == 0) {
         game.clearScreen();
-        game.BuyMenu2("a box of bullets (20 Bulelts)", player.getCash(), bulletCost);
+        game.BuyMenu2("a box of bullets (20 Bullets)", player.getCash(), bulletCost);
         bulletn = scanner.nextLine();
         if (isInteger(bulletn) == true) {
            cbulletn = Integer.parseInt(bulletn);
@@ -415,7 +415,7 @@ public class SilkRoad {
       }
       current = fcfoodn*foodCost + clothesCost*fcclothesn + bulletCost*fcbulletn + oxCost*fcoxn + tongueCost*fctonguen + wheelCost*fcwheeln + axleCost*fcaxlen;
       game.clearScreen();
-      game.BuyMenu1(player.getFood() + fcfoodn, foodCost*player.getTradeRate(), player.getClothing() + fcclothesn, clothesCost*player.getTradeRate(), player.getBullets() + 20*fcbulletn, bulletCost*player.getTradeRate(), player.getOxen() + fcoxn, oxCost*player.getTradeRate(), player.getWheel() + fcwheeln, wheelCost*player.getTradeRate(), player.getTongue() + fctonguen, tongueCost*player.getTradeRate(), player.getAxle() + fcaxlen, axleCost*player.getTradeRate(), player.getCash(), current);
+      game.BuyMenu1(player.getFood() + fcfoodn, foodCost, player.getClothing() + fcclothesn, clothesCost, player.getBullets() + 20*fcbulletn, bulletCost, player.getOxen() + fcoxn, oxCost, player.getWheel() + fcwheeln, wheelCost, player.getTongue() + fctonguen, tongueCost, player.getAxle() + fcaxlen, axleCost, player.getCash(), current);
       item = scanner.nextLine();
     }
   }
@@ -506,64 +506,185 @@ public class SilkRoad {
     System.out.println("Type anything to return to shop menu");
   }
 
+  public void Season(Scanner scanner, Time calender, SilkRoad game) {
+    String season = "initial";
+    while (true) {
+        if (season.compareTo("1") == 0) {
+          calender.setSeason(0);
+          break;
+        }
+        if (season.compareTo("2") == 0) {
+          calender.setSeason(1);
+          break;
+        }
+        if (season.compareTo("3") == 0) {
+          calender.setSeason(2);
+          break;
+        }
+        if (season.compareTo("4") == 0) {
+          calender.setSeason(3);
+          break;
+        }
+        if (season.compareTo("5") == 0) {
+          game.clearScreen();
+          game.SeasonInfo();
+          String sunused = scanner.nextLine();
+        }
+        game.clearScreen();
+        game.SeasonPick();
+        season = scanner.nextLine();
+    }
+  }
+
+  public void SeasonPick() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("When would you like to begin your journey?");
+    System.out.println("");
+    System.out.println(" 1. Winter");
+    System.out.println("");
+    System.out.println(" 2. Spring");
+    System.out.println("");
+    System.out.println(" 3. Summer");
+    System.out.println("");
+    System.out.println(" 4. Fall");
+    System.out.println("");
+    System.out.println(" 5. Need help choosing when to leave?");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("What is your choice?");
+  }
+
+  public void SeasonInfo() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("Your pace should help you determine when you want to go");
+    System.out.println("");
+    System.out.println("The winter has harsh weather that will make your party more susceptible to certain illnesses");
+    System.out.println("");
+    System.out.println("Conversely, the summer can be also quite hot resulting in illness in your party aswell");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type anything to return to choice menu");
+  }
+
+  public String checkHealth(Person p1, Person p2, Person p3, Person p4, Person p5, SilkRoad game) {
+    p1.checkKill();
+    p2.checkKill();
+    p3.checkKill();
+    p4.checkKill();
+    p5.checkKill();
+    double totalhp = 0;
+    int alive = 0;
+    if (p1.isAlive() == true) {
+      alive++;
+      totalhp += p1.getHealth();
+    }
+    if (p2.isAlive() == true) {
+      alive++;
+      totalhp += p2.getHealth();
+    }
+    if (p3.isAlive() == true) {
+      alive++;
+      totalhp += p3.getHealth();
+    }
+    if (p4.isAlive() == true) {
+      alive++;
+      totalhp += p4.getHealth();
+    }
+    if (p5.isAlive() == true) {
+      alive++;
+      totalhp += p5.getHealth();
+    }
+    double status = totalhp/alive;
+
+    if (status > 95) {
+      return "Very Healthy";
+    } else if (status > 80) {
+      return "Healthy";
+    } else if (status > 65) {
+      return "Sufficent";
+    } else if (status > 60) {
+      return  "Poor";
+    } else {
+      return "Critical";
+    }
+
+  }
+
+
+  public void TravelMenu(Player player, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("                            Travel Menu:");
+    System.out.println("");
+    System.out.println(calender.getDate());
+    System.out.println("");
+    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("");
+    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
+    System.out.println("");
+    System.out.println("Food: "+ player.getFood());
+    System.out.println("");
+    System.out.println("Traveled Miles: ");
+    System.out.println("");
+    System.out.println("Next Landmark: ");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type Anything to trave a days worth of time");
+    System.out.println("Type 'Menu' for your on road Menu:");
+
+  }
+
+  public void OnRoadMenu(Player player, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("                            Travel Menu:");
+    System.out.println("");
+    System.out.println("1. Return to travel menu");
+    System.out.println("");
+    System.out.println("2. Auto Travel");
+    System.out.println("");
+    System.out.println("3. Map");
+    System.out.println("");
+    System.out.println("4. Supplies & Members Status");
+    System.out.println("");
+    System.out.println("5. Set Pace");
+    System.out.println("");
+    System.out.println("6. Set Rations");
+    System.out.println("");
+    System.out.println("7. Rest");
+    System.out.println("");
+    System.out.println("8. Trade");
+    System.out.println("");
+    System.out.println("9. Hunt");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Enter which action you want to perform:");
+
+  }
+
+
+
+
   public static void clearScreen() {
       System.out.print("\033[H\033[2J");
       System.out.flush();
   }
-
-  public static void main (String args[]) {
-
-    //Creating all objects but Persons
-    SilkRoad game = new SilkRoad();
-    Player player = new Player();
-    Time calender = new Time();
-    Scanner scanner = new Scanner(System.in);
-    Person p1 = new Person();
-    Person p2 = new Person();
-    Person p3 = new Person();
-    Person p4 = new Person();
-    Person p5 = new Person();
-
-    game.Start(scanner, game);
-
-    game.Role(scanner, player, game);
-
-    game.People(scanner, p1, p2, p3, p4, p5, game);
-
-    game.FirstBuy(scanner, game);
-
-    game.Buy(scanner, game, calender, player);
-
-    
-
-    while()
-
-
-
-
-    int temp = calender.getDay();
-    System.out.println(temp);
-    calender.setDay(100);
-    temp = calender.getDay();
-    System.out.println(temp);
-    calender.newDay();
-    System.out.println(calender.getSeason());
-    System.out.println(calender.getDay());
-    try
-    {
-        Thread.sleep(1000);
-    }
-    catch(InterruptedException ex)
-    {
-        Thread.currentThread().interrupt();
-    }
-    System.out.println(temp);
-
-
-
-
-
-
-  } //main bracket
 
 }
