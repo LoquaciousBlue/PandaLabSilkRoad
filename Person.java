@@ -34,7 +34,7 @@ public class Person {
 	}
 
 	public Person() {
-		this("", true, true, true, true, true, 100, true);
+		this("", false, false, false, false, false, 100, true);
 	}
 
 	public String getName() {
@@ -85,7 +85,7 @@ public class Person {
 		this.Anthrax = Anthrax;
 	}
 
-	public void setDiptheria(boolean Leprosy) {
+	public void setLeprosy(boolean Leprosy) {
 		this.Leprosy = Leprosy;
 	}
 
@@ -106,7 +106,7 @@ public class Person {
 			alive = false;
 			health = 0;
 		}
-		
+
 	}
 
 }

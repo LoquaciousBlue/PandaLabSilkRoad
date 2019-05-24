@@ -642,7 +642,7 @@ public class SilkRoad {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
-    System.out.println("Type Anything to trave a days worth of time");
+    System.out.println("Type Anything to travel a days worth of time");
     System.out.println("Type 'Menu' for your on road Menu:");
   }
 
@@ -779,6 +779,90 @@ public class SilkRoad {
     System.out.println("Type 'Menu' if you want to return");
   }
 
+  public void StatusMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5){
+    int totalAlive = 0;
+    if (p1.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p2.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p3.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p4.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p5.isAlive() == true) {
+      totalAlive++;
+    }
+    String alive = "";
+    if (p1.isAlive() == false) {
+      alive = "(Dead)";
+    }
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Members Status:                                     "+totalAlive+"/5 of your members are alive");
+    System.out.println(p1.getName()+": "+alive);
+    System.out.println("Bubonic Plague: "+p1.getBubonicPlague()+"    Smallpox: "+p1.getSmallpox()+"   Anthrax: "+p1.getAnthrax()+"   Leprosy: "+p1.getLeprosy()+"   Measles: "+p1.getMeasles());
+    System.out.println("");
+
+    alive = "";
+    if (p2.isAlive() == false) {
+      alive = "(Dead)";
+    }
+
+    System.out.println(p2.getName()+": "+alive);
+    System.out.println("Bubonic Plague: "+p2.getBubonicPlague()+"    Smallpox: "+p2.getSmallpox()+"   Anthrax: "+p2.getAnthrax()+"   Leprosy: "+p2.getLeprosy()+"   Measles: "+p2.getMeasles());
+    System.out.println("");
+
+    alive = "";
+    if (p3.isAlive() == false) {
+      alive = "(Dead)";
+    }
+
+    System.out.println(p3.getName()+": "+alive);
+    System.out.println("Bubonic Plague: "+p3.getBubonicPlague()+"    Smallpox: "+p3.getSmallpox()+"   Anthrax: "+p3.getAnthrax()+"   Leprosy: "+p3.getLeprosy()+"   Measles: "+p3.getMeasles());
+    System.out.println("");
+
+    alive = "";
+    if (p4.isAlive() == false) {
+      alive = "(Dead)";
+    }
+
+    System.out.println(p4.getName()+": "+alive);
+    System.out.println("Bubonic Plague: "+p4.getBubonicPlague()+"    Smallpox: "+p4.getSmallpox()+"   Anthrax: "+p4.getAnthrax()+"   Leprosy: "+p4.getLeprosy()+"   Measles: "+p1.getMeasles());
+    System.out.println("");
+
+    alive = "";
+    if (p5.isAlive() == false) {
+      alive = "(Dead)";
+    }
+
+    System.out.println(p5.getName()+": "+alive);
+    System.out.println("Bubonic Plague: "+p5.getBubonicPlague()+"    Smallpox: "+p5.getSmallpox()+"   Anthrax: "+p5.getAnthrax()+"   Leprosy: "+p5.getLeprosy()+"   Measles: "+p5.getMeasles());
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Supplies Status:");
+    System.out.println("Food: "+player.getFood()+"  Clothes: "+player.getClothing()+"   Bullets: "+player.getBullets()+"  Cash: "+player.getCash()+ "");
+    System.out.println("Oxen: "+player.getOxen()+"  Wheels: "+player.getWheel()+"   Axles: "+player.getAxle()+"  Tongues: "+player.getTongue()+"");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type anything to return to Travel Menu: ");
+  }
+
+  public void Status(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.StatusMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    String statustemp = scanner.nextLine();
+  }
+
   public void AutoTravel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     game.AutoTravelMenu();
     String travel = scanner.nextLine();
@@ -867,7 +951,8 @@ public class SilkRoad {
 
         }
         if (season.compareTo("4") == 0) {
-
+          game.clearScreen();
+          game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("5") == 0) {
 
