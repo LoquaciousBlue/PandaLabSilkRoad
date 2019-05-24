@@ -839,19 +839,44 @@ public class SilkRoad {
     if (p5.isAlive() == false) {
       alive = "(Dead)";
     }
-
     System.out.println(p5.getName()+": "+alive);
     System.out.println("Bubonic Plague: "+p5.getBubonicPlague()+"    Smallpox: "+p5.getSmallpox()+"   Anthrax: "+p5.getAnthrax()+"   Leprosy: "+p5.getLeprosy()+"   Measles: "+p5.getMeasles());
+
+    String pace = "";
+    if (player.getPaceCoef() == 1) {
+      pace = "Steady";
+    }
+    if (player.getPaceCoef() == 1.5) {
+      pace = "Strenuous";
+    }
+    if (player.getPaceCoef() == 2) {
+      pace = "Grueling";
+    }
+
+    String ration = "";
+    if (player.getRationCoef() == 3) {
+      ration = "Filling";
+    }
+    if (player.getRationCoef() == 2) {
+      ration = "Meager";
+    }
+    if (player.getRationCoef() == 1) {
+      ration = "Barebones";
+    }
+
+
     System.out.println("");
     System.out.println("");
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
     System.out.println("Supplies Status:");
+    System.out.println("");
     System.out.println("Food: "+player.getFood()+"  Clothes: "+player.getClothing()+"   Bullets: "+player.getBullets()+"  Cash: "+player.getCash()+ "");
     System.out.println("Oxen: "+player.getOxen()+"  Wheels: "+player.getWheel()+"   Axles: "+player.getAxle()+"  Tongues: "+player.getTongue()+"");
     System.out.println("");
-    System.out.println("");
+    System.out.println("Pace: "+pace);
+    System.out.println("Rations: "+ration);
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
@@ -935,6 +960,94 @@ public class SilkRoad {
     }
   }
 
+  public void PaceMenu() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Pacing your travel is important. Traveling too slowly may result in encumbering bad weather and poor time.");
+    System.out.println("Travel too fast and you may risk the well being of your party");
+    System.out.println("");
+    System.out.println("1. Steady (A solid 8 hours of travel a day)");
+    System.out.println("");
+    System.out.println("2. Strenuous (A hard 12 hours of travel a day)");
+    System.out.println("");
+    System.out.println("3. Grueling (A challenging 16 hours of travel a day)");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type a number to ration your food.");
+    System.out.println("Type 'Menu' if you want to return");
+  }
+
+  public void Pace(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.PaceMenu();
+    String travelPace = scanner.nextLine();
+    if (travelPace.compareTo("Menu") == 0) {
+      return;
+    }
+    if (isInteger(travelPace) != true) {
+      return;
+    }
+    int travelPaceInt = Integer.parseInt(travelPace);
+
+    if (travelPaceInt == 1) {
+      player.setPaceCoef(1);
+    }
+    if (travelPaceInt == 2) {
+      player.setPaceCoef(1.5);
+    }
+    if (travelPaceInt == 3) {
+      player.setPaceCoef(2);
+    }
+
+  }
+
+  public void RationsMenu() {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Rationing your food is important. Having good portions helps travelers health.");
+    System.out.println("Although, eating too much can result in a lack of food");
+    System.out.println("");
+    System.out.println("1. Filling (Travelers will be feeling strong and ready to travel)");
+    System.out.println("");
+    System.out.println("2. Meager (Enough for travelers to keep going)");
+    System.out.println("");
+    System.out.println("3. Barebones (Travelers will be going to sleep hungry)");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type a number to ration your food.");
+    System.out.println("Type 'Menu' if you want to return");
+  }
+
+  public void Rations(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.RationsMenu();
+    String rationString = scanner.nextLine();
+    if (rationString.compareTo("Menu") == 0) {
+      return;
+    }
+    if (isInteger(rationString) != true) {
+      return;
+    }
+    int rationInt = Integer.parseInt(rationString);
+
+    if (rationInt == 1) {
+      player.setRationCoef(3);
+    }
+    if (rationInt == 2) {
+      player.setRationCoef(2);
+    }
+    if (rationInt == 3) {
+      player.setRationCoef(1);
+    }
+
+  }
+
 
   public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     String season = "initial";
@@ -955,10 +1068,12 @@ public class SilkRoad {
           game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("5") == 0) {
-
+          game.clearScreen();
+          game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("6") == 0) {
-
+          game.clearScreen();
+          game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         if (season.compareTo("7") == 0) {
             game.clearScreen();
