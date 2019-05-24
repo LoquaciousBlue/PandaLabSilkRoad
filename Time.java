@@ -4,19 +4,21 @@ public class Time {
   private int day;
   private int season;
   private int stores;
+  private int weather;
   private String StringSeason;
 
 
   Random rand = new Random();
 
-  public Time(int day, int season, int stores) {
+  public Time(int day, int season, int stores, int weather) {
     this.day = day;
     this.season = season;
     this.stores = stores;
+    this.weather = weather;
   }
 
   public Time() {
-    this(1,0,1);
+    this(1,0,1,2);
   }
 
   public void setDay(int day) {
@@ -29,6 +31,10 @@ public class Time {
 
   public void setStores(int stores) {
     this.stores = stores;
+  }
+
+  public void setWeather(int weather) {
+    this.weather = weather;
   }
 
   public void addStore() {
@@ -47,6 +53,11 @@ public class Time {
     return season;
   }
 
+
+  public int getWeather() {
+      return weather;
+  }
+
   public void newDay() {
     day++;
     if (day >= 91) {
@@ -55,6 +66,13 @@ public class Time {
     }
     if (season >= 4) {
       season = 0;
+    }
+    weather = rand.nextInt(4);
+    if (season == 0) {
+      weather = weather - 2;
+    }
+    if (season == 2) {
+      weather = weather + 2;
     }
   }
 
@@ -75,16 +93,27 @@ public class Time {
     return "Date: Day "+day+" of "+StringSeason+"";
   }
 
-  public int getWeather() {
-      int weather = rand.nextInt(4);
-      int seasonMod = 0;
-      if (season == 0) {
-        return weather - 2;
-      }
-      if (season == 2) {
-        return weather + 2;
-      }
-      return weather;
+
+  public String weatherString(int weatherInt) {
+    if (weatherInt == -2) {
+      return "Deathly Cold";
+    } else if (weatherInt == -1) {
+      return "Very Cold";
+    } else if (weatherInt == 0) {
+      return "Cold";
+    } else if (weatherInt == 1) {
+      return "Cool";
+    } else if (weatherInt == 2) {
+      return "Fair";
+    } else if (weatherInt == 3) {
+      return "Warm";
+    } else if (weatherInt == 4) {
+      return "Hot";
+    } else if (weatherInt == 5) {
+      return "Very Hot";
+    } else {
+      return "Deathly Hot";
+    }
   }
 
 

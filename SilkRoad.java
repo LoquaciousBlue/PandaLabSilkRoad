@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class SilkRoad {
@@ -628,7 +629,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println(calender.getDate());
     System.out.println("");
-    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
     System.out.println("");
     System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
     System.out.println("");
@@ -654,7 +655,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println(calender.getDate());
     System.out.println("");
-    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
     System.out.println("");
     System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
     System.out.println("");
@@ -678,7 +679,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println(calender.getDate());
     System.out.println("");
-    System.out.println("Weather: "+ calender.getWeather());
+    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
     System.out.println("");
     System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
     System.out.println("");
@@ -1048,46 +1049,99 @@ public class SilkRoad {
 
   }
 
+  public void HuntFailsMenu(int index) {
+    String whoops = "";
+    if (index == -1) {
+      whoops = "You decided to go hunting without bullets...";
+    }
+    if (index == -2) {
+      whoops = "The weather was so cold that no animals were about";
+    }
+    if (index == -3) {
+      whoops = "The weather was so hot that no animals were about";
+    }
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("The Hunt Didn't go well...");
+    System.out.println("");
+    System.out.println(whoops);
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type anything to return to the menu");
+
+  }
+
+  public void Hunting(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+
+    int HuntVar = HuntRand(player, calender);
+    if (HuntVar < 0) {
+      game.HuntFailsMenu(HuntVar);
+      String huntfail = scanner.nextLine();
+      return;
+    }
+  }
+
+  public int HuntRand(Player player, Time calender) {
+    if (player.getBullets() <= 0) {
+      return -1;
+    }
+    if (calender.getWeather() == -2) {
+      return -2;
+    }
+    if (calender.getWeather() == 6) {
+      return -3;
+    }
+
+    Random rand = new Random();
+
+    return 0;
+  }
 
   public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    String season = "initial";
+
+    String road = "initial";
     while (true) {
-        if (season.compareTo("1") == 0) {
+        if (road.compareTo("1") == 0) {
           game.clearScreen();
           game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("2") == 0) {
+        if (road.compareTo("2") == 0) {
           game.clearScreen();
           game.AutoTravel(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("3") == 0) {
+        if (road.compareTo("3") == 0) {
 
         }
-        if (season.compareTo("4") == 0) {
+        if (road.compareTo("4") == 0) {
           game.clearScreen();
           game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("5") == 0) {
+        if (road.compareTo("5") == 0) {
           game.clearScreen();
           game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("6") == 0) {
+        if (road.compareTo("6") == 0) {
           game.clearScreen();
           game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("7") == 0) {
+        if (road.compareTo("7") == 0) {
             game.clearScreen();
             game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (season.compareTo("8") == 0) {
+        if (road.compareTo("8") == 0) {
 
         }
-        if (season.compareTo("9") == 0) {
-
+        if (road.compareTo("9") == 0) {
+          game.clearScreen();
+          game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         game.clearScreen();
         game.OnRoadMenu();
-        season = scanner.nextLine();
+        road = scanner.nextLine();
     }
   }
 

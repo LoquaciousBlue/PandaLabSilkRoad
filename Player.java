@@ -182,4 +182,57 @@ public class Player {
     this.clothing = c1 + clothing;
   }
 
+  public void makeMoney(double money) {
+    this.cash = cash + money;
+  }
+
+  public void loseWheel(int w1) {
+    this.wheel = wheel - w1;
+    if (wheel < 0) {
+      wheel = 0;
+    }
+  }
+
+  public void loseAxle(int a1) {
+    this.axle = axle - a1;
+    if (axle < 0) {
+      axle = 0;
+    }
+  }
+
+  public void loseTongue(int t1) {
+    this.tongue = tongue - t1;
+    if (tongue < 0) {
+      tongue = 0;
+    }
+  }
+
+  public void loseFood(int a1) {
+    this.food = food - a1;
+    if (food < 0) {
+      tongue = 0;
+    }
+  }
+
+  public void loseAmmo(int a1) {
+    this.bullets = bullets - a1;
+    if (bullets < 0) {
+      bullets = 0;
+    }
+  }
+
+  public void loseOxen(int Ox) {
+    this.oxen = oxen - Ox;
+    if (bullets < 0) {
+      bullets = 0;
+    }
+  }
+
+  public void loseClothing(int c1) {
+    this.clothing = clothing- c1;
+    if (clothing < 0) {
+      clothing = 0;
+    }
+  }
+
 }
