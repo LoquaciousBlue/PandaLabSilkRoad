@@ -4,7 +4,9 @@ import java.util.Random;
 
 public class SilkRoad {
 
-  public SilkRoad() {}
+  public SilkRoad() {
+    int totalDays = 0;
+  }
 
 
   public void StartScreen() {
@@ -35,7 +37,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("==================================================================================================================");
     System.out.println("");
-    System.out.println("Enter 'Ready' when you're ready to begin your adventure");
+    System.out.println("Enter 'R' when you're ready to begin your adventure");
   }
 
   public void Start(Scanner scanner, SilkRoad game) {
@@ -43,7 +45,7 @@ public class SilkRoad {
     game.clearScreen();
     game.StartScreen();
     String Stemp = scanner.nextLine();
-    while (Stemp.compareTo("Ready") != 0) {
+    while (Stemp.compareTo("R") != 0) {
       game.clearScreen();
       game.StartScreen();
       Stemp = scanner.nextLine();
@@ -159,7 +161,7 @@ public class SilkRoad {
         name2 = scanner.nextLine();
         p5.setName(name2);
       }
-      if ((name.compareTo("Ready") == 0) && (p1.getName().compareTo("") != 0) && (p2.getName().compareTo("") != 0) && (p3.getName().compareTo("") != 0) && (p4.getName().compareTo("") != 0) && (p5.getName().compareTo("") != 0)) {
+      if ((name.compareTo("R") == 0) && (p1.getName().compareTo("") != 0) && (p2.getName().compareTo("") != 0) && (p3.getName().compareTo("") != 0) && (p4.getName().compareTo("") != 0) && (p5.getName().compareTo("") != 0)) {
         break;
       }
       game.clearScreen();
@@ -200,7 +202,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("");
     System.out.println("");
-    System.out.println("When every party member is named, type 'Ready'");
+    System.out.println("When every party member is named, type 'R'");
     System.out.println("");
     System.out.println("Enter the corresponding number to change the");
     System.out.println("party member's name:");
@@ -401,7 +403,7 @@ public class SilkRoad {
         String weird = scanner.nextLine();
       }
 
-      if ((item.compareTo("Ready") == 0) && initial > current && ((fcoxn + player.getOxen()) >= 2) && ((fcclothesn + player.getClothing()) >= 5)) {
+      if ((item.compareTo("R") == 0) && initial > current && ((fcoxn + player.getOxen()) >= 2) && ((fcclothesn + player.getClothing()) >= 5)) {
         player.buyFood(fcfoodn);
         player.buyClothing(fcclothesn);
         player.buyAmmo(fcbulletn*20);
@@ -694,6 +696,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("");
   }
+
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       calender.newDay();
@@ -1060,6 +1063,9 @@ public class SilkRoad {
     if (index == -3) {
       whoops = "The weather was so hot that no animals were about";
     }
+    if (index == -4) {
+      whoops = "Even with all your ammo, you couldn't hit anything.";
+    }
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
@@ -1075,31 +1081,197 @@ public class SilkRoad {
 
   }
 
-  public void Hunting(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+  public void HuntingMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Hunting will be a key way to sustain yourself while on the road.");
+    System.out.println("Before hunting, you must allocate a certain amount of bullets to the hunt");
+    System.out.println("It's important to note that when you hunt, you can only take 50 Lb of food");
+    System.out.println("per person in your party for each hunt.");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("You have: "+player.getBullets()+" bullets");
+    System.out.println("");
+    System.out.println("Type 'Menu' if you want to return to the menu");
+    System.out.println("Type the number of bullets you will be using for your hunt.");
+  }
 
-    int HuntVar = HuntRand(player, calender);
+  public void HuntingResults(int bears, int dears, int monkeys, int snakes, int foxes, int rabbits, int geese, int ducks, int bullets, int totalfood, int gatheredfood) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("That was a successful Hunt!");
+    System.out.println("");
+    System.out.println("What you got:");
+    System.out.println("");
+    System.out.println("Bears: "+bears);
+    System.out.println("Dears: "+dears);
+    System.out.println("Monkeys: "+monkeys);
+    System.out.println("Snakes: "+snakes);
+    System.out.println("Foxes: "+foxes);
+    System.out.println("Rabbits: "+rabbits);
+    System.out.println("Geese: "+geese);
+    System.out.println("Ducks: "+ducks);
+    System.out.println("");
+    System.out.println("You used a total of "+bullets+" during the hunt.");
+    System.out.println("");
+    System.out.println("Of the "+totalfood+" lb you were able to hunt, you were able to salvage "+gatheredfood+" lb of it.");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("Type anything to return to the menu");
+  }
+
+  public void Hunting(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    game.HuntingMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+    String bullets = scanner.nextLine();
+    if (bullets.compareTo("Menu") == 0) {
+      return;
+    }
+    if (isInteger(bullets) != true) {
+      return;
+    }
+    int bulletsInt = Integer.parseInt(bullets);
+
+    int HuntVar = 0;
+
+    if (player.getBullets() <= 0) {
+      HuntVar = -1;
+    }
+    if (calender.getWeather() == -2) {
+      HuntVar = -2;
+    }
+    if (calender.getWeather() == 6) {
+      HuntVar = -3;
+    }
     if (HuntVar < 0) {
+      game.clearScreen();
       game.HuntFailsMenu(HuntVar);
       String huntfail = scanner.nextLine();
       return;
     }
-  }
 
-  public int HuntRand(Player player, Time calender) {
-    if (player.getBullets() <= 0) {
-      return -1;
-    }
-    if (calender.getWeather() == -2) {
-      return -2;
-    }
-    if (calender.getWeather() == 6) {
-      return -3;
+    if (bulletsInt > player.getBullets()) {
+      bulletsInt = player.getBullets();
     }
 
     Random rand = new Random();
 
-    return 0;
+    int Bears = 0;
+    int Dears = 0;
+    int Monkeys = 0;
+    int Snakes = 0;
+    int Foxes = 0;
+    int Rabbits = 0;
+    int Geese = 0;
+    int Ducks = 0;
+
+    int ShootRNG = 0;
+    for (int i = 0; i != bulletsInt; i++) {
+      ShootRNG = rand.nextInt(400);
+      if (ShootRNG == 1 || ShootRNG == 2 || ShootRNG == 3 || ShootRNG == 4 || ShootRNG == 5) {
+        Bears++;
+      }
+      if (ShootRNG == 10 || ShootRNG == 11 || ShootRNG == 12 || ShootRNG == 13 || ShootRNG == 14) {
+        Dears++;
+      }
+      if (ShootRNG == 20 || ShootRNG == 21 || ShootRNG == 22 || ShootRNG == 23 || ShootRNG == 24) {
+        Monkeys++;
+      }
+      if (ShootRNG == 31 || ShootRNG == 32 || ShootRNG == 33 || ShootRNG == 34 || ShootRNG == 35) {
+        Snakes++;
+      }
+      if (ShootRNG == 41 || ShootRNG == 42 || ShootRNG == 43 || ShootRNG == 44 || ShootRNG == 45) {
+        Foxes++;
+      }
+      if (ShootRNG == 51 || ShootRNG == 52 || ShootRNG == 53 || ShootRNG == 54 || ShootRNG == 55) {
+        Rabbits++;
+      }
+      if (ShootRNG == 61 || ShootRNG == 62 || ShootRNG == 63 || ShootRNG == 64 || ShootRNG == 65) {
+        Geese++;
+      }
+      if (ShootRNG == 71 || ShootRNG == 72 || ShootRNG == 73 || ShootRNG == 74 || ShootRNG == 75) {
+        Ducks++;
+      }
+      if (player.getFoodMult() == 1.25) {
+        if (ShootRNG == 6 || ShootRNG == 7 || ShootRNG == 8 || ShootRNG == 9 || ShootRNG == 0) {
+          Bears++;
+        }
+        if (ShootRNG == 15 || ShootRNG == 16 || ShootRNG == 17 || ShootRNG == 18 || ShootRNG == 19) {
+          Dears++;
+        }
+        if (ShootRNG == 25 || ShootRNG == 26 || ShootRNG == 27 || ShootRNG == 28 || ShootRNG == 29) {
+          Monkeys++;
+        }
+        if (ShootRNG == 35 || ShootRNG == 36 || ShootRNG == 37 || ShootRNG == 38 || ShootRNG == 39) {
+          Snakes++;
+        }
+        if (ShootRNG == 45 || ShootRNG == 46 || ShootRNG == 47 || ShootRNG == 48 || ShootRNG == 49) {
+          Foxes++;
+        }
+        if (ShootRNG == 55 || ShootRNG == 56 || ShootRNG == 57 || ShootRNG == 58 || ShootRNG == 59) {
+          Rabbits++;
+        }
+        if (ShootRNG == 65 || ShootRNG == 66 || ShootRNG == 67 || ShootRNG == 68 || ShootRNG == 69) {
+          Geese++;
+        }
+        if (ShootRNG == 75 || ShootRNG == 76 || ShootRNG == 77 || ShootRNG == 78 || ShootRNG == 79) {
+          Ducks++;
+        }
+      }
+
+    }
+    int totalFood = 0;
+    totalFood = 75*Bears+45*Dears+20*Monkeys+10*Snakes+7*Foxes+5*Rabbits+4*Geese+3*Ducks;
+
+    if (totalFood == 0) {
+      game.clearScreen();
+      game.HuntFailsMenu(-4);
+      player.loseAmmo(bulletsInt);
+      String huntfail2 = scanner.nextLine();
+      return;
+    }
+
+    int totalAlive = 0;
+    if (p1.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p2.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p3.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p4.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p5.isAlive() == true) {
+      totalAlive++;
+    }
+
+    int salvagedFood = 0;
+    if (totalAlive*50 >= totalFood) {
+      salvagedFood = totalFood;
+    } else {
+      salvagedFood = totalAlive*50;
+    }
+    player.buyFood(salvagedFood);
+    player.loseAmmo(bulletsInt);
+    game.clearScreen();
+    game.HuntingResults(Bears, Dears, Monkeys, Snakes, Foxes, Rabbits, Geese, Ducks, bulletsInt, totalFood, salvagedFood);
+    String results = scanner.nextLine();
+
   }
+
+
+
 
   public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 

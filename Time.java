@@ -67,7 +67,7 @@ public class Time {
     if (season >= 4) {
       season = 0;
     }
-    weather = rand.nextInt(4);
+    weather = rand.nextInt(5);
     if (season == 0) {
       weather = weather - 2;
     }
