@@ -210,7 +210,7 @@ public class Player {
   public void loseFood(int a1) {
     this.food = food - a1;
     if (food < 0) {
-      tongue = 0;
+      food = 0;
     }
   }
 
@@ -223,8 +223,8 @@ public class Player {
 
   public void loseOxen(int Ox) {
     this.oxen = oxen - Ox;
-    if (bullets < 0) {
-      bullets = 0;
+    if (oxen < 0) {
+      oxen = 0;
     }
   }
 

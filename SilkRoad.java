@@ -717,11 +717,37 @@ public class SilkRoad {
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       calender.newDay();
+      game.eat(player, scanner, game, p1, p2, p3, p4, p5);
       //int RE[] = RandomEvent(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
       //Create random events via calender
       //Create travel time here
 
+    }
+
+    public void Starving() {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("Your party is out of food!");
+      System.out.println("");
+      System.out.println("Without food, your party will not be able to travel as fast and will be easily sespetible to illness.");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+
+    public void eat(Player player, Scanner scanner, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      int eaten = (int) Math.round(game.getTotalAliveMembers(p1, p2, p3, p4, p5)*player.getRationCoef());
+      player.loseFood(eaten);
+      if (player.getFood() == 0) {
+        game.clearScreen();
+        game.Starving();
+        String starving = scanner.nextLine();
+      }
     }
 
 
@@ -748,8 +774,7 @@ public class SilkRoad {
       }
       if (event == 4) { // bad event
         game.clearScreen();
-
-        event = rand.nextInt(9);
+        event = rand.nextInt(10);
         if(event == 0) {
           //blizard or rainstorm
         } else if (event == 1) {
@@ -765,13 +790,16 @@ public class SilkRoad {
         } else if (event == 6) {
           //dead oxen(s)
         } else if (event == 7) {
-          //murderer
+          //snake attack
+        } else if (event == 8) {
+          //bear attack
         } else {
           //Cart fire
         }
         //Bad event screen
         String badevent = scanner.nextLine();
         return;
+
       }
 
     }
@@ -855,6 +883,21 @@ public class SilkRoad {
     System.out.println("Type 'Menu' if you want to return");
   }
 
+  public String getStatus(Person person) {
+    int status = person.getHealth();
+    if (status > 95) {
+      return "Health: Very Healthy";
+    } else if (status > 80) {
+      return "Health: Healthy";
+    } else if (status > 65) {
+      return "Health: Sufficent";
+    } else if (status > 60) {
+      return  "Health: Poor";
+    } else {
+      return "Health: Critical";
+    }
+  }
+
   public void StatusMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5){
     int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
 
@@ -864,9 +907,9 @@ public class SilkRoad {
     }
     System.out.println("==================================================================================================================");
     System.out.println("");
-    System.out.println("");
     System.out.println("Members Status:                                     "+totalAlive+"/5 of your members are alive");
     System.out.println(p1.getName()+": "+alive);
+    System.out.println(game.getStatus(p1));
     System.out.println("Bubonic Plague: "+p1.getBubonicPlague()+"    Smallpox: "+p1.getSmallpox()+"   Anthrax: "+p1.getAnthrax()+"   Leprosy: "+p1.getLeprosy()+"   Measles: "+p1.getMeasles());
     System.out.println("");
 
@@ -876,6 +919,7 @@ public class SilkRoad {
     }
 
     System.out.println(p2.getName()+": "+alive);
+    System.out.println(game.getStatus(p2));
     System.out.println("Bubonic Plague: "+p2.getBubonicPlague()+"    Smallpox: "+p2.getSmallpox()+"   Anthrax: "+p2.getAnthrax()+"   Leprosy: "+p2.getLeprosy()+"   Measles: "+p2.getMeasles());
     System.out.println("");
 
@@ -885,6 +929,7 @@ public class SilkRoad {
     }
 
     System.out.println(p3.getName()+": "+alive);
+    System.out.println(game.getStatus(p3));
     System.out.println("Bubonic Plague: "+p3.getBubonicPlague()+"    Smallpox: "+p3.getSmallpox()+"   Anthrax: "+p3.getAnthrax()+"   Leprosy: "+p3.getLeprosy()+"   Measles: "+p3.getMeasles());
     System.out.println("");
 
@@ -894,6 +939,7 @@ public class SilkRoad {
     }
 
     System.out.println(p4.getName()+": "+alive);
+    System.out.println(game.getStatus(p4));
     System.out.println("Bubonic Plague: "+p4.getBubonicPlague()+"    Smallpox: "+p4.getSmallpox()+"   Anthrax: "+p4.getAnthrax()+"   Leprosy: "+p4.getLeprosy()+"   Measles: "+p1.getMeasles());
     System.out.println("");
 
@@ -902,6 +948,7 @@ public class SilkRoad {
       alive = "(Dead)";
     }
     System.out.println(p5.getName()+": "+alive);
+    System.out.println(game.getStatus(p5));
     System.out.println("Bubonic Plague: "+p5.getBubonicPlague()+"    Smallpox: "+p5.getSmallpox()+"   Anthrax: "+p5.getAnthrax()+"   Leprosy: "+p5.getLeprosy()+"   Measles: "+p5.getMeasles());
 
     String pace = "";
