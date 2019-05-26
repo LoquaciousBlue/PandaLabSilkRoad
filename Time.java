@@ -6,19 +6,23 @@ public class Time {
   private int stores;
   private int weather;
   private String StringSeason;
+  private int nextLandMark;
+  private int totalDistance;
 
 
   Random rand = new Random();
 
-  public Time(int day, int season, int stores, int weather) {
+  public Time(int day, int season, int stores, int weather, int nextLandMark, int totalDistance) {
     this.day = day;
     this.season = season;
     this.stores = stores;
     this.weather = weather;
+    this.nextLandMark = nextLandMark;
+    this.totalDistance = totalDistance;
   }
 
   public Time() {
-    this(1,0,1,2);
+    this(1,0,1,2,0,0);
   }
 
   public void setDay(int day) {
@@ -35,6 +39,22 @@ public class Time {
 
   public void setWeather(int weather) {
     this.weather = weather;
+  }
+
+  public void setLandmark(int nextLandMark) {
+    this.nextLandMark = nextLandMark;
+  }
+
+  public void setDistance(int totalDistance) {
+    this.totalDistance = totalDistance;
+  }
+
+  public int getLandmark() {
+    return nextLandMark;
+  }
+
+  public int getDistance() {
+    return totalDistance;
   }
 
   public void addStore() {

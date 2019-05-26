@@ -402,20 +402,37 @@ public class SilkRoad {
         game.ShopInfo();
         String weird = scanner.nextLine();
       }
+      if (calender.getStore() == 1) {
+        if ((item.compareTo("R") == 0) &&  initial > current && ((fcoxn + player.getOxen()) >= 2) && ((fcclothesn + player.getClothing()) >= 5)) {
+          player.buyFood(fcfoodn);
+          player.buyClothing(fcclothesn);
+          player.buyAmmo(fcbulletn*20);
+          player.buyOxen(fcoxn);
+          player.buyWheel(fcwheeln);
+          player.buyTongue(fctonguen);
+          player.buyAxle(fcaxlen);
 
-      if ((item.compareTo("R") == 0) && initial > current && ((fcoxn + player.getOxen()) >= 2) && ((fcclothesn + player.getClothing()) >= 5)) {
-        player.buyFood(fcfoodn);
-        player.buyClothing(fcclothesn);
-        player.buyAmmo(fcbulletn*20);
-        player.buyOxen(fcoxn);
-        player.buyWheel(fcwheeln);
-        player.buyTongue(fctonguen);
-        player.buyAxle(fcaxlen);
+          player.spend(current);
+          current = 0;
+          break;
+        }
+      } else {
+        if ((item.compareTo("R") == 0) &&  initial > current) {
+          player.buyFood(fcfoodn);
+          player.buyClothing(fcclothesn);
+          player.buyAmmo(fcbulletn*20);
+          player.buyOxen(fcoxn);
+          player.buyWheel(fcwheeln);
+          player.buyTongue(fctonguen);
+          player.buyAxle(fcaxlen);
 
-        player.spend(current);
-        current = 0;
-        break;
+          player.spend(current);
+          current = 0;
+          break;
       }
+    }
+
+
       current = fcfoodn*foodCost + clothesCost*fcclothesn + bulletCost*fcbulletn + oxCost*fcoxn + tongueCost*fctonguen + wheelCost*fcwheeln + axleCost*fcaxlen;
       game.clearScreen();
       game.BuyMenu1(player.getFood() + fcfoodn, foodCost, player.getClothing() + fcclothesn, clothesCost, player.getBullets() + 20*fcbulletn, bulletCost, player.getOxen() + fcoxn, oxCost, player.getWheel() + fcwheeln, wheelCost, player.getTongue() + fctonguen, tongueCost, player.getAxle() + fcaxlen, axleCost, player.getCash(), current);
@@ -465,7 +482,7 @@ public class SilkRoad {
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
-    System.out.println("When you have everything you want to buy, type 'Ready'");
+    System.out.println("When you have everything you want to buy, type 'R'");
     System.out.println("Know that there will be more stores on the road");
     System.out.println("Enter the corresponding number to buy an item");
   }
@@ -700,10 +717,65 @@ public class SilkRoad {
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       calender.newDay();
+      //int RE[] = RandomEvent(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
       //Create random events via calender
       //Create travel time here
 
     }
+
+
+    public void RandomEvent(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int event = rand.nextInt(10);
+      if (event == 7) { // good event
+        game.clearScreen();
+        event = rand.nextInt(5);
+        if(event == 0) {
+          //found cart
+        } else if (event == 1) {
+          //found oxen
+        } else if (event == 2) {
+          //found medecine
+        } else if (event == 3) {
+          //found shortcut to city
+        } else {
+          //found berry bush or root vegetables
+        }
+        //Good event scnree
+        String goodevent = scanner.nextLine();
+        return;
+      }
+      if (event == 4) { // bad event
+        game.clearScreen();
+
+        event = rand.nextInt(9);
+        if(event == 0) {
+          //blizard or rainstorm
+        } else if (event == 1) {
+          //robber
+        } else if (event == 2) {
+          //instant illness on everyone
+        } else if (event == 3) {
+          //wrong road
+        } else if (event == 4) {
+          //broken wheel
+        } else if (event == 5) {
+          //broken tongue
+        } else if (event == 6) {
+          //dead oxen(s)
+        } else if (event == 7) {
+          //murderer
+        } else {
+          //Cart fire
+        }
+        //Bad event screen
+        String badevent = scanner.nextLine();
+        return;
+      }
+
+    }
+
 
     public void Travel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       String isMenu = "";
@@ -784,22 +856,8 @@ public class SilkRoad {
   }
 
   public void StatusMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5){
-    int totalAlive = 0;
-    if (p1.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p2.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p3.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p4.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p5.isAlive() == true) {
-      totalAlive++;
-    }
+    int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
+
     String alive = "";
     if (p1.isAlive() == false) {
       alive = "(Dead)";
@@ -1006,6 +1064,26 @@ public class SilkRoad {
       player.setPaceCoef(2);
     }
 
+  }
+
+  public int getTotalAliveMembers(Person p1, Person p2, Person p3, Person p4, Person p5) {
+    int totalAlive = 0;
+    if (p1.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p2.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p3.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p4.isAlive() == true) {
+      totalAlive++;
+    }
+    if (p5.isAlive() == true) {
+      totalAlive++;
+    }
+    return totalAlive;
   }
 
   public void RationsMenu() {
@@ -1239,22 +1317,7 @@ public class SilkRoad {
       return;
     }
 
-    int totalAlive = 0;
-    if (p1.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p2.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p3.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p4.isAlive() == true) {
-      totalAlive++;
-    }
-    if (p5.isAlive() == true) {
-      totalAlive++;
-    }
+    int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
 
     int salvagedFood = 0;
     if (totalAlive*50 >= totalFood) {

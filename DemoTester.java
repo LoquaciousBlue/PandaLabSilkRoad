@@ -15,7 +15,14 @@ public class DemoTester {
     Person p4 = new Person();
     Person p5 = new Person();
 
-    game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    //game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+    //calender.setStores(2);
+    //game.Buy(scanner, game, calender, player);
+
+
+
+
     /**
     while(true) {
       game.clearScreen();
