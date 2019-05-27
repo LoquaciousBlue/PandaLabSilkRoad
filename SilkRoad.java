@@ -716,16 +716,19 @@ public class SilkRoad {
 
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-      calender.newDay();
       game.eat(player, scanner, game, p1, p2, p3, p4, p5);
-      //int RE[] = RandomEvent(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      game.RandomEvent(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      //health update check sickness, if getting sick, resting? (add resting flag),decrease hp based on rations, weather, pace
 
-      //Create random events via calender
-      //Create travel time here
+      //check if it's the last day.
+        calender.newDay();
+        //update travel time
+
+
 
     }
 
-    public void Starving() {
+    public void StarvingMenu() {
       System.out.println("==================================================================================================================");
       System.out.println("");
       System.out.println("Your party is out of food!");
@@ -740,17 +743,45 @@ public class SilkRoad {
     }
 
 
+
     public void eat(Player player, Scanner scanner, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       int eaten = (int) Math.round(game.getTotalAliveMembers(p1, p2, p3, p4, p5)*player.getRationCoef());
       player.loseFood(eaten);
       if (player.getFood() == 0) {
         game.clearScreen();
-        game.Starving();
+        game.StarvingMenu();
         String starving = scanner.nextLine();
       }
     }
 
+    public void restHeal(Person person, Player player, Random rand) {
+      int healthNum = rand.nextInt(3);
+      int healed = 0;
+      if (healthNum == 0) {
+        healed = (int) Math.round(3*player.getRationCoef());
+        person.incHealth(healed);
+      } else if (healthNum == 1) {
+        healed = (int) Math.round(2*player.getRationCoef());
+        person.incHealth(healed);
+      } else {
+        healed = (int) Math.round(1*player.getRationCoef());
+        person.incHealth(healed);
+      }
 
+      // Healing chance default 3/10+rationCoef for each disease
+
+    }
+
+    public void isResting(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      if (player.getResting() == true) {
+        game.restHeal(p1, player, rand);
+        game.restHeal(p2, player, rand);
+        game.restHeal(p3, player, rand);
+        game.restHeal(p4, player, rand);
+        game.restHeal(p4, player, rand);
+      }
+    }
     public void RandomEvent(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
       int event = rand.nextInt(10);
@@ -790,9 +821,9 @@ public class SilkRoad {
         } else if (event == 6) {
           //dead oxen(s)
         } else if (event == 7) {
-          //snake attack
+          //snake/bear attack
         } else if (event == 8) {
-          //bear attack
+          //Cart stuck. Lose days
         } else {
           //Cart fire
         }
@@ -1033,6 +1064,7 @@ public class SilkRoad {
     }
   }
 
+
   public void Rest(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     game.RestMenu();
     String rest = scanner.nextLine();
@@ -1043,7 +1075,7 @@ public class SilkRoad {
       return;
     }
     int restdays = Integer.parseInt(rest);
-
+    player.setResting(true);
     for(int i = 0; restdays > i; i++) {
       game.clearScreen();
       game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -1067,6 +1099,7 @@ public class SilkRoad {
     {
         Thread.currentThread().interrupt();
     }
+    player.setResting(false);
   }
 
   public void PaceMenu() {

@@ -95,7 +95,24 @@ public class Person {
 
 	public void setHealth(int health) {
 		this.health = health;
+		if (health > 110) {
+			health = 110;
+		}
 	}
+
+	public void decHealth(int a1) {
+    this.health = health - a1;
+		if (health < 0) {
+			health = 0;
+		}
+  }
+
+  public void incHealth(int a1) {
+    this.health = health + a1;
+		if (health > 110) {
+			health = 110;
+		}
+  }
 
 	public void setAlive(boolean alive) {
 		this.alive = alive;
