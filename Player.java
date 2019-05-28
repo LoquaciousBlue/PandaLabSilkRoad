@@ -16,8 +16,9 @@ public class Player {
   private int distance;
   private int oxen;
   private boolean resting;
+  private boolean storming;
 
-  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance, boolean resting) {
+  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance, boolean resting, boolean storming) {
     this.oxen = oxen;
     this.food = food;
     this.bullets = bullets;
@@ -33,10 +34,11 @@ public class Player {
     this.rationCoef = rationCoef;
     this.distance = distance;
     this.resting = resting;
+    this.storming = storming;
   }
 
   public Player() {
-    this(0, 0, 0, 0, 0, 0, 0, 800, 5, 1, 1, 1, 3, 0, false);
+    this(0, 0, 0, 0, 4, 2, 1, 800, 5, 1, 1, 1, 3, 0, false, false);
   }
 
   public void setResting(boolean resting) {
@@ -45,6 +47,14 @@ public class Player {
 
   public boolean getResting() {
     return resting;
+  }
+
+  public void setStorming(boolean storming) {
+    this.storming = storming;
+  }
+
+  public boolean getStorming() {
+    return storming;
   }
 
   public int getOxen() {

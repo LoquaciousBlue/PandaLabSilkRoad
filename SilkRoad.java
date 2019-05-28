@@ -252,6 +252,9 @@ public class SilkRoad {
     System.out.println("This will include oxen to pull the card which you need, as well as possibly spare cart parts.");
     System.out.println("");
     System.out.println("");
+    System.out.println("Your cart will start off with 4 wheels, 1 tongue, and 2 axles");
+    System.out.println("");
+    System.out.println("");
     System.out.println("==================================================================================================================");
     System.out.println("");
     System.out.println("");
@@ -369,7 +372,7 @@ public class SilkRoad {
         wheeln = scanner.nextLine();
         if (isInteger(wheeln) == true) {
            cwheeln = Integer.parseInt(wheeln);
-          if (cwheeln > 0 && 3 >= cwheeln && ((cwheeln + player.getWheel()) <= 3)) {
+          if (cwheeln > 0 && 3 >= cwheeln && ((cwheeln + player.getWheel()) <= 7)) {
             fcwheeln = cwheeln;
           }
         }
@@ -380,7 +383,7 @@ public class SilkRoad {
         tonguen = scanner.nextLine();
         if (isInteger(tonguen) == true) {
            ctonguen = Integer.parseInt(tonguen);
-          if (ctonguen > 0 && 3 >= ctonguen && ((ctonguen + player.getTongue()) <= 3)) {
+          if (ctonguen > 0 && 3 >= ctonguen && ((ctonguen + player.getTongue()) <= 4)) {
             fctonguen = ctonguen;
           }
         }
@@ -391,7 +394,7 @@ public class SilkRoad {
         axlen = scanner.nextLine();
         if (isInteger(axlen) == true) {
           caxlen = Integer.parseInt(axlen);
-          if (caxlen > 0 && 3 >= caxlen && ((caxlen + player.getAxle()) <= 3)) {
+          if (caxlen > 0 && 3 >= caxlen && ((caxlen + player.getAxle()) <= 5)) {
             fcaxlen = caxlen;
           }
         }
@@ -463,15 +466,15 @@ public class SilkRoad {
     System.out.println("");
     System.out.println(" 5. Wheels: "+wheels);
     System.out.printf("Costs: $%.2f per wheel\n", wheelCost);
-    System.out.println("Max: 3");
+    System.out.println("Max: 7");
     System.out.println("");
     System.out.println(" 6. Tongues: "+tongues);
     System.out.printf("Costs: $%.2f per tongue\n", tongueCost);
-    System.out.println("Max: 3");
+    System.out.println("Max: 4");
     System.out.println("");
     System.out.println(" 7. Axles: "+axles);
     System.out.printf("Costs: $%.2f per axle\n", axleCost);
-    System.out.println("Max: 3");
+    System.out.println("Max: 5");
     System.out.println("");
     System.out.printf(" 8. Need help buying stuff?");
     System.out.println("");
@@ -714,17 +717,51 @@ public class SilkRoad {
     System.out.println("");
   }
 
+  public void TravelMenu4(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("                            Travel Menu: (Storm)");
+    System.out.println("");
+    System.out.println(calender.getDate());
+    System.out.println("");
+    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
+    System.out.println("");
+    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
+    System.out.println("");
+    System.out.println("Food: "+ player.getFood());
+    System.out.println("");
+    System.out.println("Traveled Miles: ");
+    System.out.println("");
+    System.out.println("Next Landmark: ");
+    System.out.println("");
+    System.out.println("");
+    System.out.println("==================================================================================================================");
+    System.out.println("");
+    System.out.println("");
+  }
+
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      //check if anyone is alive for a new day
       game.eat(player, scanner, game, p1, p2, p3, p4, p5);
+      game.isResting(player, scanner, calender, game, p1, p2, p3, p4, p5);
       game.RandomEvent(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
       //health update check sickness, if getting sick, resting? (add resting flag),decrease hp based on rations, weather, pace
 
-      //check if it's the last day.
-        calender.newDay();
-        //update travel time
+      //check if it's the last day. (WIN GAME OR THEY ALL DIED)
 
 
+      calender.newDay();
+      if (player.getResting() == false && player.getStorming() == false) {
+        double doubleprogress = player.getPaceCoef()*(1.5*player.getOxen())+4;
+        int progress = (int) Math.round(doubleprogress);
+        if ((player.getTongue() <= 0) || (player.getWheel() <= 3) || (player.getAxle() <= 1) || (player.getOxen() <= 0)) {
+          progress = 5;
+        }
+        calender.ProgressOnRoad(progress);
+      }
 
     }
 
@@ -748,13 +785,31 @@ public class SilkRoad {
       int eaten = (int) Math.round(game.getTotalAliveMembers(p1, p2, p3, p4, p5)*player.getRationCoef());
       player.loseFood(eaten);
       if (player.getFood() == 0) {
+        player.setRationCoef(1);
         game.clearScreen();
         game.StarvingMenu();
         String starving = scanner.nextLine();
       }
     }
 
-    public void restHeal(Person person, Player player, Random rand) {
+    public void healed(String illness, Person person) {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Resting has allowed "+person.getName()+" to heal.");
+      System.out.println("");
+      System.out.println("Now they don't have "+illness);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void restHeal(SilkRoad game, Person person, Player player, Random rand) {
+      Scanner scanner = new Scanner(System.in);
       int healthNum = rand.nextInt(3);
       int healed = 0;
       if (healthNum == 0) {
@@ -767,37 +822,542 @@ public class SilkRoad {
         healed = (int) Math.round(1*player.getRationCoef());
         person.incHealth(healed);
       }
-
-      // Healing chance default 3/10+rationCoef for each disease
+      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(9));
+      if (healthNum >= 9) {
+        if (person.getBubonicPlague() == true) {
+          person.setBubonicPlague(false);
+          game.clearScreen();
+          game.healed("Bubonic Plague", person);
+          String bp = scanner.nextLine();
+        }
+      }
+      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(9));
+      if (healthNum >= 10) {
+        if (person.getSmallpox() == true) {
+          person.setSmallpox(false);
+          game.clearScreen();
+          game.healed("Smallpox", person);
+          String sp = scanner.nextLine();
+        }
+      }
+      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(9));
+      if (healthNum >= 9) {
+        if (person.getAnthrax() == true) {
+          person.setAnthrax(false);
+          game.clearScreen();
+          game.healed("Anthrax", person);
+          String a = scanner.nextLine();
+        }
+      }
+      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(9));
+      if (healthNum >= 9) {
+        if (person.getLeprosy() == true) {
+          person.setLeprosy(false);
+          game.clearScreen();
+          game.healed("Leprosy", person);
+          String L = scanner.nextLine();
+        }
+      }
+      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(9));
+      if (healthNum >= 9) {
+        if (person.getMeasles() == true) {
+          person.setMeasles(false);
+          game.clearScreen();
+          game.healed("Measles", person);
+          String M = scanner.nextLine();
+        }
+      }
 
     }
 
     public void isResting(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
       if (player.getResting() == true) {
-        game.restHeal(p1, player, rand);
-        game.restHeal(p2, player, rand);
-        game.restHeal(p3, player, rand);
-        game.restHeal(p4, player, rand);
-        game.restHeal(p4, player, rand);
+        game.restHeal(game, p1, player, rand);
+        game.restHeal(game, p2, player, rand);
+        game.restHeal(game, p3, player, rand);
+        game.restHeal(game, p4, player, rand);
+        game.restHeal(game, p4, player, rand);
       }
     }
+
+    public void FoundCart(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int bulls = rand.nextInt(250);
+      player.buyAmmo(bulls);
+      int cloths = rand.nextInt(10);
+      player.buyClothing(cloths);
+      int wheels = rand.nextInt(2);
+      player.buyWheel(wheels);
+      int tongues = rand.nextInt(2);
+      player.buyTongue(tongues);
+      int Axles = rand.nextInt(2);
+      player.buyAxle(Axles);
+
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found an abandoned cart on the side of the road!");
+      System.out.println("");
+      System.out.println("You were able to salvage:");
+      System.out.println("");
+      System.out.println("Bullets: "+bulls);
+      System.out.println("Clothing: "+cloths);
+      System.out.println("Wheels: " +wheels);
+      System.out.println("Tongues: "+tongues);
+      System.out.println("Axles: "+Axles);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void FindOxen(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int oxen = 1+rand.nextInt(3);
+      player.buyOxen(oxen);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found Stray Oxen on the side of the road!");
+      System.out.println("");
+      System.out.println("You were able to add " +oxen+ " to your Yoke");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void PersonHeal(Person person) {
+      person.setHealth(110);
+      person.setBubonicPlague(false);
+      person.setSmallpox(false);
+      person.setAnthrax(false);
+      person.setLeprosy(false);
+      person.setMeasles(false);
+    }
+
+    public void FullHeal(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      game.PersonHeal(p1);
+      game.PersonHeal(p2);
+      game.PersonHeal(p3);
+      game.PersonHeal(p4);
+      game.PersonHeal(p5);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found a traveling doctor on the road who kindly healed everyone in your party!");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void Shortcut(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      calender.setLandmark(0);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found a shortcut to the next landmark");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+
+    public void FindFood(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int food = 1+rand.nextInt(400);
+      player.buyFood(food);
+      String vegetables = "many berry bushes";
+      if (calender.getSeason() == 0) {
+        vegetables = "a field of carrots";
+      }
+
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found a "+vegetables+"!");
+      System.out.println("");
+      System.out.println("You were able to add " +food+ " lbs to your supplies");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void FindTreasure(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int cash = rand.nextInt(400);
+      player.makeMoney(cash);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You found a chest of money while traveling!");
+      System.out.println("");
+      System.out.println("You were able to add $" +cash+ " to your supplies");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void StormMenu(int storm) {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Your party has come across a storm while traveling!");
+      System.out.println("");
+      System.out.println("You are forced to take shelter for "+storm+ " days");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void Storm(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+
+      int storm = 1+rand.nextInt(7);
+
+      game.StormMenu(storm);
+      String goodevent = scanner.nextLine();
+
+      player.setStorming(true);
+      for(int i = 0; storm > i; i++) {
+        game.clearScreen();
+        game.TravelMenu4(player, scanner, calender, game, p1, p2, p3, p4, p5);
+        try
+        {
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
+        game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+      }
+      game.clearScreen();
+      game.TravelMenu4(player, scanner, calender, game, p1, p2, p3, p4, p5);
+      try
+      {
+          Thread.sleep(2000);
+      }
+      catch(InterruptedException ex)
+      {
+          Thread.currentThread().interrupt();
+      }
+      player.setStorming(false);
+    }
+
+    public void Robbed(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int playercashInt = (int) Math.round(player.getCash());
+      int robbedInt = rand.nextInt(playercashInt);
+      player.spend(robbedInt);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("In the night, a thief came and robbed you.");
+      System.out.println("");
+      System.out.println("The thief was able to take off with $" +robbedInt+ "!");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void WrongTurn(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int distance = 100+rand.nextInt(350);
+      calender.addLandMark(distance);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("It turns out that you were on the wrong road.");
+      System.out.println("");
+      System.out.println("You're going to have to go another "+distance+" miles to get to your next landmark");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void Sickness(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int illness = rand.nextInt(5);
+      String sickness = "";
+      if (illness == 0) {
+        sickness = "Bubonic Plague";
+        p1.setBubonicPlague(true);
+        p2.setBubonicPlague(true);
+        p3.setBubonicPlague(true);
+        p4.setBubonicPlague(true);
+        p5.setBubonicPlague(true);
+      }
+      if (illness == 1) {
+        sickness = "Measles";
+        p1.setMeasles(true);
+        p2.setMeasles(true);
+        p3.setMeasles(true);
+        p4.setMeasles(true);
+        p5.setMeasles(true);
+      }
+      if (illness == 2) {
+        sickness = "Anthrax";
+        p1.setAnthrax(true);
+        p2.setAnthrax(true);
+        p3.setAnthrax(true);
+        p4.setAnthrax(true);
+        p5.setAnthrax(true);
+      }
+      if (illness == 3) {
+        sickness = "Smallpox";
+        p1.setSmallpox(true);
+        p2.setSmallpox(true);
+        p3.setSmallpox(true);
+        p4.setSmallpox(true);
+        p5.setSmallpox(true);
+      }
+      if (illness == 4) {
+        sickness = "Leprosy";
+        p1.setLeprosy(true);
+        p2.setLeprosy(true);
+        p3.setLeprosy(true);
+        p4.setLeprosy(true);
+        p5.setLeprosy(true);
+      }
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("There's an outbreak of "+sickness+" in your entire party!");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void BrokenWheel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You have a broken wheel!");
+      System.out.println("");
+      if (player.getWheel() >= 1) {
+        System.out.println("The good news is you're able to repair it.");
+      } else {
+        System.out.println("Oh no! You're out of wheels are you're going to have to walk.");
+      }
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+      player.loseWheel(1);
+
+    }
+
+    public void BrokenAxle(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You have a broken axle!");
+      System.out.println("");
+      if (player.getAxle() >= 1) {
+        System.out.println("The good news is you're able to repair it.");
+      } else {
+        System.out.println("Oh no! You're out of axles are you're going to have to walk.");
+      }
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+      player.loseAxle(1);
+    }
+
+    public void BrokenTongue(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("You have a broken tongue!");
+      System.out.println("");
+      if (player.getTongue() >= 1) {
+        System.out.println("The good news is you're able to repair it.");
+      } else {
+        System.out.println("Oh no! You're out of tongues are you're going to have to walk.");
+      }
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+      player.loseTongue(1);
+    }
+
+    public void DeadOxen(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int deadoxen = rand.nextInt(player.getOxen()+1);
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      if (deadoxen == player.getOxen()) {
+        System.out.println("Oh no. Your entire yoke has died. You'll have to walk to the next landmark.");
+      } else {
+        System.out.println("Oh no. "+deadoxen+" of your oxen have died due to illness.");
+      }
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+      player.loseOxen(deadoxen);
+    }
+
+    public void CartFire(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int bulls = rand.nextInt(player.getBullets()+1);
+      player.loseAmmo(bulls);
+      int cloths = rand.nextInt(player.getClothing()+1);
+      player.loseClothing(cloths);
+      int food = rand.nextInt(player.getFood()+1);
+      player.loseFood(food);
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Your cart catches on fire!");
+      System.out.println("");
+      System.out.println("You lose these items in the fire:");
+      System.out.println("");
+      System.out.println("Bullets: "+bulls);
+      System.out.println("Clothing: "+cloths);
+      System.out.println("Food: "+food);
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+    public void Attack(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+
+
+
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("A bear attack your camp!");
+      System.out.println("");
+
+      while (game.getTotalAliveMembers(p1, p2, p3, p4, p5) != 0) {
+        int dead = rand.nextInt(5);
+        if (dead == 0 && p1.isAlive() == true) {
+          p1.setAlive(false);
+          System.out.println(p1.getName()+" was killed in the attack.");
+          break;
+        }
+        if (dead == 1 && p2.isAlive() == true) {
+          p2.setAlive(false);
+          System.out.println(p2.getName()+" was killed in the attack.");
+          break;
+        }
+        if (dead == 2 && p3.isAlive() == true) {
+          p3.setAlive(false);
+          System.out.println(p3.getName()+" was killed in the attack.");
+          break;
+        }
+        if (dead == 3 && p4.isAlive() == true) {
+          p4.setAlive(false);
+          System.out.println(p4.getName()+" was killed in the attack.");
+          break;
+        }
+        if (dead == 4 && p5.isAlive() == true) {
+          p5.setAlive(false);
+          System.out.println(p5.getName()+" was killed in the attack.");
+          break;
+        }
+      }
+
+      System.out.println("");
+      System.out.println("");
+      System.out.println("==================================================================================================================");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("Type anything to acknowledge");
+    }
+
+
     public void RandomEvent(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
       int event = rand.nextInt(10);
       if (event == 7) { // good event
         game.clearScreen();
-        event = rand.nextInt(5);
+        event = rand.nextInt(6);
         if(event == 0) {
-          //found cart
+          game.FoundCart(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 1) {
-          //found oxen
+          game.FindOxen(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 2) {
-          //found medecine
+          game.FullHeal(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 3) {
-          //found shortcut to city
+          game.Shortcut(player, scanner, calender, game, p1, p2, p3, p4, p5);
+        } else if (event == 4) {
+          game.FindTreasure(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else {
-          //found berry bush or root vegetables
+          game.FindFood(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         //Good event scnree
         String goodevent = scanner.nextLine();
@@ -805,27 +1365,29 @@ public class SilkRoad {
       }
       if (event == 4) { // bad event
         game.clearScreen();
-        event = rand.nextInt(10);
+        event = rand.nextInt(11);
         if(event == 0) {
-          //blizard or rainstorm
+          game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 1) {
-          //robber
+          game.Robbed(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 2) {
-          //instant illness on everyone
+          game.Sickness(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 3) {
-          //wrong road
+          game.WrongTurn(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 4) {
-          //broken wheel
+          game.BrokenWheel(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 5) {
-          //broken tongue
+          game.BrokenTongue(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 6) {
-          //dead oxen(s)
+          game.DeadOxen(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 7) {
-          //snake/bear attack
+          game.Attack(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 8) {
-          //Cart stuck. Lose days
+          game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
+        } else if (event == 9) {
+          game.BrokenAxle(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else {
-          //Cart fire
+          game.CartFire(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
         //Bad event screen
         String badevent = scanner.nextLine();
@@ -871,9 +1433,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("7. Rest");
     System.out.println("");
-    System.out.println("8. Trade");
-    System.out.println("");
-    System.out.println("9. Hunt");
+    System.out.println("8. Hunt");
     System.out.println("");
     System.out.println("");
     System.out.println("==================================================================================================================");
@@ -940,7 +1500,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("Members Status:                                     "+totalAlive+"/5 of your members are alive");
     System.out.println(p1.getName()+": "+alive);
-    System.out.println(game.getStatus(p1));
+    System.out.println(game.getStatus(p1) + "" + p1.getHealth());
     System.out.println("Bubonic Plague: "+p1.getBubonicPlague()+"    Smallpox: "+p1.getSmallpox()+"   Anthrax: "+p1.getAnthrax()+"   Leprosy: "+p1.getLeprosy()+"   Measles: "+p1.getMeasles());
     System.out.println("");
 
@@ -950,7 +1510,7 @@ public class SilkRoad {
     }
 
     System.out.println(p2.getName()+": "+alive);
-    System.out.println(game.getStatus(p2));
+    System.out.println(game.getStatus(p2) + "" + p2.getHealth());
     System.out.println("Bubonic Plague: "+p2.getBubonicPlague()+"    Smallpox: "+p2.getSmallpox()+"   Anthrax: "+p2.getAnthrax()+"   Leprosy: "+p2.getLeprosy()+"   Measles: "+p2.getMeasles());
     System.out.println("");
 
@@ -960,7 +1520,7 @@ public class SilkRoad {
     }
 
     System.out.println(p3.getName()+": "+alive);
-    System.out.println(game.getStatus(p3));
+    System.out.println(game.getStatus(p3) + "" + p3.getHealth());
     System.out.println("Bubonic Plague: "+p3.getBubonicPlague()+"    Smallpox: "+p3.getSmallpox()+"   Anthrax: "+p3.getAnthrax()+"   Leprosy: "+p3.getLeprosy()+"   Measles: "+p3.getMeasles());
     System.out.println("");
 
@@ -970,7 +1530,7 @@ public class SilkRoad {
     }
 
     System.out.println(p4.getName()+": "+alive);
-    System.out.println(game.getStatus(p4));
+    System.out.println(game.getStatus(p4) + "" + p4.getHealth());
     System.out.println("Bubonic Plague: "+p4.getBubonicPlague()+"    Smallpox: "+p4.getSmallpox()+"   Anthrax: "+p4.getAnthrax()+"   Leprosy: "+p4.getLeprosy()+"   Measles: "+p1.getMeasles());
     System.out.println("");
 
@@ -979,7 +1539,7 @@ public class SilkRoad {
       alive = "(Dead)";
     }
     System.out.println(p5.getName()+": "+alive);
-    System.out.println(game.getStatus(p5));
+    System.out.println(game.getStatus(p5) + "" + p5.getHealth());
     System.out.println("Bubonic Plague: "+p5.getBubonicPlague()+"    Smallpox: "+p5.getSmallpox()+"   Anthrax: "+p5.getAnthrax()+"   Leprosy: "+p5.getLeprosy()+"   Measles: "+p5.getMeasles());
 
     String pace = "";
@@ -1012,7 +1572,7 @@ public class SilkRoad {
     System.out.println("");
     System.out.println("Supplies Status:");
     System.out.println("");
-    System.out.println("Food: "+player.getFood()+"  Clothes: "+player.getClothing()+"   Bullets: "+player.getBullets()+"  Cash: "+player.getCash()+ "");
+    System.out.println("Food: "+player.getFood()+" lb  Clothes: "+player.getClothing()+" sets   Bullets: "+player.getBullets()+"  Cash: $"+player.getCash()+ "");
     System.out.println("Oxen: "+player.getOxen()+"  Wheels: "+player.getWheel()+"   Axles: "+player.getAxle()+"  Tongues: "+player.getTongue()+"");
     System.out.println("");
     System.out.println("Pace: "+pace);
@@ -1042,21 +1602,22 @@ public class SilkRoad {
     for(int i = 0; traveldays > i; i++) {
       game.clearScreen();
       game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
-      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
       try
       {
-          Thread.sleep(1000);
+          Thread.sleep(2000);
       }
       catch(InterruptedException ex)
       {
           Thread.currentThread().interrupt();
       }
+      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
     }
     game.clearScreen();
     game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
     try
     {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     catch(InterruptedException ex)
     {
@@ -1079,21 +1640,21 @@ public class SilkRoad {
     for(int i = 0; restdays > i; i++) {
       game.clearScreen();
       game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
-      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
       try
       {
-          Thread.sleep(1000);
+          Thread.sleep(2000);
       }
       catch(InterruptedException ex)
       {
           Thread.currentThread().interrupt();
       }
+      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
     }
     game.clearScreen();
     game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
     try
     {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
     catch(InterruptedException ex)
     {
@@ -1447,10 +2008,8 @@ public class SilkRoad {
             game.clearScreen();
             game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
-        if (road.compareTo("8") == 0) {
 
-        }
-        if (road.compareTo("9") == 0) {
+        if (road.compareTo("8") == 0) {
           game.clearScreen();
           game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }

@@ -27,6 +27,7 @@ public class Tester {
 
     game.Season(scanner, calender, game);
 
+
     game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
 

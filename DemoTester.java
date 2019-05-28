@@ -20,6 +20,22 @@ public class DemoTester {
     //calender.setStores(2);
     //game.Buy(scanner, game, calender, player);
 
+    p1.setBubonicPlague(true);
+    p2.setBubonicPlague(true);
+    p3.setBubonicPlague(true);
+    p4.setBubonicPlague(true);
+    p5.setBubonicPlague(true);
+    p1.setLeprosy(true);
+    p2.setLeprosy(true);
+    p3.setLeprosy(true);
+    p4.setLeprosy(true);
+    p5.setLeprosy(true);
+
+
+    player.setTongue(1);
+    player.loseTongue(3);
+    System.out.println(player.getTongue());
+  //  game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
 
 

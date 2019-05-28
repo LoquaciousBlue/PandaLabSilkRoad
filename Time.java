@@ -49,6 +49,46 @@ public class Time {
     this.totalDistance = totalDistance;
   }
 
+  public void ProgressOnRoad(int progress) {
+    this.totalDistance = totalDistance + progress;
+  }
+
+  public void addLandMark(int oof) {
+    this.nextLandMark = nextLandMark + oof;
+  }
+
+  public void closerToLandMark(int yeet) {
+    this.nextLandMark = nextLandMark - yeet;
+    if (nextLandMark < 0) {
+      nextLandMark = 0;
+    }
+  }
+
+
+
+  public String StringLandMark(int stores) {
+    String cityname = "";
+    if (stores == 1) {
+      cityname =  "FirstCity";
+    }
+    if (stores == 2) {
+      cityname =  "Merv";
+    }
+    if (stores == 3) {
+      cityname =  "Aleppo";
+    }
+    if (stores == 4) {
+      cityname =  "Mosul";
+    }
+    if (stores == 5) {
+      cityname =  "Sanarkand";
+    }
+    if (stores == 6) {
+      cityname =  "Xi'an";
+    }
+    return cityname;
+  }
+
   public int getLandmark() {
     return nextLandMark;
   }
