@@ -5,6 +5,7 @@ public class Time {
   private int season;
   private int stores;
   private int weather;
+  private int totaldays;
   private String StringSeason;
   private int nextLandMark;
   private int totalDistance;
@@ -12,17 +13,18 @@ public class Time {
 
   Random rand = new Random();
 
-  public Time(int day, int season, int stores, int weather, int nextLandMark, int totalDistance) {
+  public Time(int day, int season, int stores, int weather, int nextLandMark, int totalDistance, int totaldays) {
     this.day = day;
     this.season = season;
     this.stores = stores;
     this.weather = weather;
     this.nextLandMark = nextLandMark;
     this.totalDistance = totalDistance;
+    this.totaldays = totaldays;
   }
 
   public Time() {
-    this(1,0,1,2,0,0);
+    this(1,0,1,2,0,0,1);
   }
 
   public void setDay(int day) {
@@ -64,12 +66,15 @@ public class Time {
     }
   }
 
+  public int getTotalDays() {
+    return totaldays;
+  }
 
 
   public String StringLandMark(int stores) {
     String cityname = "";
     if (stores == 1) {
-      cityname =  "FirstCity";
+      cityname =  "Kashgar";
     }
     if (stores == 2) {
       cityname =  "Merv";
@@ -109,6 +114,10 @@ public class Time {
     return stores;
   }
 
+  public void incStore() {
+    stores++;
+  }
+
   public int getSeason() {
     return season;
   }
@@ -120,6 +129,7 @@ public class Time {
 
   public void newDay() {
     day++;
+    totaldays++;
     if (day >= 91) {
       day = 1;
       season++;

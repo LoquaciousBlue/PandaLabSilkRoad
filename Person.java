@@ -7,6 +7,8 @@
 * @Version 1.0
 */
 
+import java.util.Scanner;
+
 public class Person {
 	//Vars to be used in describing a person
 	private String name;
@@ -96,7 +98,7 @@ public class Person {
 	public void setHealth(int health) {
 		this.health = health;
 		if (health > 110) {
-			health = 110;
+			health = 109;
 		}
 	}
 
@@ -110,7 +112,7 @@ public class Person {
   public void incHealth(int a1) {
     this.health = health + a1;
 		if (health > 110) {
-			health = 110;
+			health = 109;
 		}
   }
 
@@ -118,12 +120,5 @@ public class Person {
 		this.alive = alive;
 	}
 
-	public void checkKill() {
-		if (health <= 0) {
-			alive = false;
-			health = 0;
-		}
-
-	}
-
+	
 }

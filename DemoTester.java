@@ -30,12 +30,13 @@ public class DemoTester {
     p3.setLeprosy(true);
     p4.setLeprosy(true);
     p5.setLeprosy(true);
+    player.setFood(0);
 
 
-    player.setTongue(1);
-    player.loseTongue(3);
-    System.out.println(player.getTongue());
-  //  game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
+    game.naturalToll(game, p1,  player,  calender);
+    game.naturalToll(game, p1,  player,  calender);
+
+  //game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
 
 
