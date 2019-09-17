@@ -25,11 +25,6 @@ public class DemoTester {
     p3.setBubonicPlague(true);
     p4.setBubonicPlague(true);
     p5.setBubonicPlague(true);
-    p1.setLeprosy(true);
-    p2.setLeprosy(true);
-    p3.setLeprosy(true);
-    p4.setLeprosy(true);
-    p5.setLeprosy(true);
     player.setFood(0);
 
 

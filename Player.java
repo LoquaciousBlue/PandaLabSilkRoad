@@ -9,8 +9,9 @@ public class Player {
   private int tongue;
   private double cash;
   private int alive;
-  private double FoodMult;
+  private boolean FoodMult;
   private double tradeRate;
+  private boolean Carpenter;
   private double paceCoef;
   private double rationCoef;
   private int distance;
@@ -18,7 +19,7 @@ public class Player {
   private boolean resting;
   private boolean storming;
 
-  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, double FoodMult, double tradeRate, double paceCoef, double rationCoef, int distance, boolean resting, boolean storming) {
+  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, boolean FoodMult, double tradeRate, boolean Carpenter, double paceCoef, double rationCoef, int distance, boolean resting, boolean storming) {
     this.oxen = oxen;
     this.food = food;
     this.bullets = bullets;
@@ -30,6 +31,7 @@ public class Player {
     this.axle = axle;
     this.FoodMult = FoodMult;
     this.tradeRate = tradeRate;
+    this.Carpenter = Carpenter;
     this.paceCoef = paceCoef;
     this.rationCoef = rationCoef;
     this.distance = distance;
@@ -37,8 +39,9 @@ public class Player {
     this.storming = storming;
   }
 
+
   public Player() {
-    this(0, 0, 0, 0, 4, 2, 1, 800, 5, 1, 1, 1, 3, 0, false, false);
+    this(0, 0, 0, 0 , 4, 2, 1, 800, 5, false, 1, false, 1, 3, 0, false, false);
   }
 
   public void setResting(boolean resting) {
@@ -47,6 +50,14 @@ public class Player {
 
   public boolean getResting() {
     return resting;
+  }
+
+  public void setCarpenter(boolean Carpenter) {
+    this.Carpenter = Carpenter;
+  }
+
+  public boolean getCarpenter() {
+    return Carpenter;
   }
 
   public void setStorming(boolean storming) {
@@ -94,7 +105,7 @@ public class Player {
     return axle;
   }
 
-  public double getFoodMult() {
+  public boolean getFoodMult() {
     return FoodMult;
   }
 
@@ -146,7 +157,7 @@ public class Player {
     this.wheel = wheel;
   }
 
-  public void setFoodMult(double FoodMult) {
+  public void setFoodMult(boolean FoodMult) {
     this.FoodMult = FoodMult;
   }
 

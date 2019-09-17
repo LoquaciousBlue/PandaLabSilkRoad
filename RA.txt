@@ -1,0 +1,38 @@
+
+Name: R A
+
+Carpenter
+
+P1: 2
+P2: 3
+P3: 3
+P4: 4
+P5: 5
+
+Initial Food: 100
+
+Initial Clothing: 10
+
+Initial Ammunition: 2000
+
+Initial Oxen: 8
+
+Initial Wheel: 7
+
+Initial Tongues: 4
+
+Initial Axles: 5
+
+Spring
+
+Day: 9
+Successful at hunting
+
+Day: 10
+Changed Rations to Filling
+
+Day: 17
+Successful at hunting
+
+Day: 18
+Decided to rest for 3 days

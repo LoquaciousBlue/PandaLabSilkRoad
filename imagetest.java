@@ -15,7 +15,8 @@ public class imagetest extends JFrame {
   private JLabel label2;
   private JTextField item1;
   imagetest() {
-    setLayout(new FlowLayout());
+    //setLayout(new FlowLayout());
+    setLayout(new GridLayout());
 
     item1 = new JTextField(10);
     add(item1);
@@ -37,13 +38,24 @@ public class imagetest extends JFrame {
   private class thehandler implements ActionListener{
     public void actionPerformed(ActionEvent event){
 
-      String string = "";
+      String boop = "yeet";
+      String test = "lol";
 
       if(event.getSource()==item1) {
-        string=String.format("field 1: %s", event.getActionCommand());
+        System.out.println(event.getActionCommand());
+
+        test=String.format(event.getActionCommand());
+
+        if (test.compareTo("1") == 0) {
+          System.out.println("WIN");
+        }
+
+
+        boop=String.format("field 1: %s", event.getActionCommand());
       }
-      System.out.println(string);
-    JOptionPane.showMessageDialog(null, string);
+      System.out.println(boop);
+
+    JOptionPane.showMessageDialog(null, boop);
     }
 
   }
