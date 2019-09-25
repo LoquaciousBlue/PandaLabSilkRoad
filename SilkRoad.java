@@ -107,13 +107,13 @@ public class SilkRoad {
           tmpDir = new File(filename);
         } else {
           flag = 0;
-          System.out.println("BOOF");
         }
-        System.out.println("eep");
     }
-    System.out.println("leep");
 
 
+
+
+  
 
     game.setName(filename);
     try {
