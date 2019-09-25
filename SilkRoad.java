@@ -1,6 +1,20 @@
+
 import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
 
 public class SilkRoad {
   private String name;
@@ -50,34 +64,57 @@ public class SilkRoad {
     System.out.println("Enter 'R' when you're ready to begin your adventure");
   }
 
-  public void GetFName(Scanner scanner, SilkRoad game) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("Before we get started:");
-    System.out.println("");
-    System.out.println("What is your first name?");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-  }
 
-  public void GetLName(Scanner scanner, SilkRoad game) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("What is your last name?");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-  }
+  public void Start(JFrame frame, Scanner scanner, Time calender, SilkRoad game) {
 
-  public void Start(Scanner scanner, Time calender, SilkRoad game) {
-    game.clearScreen();
-    game.GetFName(scanner, game);
-    String fname = scanner.nextLine();
-    game.clearScreen();
-    game.GetLName(scanner, game);
-    String lname = scanner.nextLine();
-    String filename = ""+fname+lname+".txt";
+    ImageIcon icon = new ImageIcon("index.png");
+    String fname = (String)JOptionPane.showInputDialog(frame, "Enter your first name",
+    "The Silk Road (First Name Prompt)", JOptionPane.QUESTION_MESSAGE);
+
+    String lname = (String)JOptionPane.showInputDialog(frame, "Enter your last name",
+    "The Silk Road (Last Name Prompt)", JOptionPane.QUESTION_MESSAGE);
+
+    String[] options = {"Newbie", "Practice", "Expert"};
+    String n = (String)JOptionPane.showInputDialog(null, "What is your level of experience?",
+    "The Silk Road (Experience Input)", JOptionPane.QUESTION_MESSAGE, icon, options, options[0]);
+
+    String ability = "";
+
+    if (n  == "Newbie") {
+      ability = "N";
+    }
+    if (n == "Practice") {
+      ability = "P";
+    }
+    if (n == "Expert") {
+      ability = "E";
+    }
+
+
+    int x = 0;
+    String num = "" + x;
+    String filename = ""+fname+lname+ability+num+".txt";
+
+    int flag = 1;
+
+    File tmpDir = new File(filename);
+
+    while(flag == 1) {
+        if(tmpDir.exists()) {
+          x++;
+          num = "" + x;
+          filename = ""+fname+lname+ability+num+".txt";
+          tmpDir = new File(filename);
+        } else {
+          flag = 0;
+          System.out.println("BOOF");
+        }
+        System.out.println("eep");
+    }
+    System.out.println("leep");
+
+
+
     game.setName(filename);
     try {
     	     File file = new File(filename);
@@ -94,7 +131,6 @@ public class SilkRoad {
     	  }
 
         game.WriteData(game, calender,"Name: "+fname+" "+lname);
-
 
 
 
