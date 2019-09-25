@@ -12,6 +12,7 @@ public class GuiTest extends JFrame{
 	private JTextField item1;
 	private JTextField item2;
 	private JTextField item3;
+	private JTextField item4;
 	private JPasswordField passwordField;
 
 	public GuiTest(){
@@ -19,6 +20,10 @@ public class GuiTest extends JFrame{
 	  setLayout(new FlowLayout());
 		item1 = new JTextField(10);
 		add(item1);
+
+		item4= new JTextField("34",10);
+		item4.setEditable(false);
+		add(item4);
 
 		item2 = new JTextField("enter text here");
 		add(item2);

@@ -9,11 +9,13 @@ public class Time {
   private String StringSeason;
   private int nextLandMark;
   private int totalDistance;
+  private long starttime;
+  private long taketime;
 
 
   Random rand = new Random();
 
-  public Time(int day, int season, int stores, int weather, int nextLandMark, int totalDistance, int totaldays) {
+  public Time(int day, int season, int stores, int weather, int nextLandMark, int totalDistance, int totaldays, long starttime, long taketime) {
     this.day = day;
     this.season = season;
     this.stores = stores;
@@ -21,10 +23,33 @@ public class Time {
     this.nextLandMark = nextLandMark;
     this.totalDistance = totalDistance;
     this.totaldays = totaldays;
+    this.starttime = starttime;
+    this.taketime = taketime;
   }
 
   public Time() {
-    this(1,0,1,2,0,0,1);
+    this(1,0,1,2,0,0,1,0,0);
+  }
+
+  public void setStart() {
+    this.starttime = System.currentTimeMillis();
+  }
+
+  public String getTime() {
+    this.taketime = System.currentTimeMillis();
+    long time = taketime-starttime;
+    String returnable = "";
+    time = time/1000;
+    int digit1and2 = (int)time/60;
+    int digit3and4 = (int)time%60;
+
+    returnable = digit1and2+":"+digit3and4;
+
+    return returnable;
+  }
+
+  public long getStart() {
+      return starttime;
   }
 
   public void setDay(int day) {

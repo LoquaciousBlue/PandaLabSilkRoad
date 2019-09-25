@@ -1,0 +1,602 @@
+
+Time: 0:0 Name: Hello World Edwin
+
+Time: 0:25 Hunter
+
+Time: 0:58 P1: Edwin
+P2: Aldrich
+P3: Marty
+P4: McFly
+P5: Jacob
+
+Time: 1:35 Initial Food: 100
+
+Time: 1:35 Initial Clothing: 10
+
+Time: 1:35 Initial Ammunition: 2000
+
+Time: 1:35 Initial Oxen: 10
+
+Time: 1:35 Initial Wheel: 5
+
+Time: 1:35 Initial Tongues: 2
+
+Time: 1:35 Initial Axles: 3
+
+Time: 1:37 Spring
+
+Day: 7
+Time: 1:44 
+Found a cart with 88 bullets, 2 clothes, 0 wheels, 1 tongues, and 1 axles
+
+Day: 8
+Time: 1:53 
+Successful at hunting. Got 250 pounds of food
+
+Day: 9
+Time: 1:56 
+Successful at hunting. Got 250 pounds of food
+
+Day: 10
+Time: 2:0 
+Changed Rations to Filling
+
+Day: 13
+Time: 2:3 
+Aldrich hurt in bear attack
+
+Day: 14
+Time: 2:11 
+Decided to rest for 3 days
+
+Day: 15
+Time: 2:15 
+Fire caused party to lose 245 bullets, 7 clothes, and 290 pounds of food
+
+Day: 17
+Time: 2:28 
+Successful at hunting. Got 250 pounds of food
+
+Day: 20
+Time: 2:31 
+Broken tongue that needed to be repaired
+
+Day: 21
+Time: 2:36 
+Made it to Kashgar
+
+Day: 21
+Time: 2:41 
+Checked health and party status
+
+Day: 27
+Time: 3:31 
+Fire caused party to lose 92 bullets, 3 clothes, and 167 pounds of food
+
+Day: 27
+Time: 3:31 
+Jacob got Measles via not taking care of themself
+
+Day: 28
+Time: 3:35 
+Marty got small pox via not taking care of themself
+
+Day: 29
+Time: 3:44 
+Successful at hunting. Got 250 pounds of food
+
+Day: 29
+Time: 3:44 
+Found 2 oxen
+
+Day: 29
+Time: 3:44 
+McFly got Measles via not taking care of themself
+
+Day: 29
+Time: 3:45 
+Jacob got small pox via not taking care of themself
+
+Day: 30
+Time: 3:49 
+Decided to rest for 3 days
+
+Day: 30
+Time: 3:51 
+Person@77459877 cured of smallpox via rest
+
+Day: 30
+Time: 3:58 
+Person@5b2133b1 cured of measles via rest
+
+Day: 33
+Time: 4:14 
+Checked health and party status
+
+Day: 33
+Time: 4:31 
+Decided to rest for 4 days
+
+Day: 34
+Time: 4:39 
+Jacob died
+
+Day: 34
+Time: 4:41 
+Broken axle that needed to be repaired
+
+Day: 35
+Time: 4:45 
+Marty got Bubonic Plague via not taking care of themself
+
+Day: 37
+Time: 4:59 
+Changed Rations to Filling
+
+Day: 37
+Time: 5:1 
+Decided to rest for 3 days
+
+Day: 37
+Time: 5:3 
+Person@77459877 cured of bubonic plague via rest
+
+Day: 39
+Time: 5:10 
+Edwin got Measles via not taking care of themself
+
+Day: 39
+Time: 5:11 
+McFly got Measles via not taking care of themself
+
+Day: 40
+Time: 5:18 
+Checked health and party status
+
+Day: 40
+Time: 5:25 
+Successful at hunting. Got 200 pounds of food
+
+Day: 41
+Time: 5:30 
+Decided to rest for 3 days
+
+Day: 41
+Time: 5:32 
+Person@72ea2f77 cured of measles via rest
+
+Day: 41
+Time: 5:36 
+Person@5b2133b1 cured of measles via rest
+
+Day: 41
+Time: 5:36 
+Edwin got Measles via not taking care of themself
+
+Day: 41
+Time: 5:37 
+McFly got Bubonic Plague via not taking care of themself
+
+Day: 42
+Time: 5:39 
+Person@5b2133b1 cured of bubonic plague via rest
+
+Day: 42
+Time: 5:40 
+Found 10 pounds of food
+
+Day: 47
+Time: 5:51 
+Illness caused9 oxen to die
+
+Day: 48
+Time: 5:53 
+Edwin got small pox via not taking care of themself
+
+Day: 48
+Time: 5:54 
+Aldrich got small pox via not taking care of themself
+
+Day: 49
+Time: 5:55 
+Illness caused1 oxen to die
+
+Day: 51
+Time: 6:1 
+Edwin got Bubonic Plague via not taking care of themself
+
+Day: 52
+Time: 6:2 
+Edwin died
+
+Day: 56
+Time: 6:7 
+McFly got small pox via not taking care of themself
+
+Day: 58
+Time: 6:10 
+Aldrich died
+
+Day: 58
+Time: 6:11 
+Marty got small pox via not taking care of themself
+
+Day: 59
+Time: 6:12 
+Made it to Merv
+
+Day: 59
+Time: 6:18 
+Paid to heal entire party at doctors
+
+Day: 59
+Time: 6:19 
+Checked health and party status
+
+Day: 59
+Time: 6:38 
+Checked health and party status
+
+Day: 59
+Time: 7:47 
+Bought Food: 0
+
+Day: 59
+Time: 7:47 
+Bought Clothing: 0
+
+Day: 59
+Time: 7:47 
+Bought Ammunition: 0
+
+Day: 59
+Time: 7:47 
+Bought Oxen: 5
+
+Day: 59
+Time: 7:47 
+Bought Wheel: 0
+
+Day: 59
+Time: 7:47 
+Bought Tongues: 0
+
+Day: 59
+Time: 7:47 
+Bought Axle: 0
+
+Day: 61
+Time: 7:49 
+Fire caused party to lose 810 bullets, 0 clothes, and 93 pounds of food
+
+Day: 62
+Time: 7:55 
+Checked health and party status
+
+Day: 62
+Time: 8:0 
+Successful at hunting. Got 100 pounds of food
+
+Day: 64
+Time: 8:2 
+Found 3 oxen
+
+Day: 65
+Time: 8:5 
+Marty got Measles via not taking care of themself
+
+Day: 69
+Time: 8:10 
+Marty got small pox via not taking care of themself
+
+Day: 70
+Time: 8:11 
+Made it to Aleppo
+
+Day: 70
+Time: 8:18 
+Checked health and party status
+
+Day: 70
+Time: 8:28 
+Paid to heal entire party at doctors
+
+Day: 70
+Time: 8:30 
+Checked health and party status
+
+Day: 70
+Time: 8:57 
+Bought Food: 0
+
+Day: 70
+Time: 8:57 
+Bought Clothing: 0
+
+Day: 70
+Time: 8:57 
+Bought Ammunition: 0
+
+Day: 70
+Time: 8:57 
+Bought Oxen: 5
+
+Day: 70
+Time: 8:57 
+Bought Wheel: 0
+
+Day: 70
+Time: 8:57 
+Bought Tongues: 0
+
+Day: 70
+Time: 8:57 
+Bought Axle: 0
+
+Day: 71
+Time: 9:0 
+Marty got small pox via not taking care of themself
+
+Day: 76
+Time: 9:6 
+Made it to Mosul
+
+Day: 76
+Time: 9:42 
+Bought Food: 0
+
+Day: 76
+Time: 9:42 
+Bought Clothing: 0
+
+Day: 76
+Time: 9:42 
+Bought Ammunition: 500
+
+Day: 76
+Time: 9:42 
+Bought Oxen: 0
+
+Day: 76
+Time: 9:42 
+Bought Wheel: 0
+
+Day: 76
+Time: 9:42 
+Bought Tongues: 0
+
+Day: 76
+Time: 9:42 
+Bought Axle: 0
+
+Day: 77
+Time: 9:50 
+Changed Rations to Filling
+
+Day: 77
+Time: 9:54 
+Successful at hunting. Got 100 pounds of food
+
+Day: 78
+Time: 9:57 
+Checked health and party status
+
+Day: 78
+Time: 10:4 
+Checked health and party status
+
+Day: 80
+Time: 10:9 
+Broken wheel that needed to be repaired
+
+Day: 84
+Time: 10:14 
+A storm for 5 days occurs
+
+Day: 87
+Time: 10:31 
+Marty died
+
+Day: 90
+Time: 10:41 
+Checked health and party status
+
+Day: 90
+Time: 10:49 
+Decided to rest for 10 days
+
+Day: 90
+Time: 10:51 
+Person@72ea2f77 cured of smallpox via rest
+
+Day: 90
+Time: 10:52 
+Person@681a9515 cured of smallpox via rest
+
+Day: 91
+Time: 10:55 
+Person@72ea2f77 cured of bubonic plague via rest
+
+Day: 95
+Time: 11:5 
+Person@72ea2f77 cured of measles via rest
+
+Day: 95
+Time: 11:6 
+Person@77459877 cured of smallpox via rest
+
+Day: 95
+Time: 11:7 
+Found 3 oxen
+
+Day: 95
+Time: 11:9 
+McFly got small pox via not taking care of themself
+
+Day: 96
+Time: 11:12 
+Person@5b2133b1 cured of smallpox via rest
+
+Day: 100
+Time: 11:22 
+Checked health and party status
+
+Day: 102
+Time: 11:39 
+Made it to Sanarkand
+
+Day: 102
+Time: 11:43 
+Checked health and party status
+
+Day: 102
+Time: 11:53 
+Checked health and party status
+
+Day: 102
+Time: 12:34 
+Bought Food: 0
+
+Day: 102
+Time: 12:34 
+Bought Clothing: 3
+
+Day: 102
+Time: 12:34 
+Bought Ammunition: 0
+
+Day: 102
+Time: 12:34 
+Bought Oxen: 5
+
+Day: 102
+Time: 12:34 
+Bought Wheel: 0
+
+Day: 102
+Time: 12:34 
+Bought Tongues: 2
+
+Day: 102
+Time: 12:34 
+Bought Axle: 0
+
+Day: 107
+Time: 12:42 
+Found a cart with 141 bullets, 8 clothes, 1 wheels, 0 tongues, and 1 axles
+
+Day: 109
+Time: 12:48 
+Illness caused21 oxen to die
+
+Day: 112
+Time: 12:51 
+Made it to Xi'an
+
+Day: 112
+Time: 12:55 
+Checked health and party status
+
+Day: 120
+Time: 13:6 
+McFly hurt in bear attack
+
+Day: 121
+Time: 13:11 
+Checked health and party status
+
+Day: 121
+Time: 13:16 
+Decided to rest for 4 days
+
+Day: 124
+Time: 13:24 
+Found 6 pounds of food
+
+Day: 125
+Time: 13:31 
+Checked health and party status
+
+Day: 125
+Time: 13:48 
+Successful at hunting. Got 50 pounds of food
+
+Day: 126
+Time: 13:52 
+Successful at hunting. Got 50 pounds of food
+
+Day: 127
+Time: 13:55 
+Successful at hunting. Got 50 pounds of food
+
+Day: 131
+Time: 14:0 
+McFly got Measles via not taking care of themself
+
+Day: 134
+Time: 14:3 
+McFly hurt in bear attack
+
+Day: 135
+Time: 14:6 
+Checked health and party status
+
+Day: 135
+Time: 14:14 
+Decided to rest for 5 days
+
+Day: 135
+Time: 14:16 
+Person@5b2133b1 cured of measles via rest
+
+Day: 135
+Time: 14:19 
+McFly got Bubonic Plague via not taking care of themself
+
+Day: 136
+Time: 14:22 
+Person@5b2133b1 cured of bubonic plague via rest
+
+Day: 137
+Time: 14:25 
+Found 253 pounds of food
+
+Day: 138
+Time: 14:29 
+Everyone in the party got bubonic plague
+
+Day: 139
+Time: 14:32 
+Person@72ea2f77 cured of bubonic plague via rest
+
+Day: 139
+Time: 14:35 
+Person@5b2133b1 cured of bubonic plague via rest
+
+Day: 140
+Time: 14:45 
+Checked health and party status
+
+Day: 140
+Time: 14:52 
+Found 23 pounds of food
+
+Day: 141
+Time: 14:54 
+Everyone in the party got small pox
+
+Day: 143
+Time: 14:57 
+Found 1 oxen
+
+Day: 146
+Time: 15:0 
+McFly got Measles via not taking care of themself
+
+Day: 148
+Time: 15:2 
+A storm for 7 days occurs
+
+Day: 153
+Time: 15:44 
+McFly died
