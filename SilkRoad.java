@@ -15,9 +15,31 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+ import java.awt.FlowLayout;
+import java.net.URL;
+ import java.io.File;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.imageio.ImageIO;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 public class SilkRoad {
   private String name;
+    BufferedImage bi = null;
 
   public SilkRoad() {
     this.name = name;
@@ -33,39 +55,64 @@ public class SilkRoad {
 
 
 
-  public void StartScreen() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println(" #######                 ");
-    System.out.println("    #     #    #  ###### ");
-    System.out.println("    #     #    #  #      ");
-    System.out.println("    #     ######  #####  ");
-    System.out.println("    #     #    #  #      ");
-    System.out.println("    #     #    #  #      ");
-    System.out.println("    #     #    #  ###### ");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("  #####                          ######                          ");
-    System.out.println(" #     #  #  #       #    #      #     #   ####     ##    #####  ");
-    System.out.println(" #        #  #       #   #       #     #  #    #   #  #   #    # ");
-    System.out.println("  #####   #  #       ####        ######   #    #  #    #  #    # ");
-    System.out.println("       #  #  #       #  #        #   #    #    #  ######  #    # ");
-    System.out.println(" #     #  #  #       #   #       #    #   #    #  #    #  #    # ");
-    System.out.println("  #####   #  ######  #    #      #     #   ####   #    #  #####  ");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("By: The Panda Lab");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("Enter 'R' when you're ready to begin your adventure");
+  public class StartScreen{
+    BufferedImage bi = null;
+    JFrame f = new JFrame("The Silk Road");
+
+    StartScreen() {
+       try{
+           bi = ImageIO.read(new File("/home/ealdrich/OregonTrail/ReadyPlayerTest.jpg"));
+
+      //new URL("https://images.findagrave.com/photos/2008/209/28582429_121726221313.jpg")
+         f.setLayout(new FlowLayout());
+           f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           MyJPanel p = new MyJPanel();
+           p.setPreferredSize(new Dimension(bi.getWidth(), bi.getHeight()));
+
+           f.add(p);
+      f.setSize(500,500);
+           f.pack();
+           f.setLocationRelativeTo(null);
+                f.setVisible(true);
+
+
+
+
+
+       }catch(Exception e){
+         e.printStackTrace();
+       }
+
+
+
+
+
+
+
+    }
+
+    public void closeFrame() {
+        f.setVisible(false);
+        f.dispose();
+
+    }
+
+
+    class MyJPanel extends JPanel{
+        @Override
+        public void paintComponent(Graphics g){
+          super.paintComponent(g);
+          g.drawImage(bi, 0, 0, this);
+        }
+      }
+
   }
 
 
-  public void Start(JFrame frame, Scanner scanner, Time calender, SilkRoad game) {
+  public void Start(JFrame frame, Scanner scanner, Time calender, SilkRoad game, Player player, Person p1, Person p2, Person p3, Person p4, Person p5) {
+
+    StartScreen start = new StartScreen();
+
 
     ImageIcon icon = new ImageIcon("index.png");
     String fname = (String)JOptionPane.showInputDialog(frame, "Enter your first name",
@@ -110,11 +157,6 @@ public class SilkRoad {
         }
     }
 
-
-
-
-  
-
     game.setName(filename);
     try {
     	     File file = new File(filename);
@@ -132,19 +174,91 @@ public class SilkRoad {
 
         game.WriteData(game, calender,"Name: "+fname+" "+lname);
 
+        JFrame frame2 = new JFrame();
+
+        x = 3;
+        while (x == 3) {
+          String[] roles = {"Carpenter",
+                              "Hunter",
+                              "Trader", "More Info"};
+          x = JOptionPane.showOptionDialog(frame2,//parent container of JOptionPane
+              "Many people have traveled the Silk Road. What type of person are you?",
+              "Role",
+              JOptionPane.YES_NO_CANCEL_OPTION,
+              JOptionPane.QUESTION_MESSAGE,
+              null,//do not use a custom Icon
+              roles,//the titles of buttons
+              roles[2]);//default button title
+              if (x == 3) {
+                JOptionPane.showMessageDialog(null, "1. Carpenters\n Carpenters will be able to be the " +
+                "handymen when you travel meaning broken wheels and caulking a boat will be problems of the past\n" +
+                "2. Hunters\nHunters get more food when they hunt which will help the survival of the group\n" + "3. Trader\nTraders know the price of the things on the silk road meaning they" +
+                " will get the best price");
+
+              }
+        }
+
+        if (x == 0) {
+          WriteData(game, calender, "Carpenter");
+          player.setCarpenter(true);
+        } else if (x == 1) {
+          WriteData(game, calender, "Hunter");
+          player.setFoodMult(true);
+        } else {
+          WriteData(game, calender, "Trader");
+          player.setTradeRate(.8);
+        }
 
 
-  //  game.WriteData(game, "Name: "+fname+" "+lname);
+            JTextField character1 = new JTextField(12);
+            JTextField character2 = new JTextField(12);
+            JTextField character3 = new JTextField(12);
+            JTextField character4 = new JTextField(12);
+            JTextField character5 = new JTextField(12);
 
-    game.clearScreen();
-    game.StartScreen();
-    String Stemp = scanner.nextLine();
-    while ((Stemp.compareTo("R") != 0)) {
-      game.clearScreen();
-      game.StartScreen();
-      Stemp = scanner.nextLine();
-    }
+            JPanel myPanel = new JPanel();
+            myPanel.add(new JLabel("Member 1:"));
+            myPanel.add(character1);
+            myPanel.add(Box.createHorizontalStrut(12)); // a spacer
+            myPanel.add(new JLabel("Member 2:"));
+            myPanel.add(character2);
+            myPanel.add(Box.createHorizontalStrut(12)); // a spacer
+            myPanel.add(new JLabel("Member 3:"));
+            myPanel.add(character3);
+            myPanel.add(Box.createHorizontalStrut(12)); // a spacer
+            myPanel.add(new JLabel("Member 4:"));
+            myPanel.add(character4);
+            myPanel.add(Box.createHorizontalStrut(12)); // a spacer
+            myPanel.add(new JLabel("Member 5:"));
+            myPanel.add(character5);
+
+            character1.setText(" ");
+            character2.setText(" ");
+            character3.setText(" ");
+            character4.setText(" ");
+            character5.setText(" ");
+
+
+          while ((character1.getText().compareTo(" ") == 0) || (character2.getText().compareTo(" ") == 0) || (character3.getText().compareTo(" ") == 0) || (character4.getText().compareTo(" ") == 0) || (character5.getText().compareTo(" ") == 0)) {
+            int result = JOptionPane.showConfirmDialog(null, myPanel,
+                "What will the members of your party be named?", JOptionPane.OK_CANCEL_OPTION);
+            if (result == JOptionPane.OK_OPTION && character1.getText() != "") {
+              p1.setName(character1.getText());
+              p2.setName(character2.getText());
+              p3.setName(character3.getText());
+              p4.setName(character4.getText());
+              p5.setName(character5.getText());
+            }
+          }
+          game.WriteData(game, calender, "\nP1: "+p1.getName()+"\nP2: "+p2.getName()+"\nP3: "+p3.getName()+"\nP4: "+p4.getName()+"\nP5: "+p5.getName());
+
+
+        start.closeFrame();
+
+
+
   }
+
 
 
   public void WriteData(SilkRoad game, Time calender, String data) {
@@ -178,124 +292,6 @@ public class SilkRoad {
 }
 
 
-
-  public void Role(Scanner scanner, Player player, SilkRoad game, Time calender) {
-    String role = "initial";
-    while (true) {
-        if (role.compareTo("1") == 0) {
-          WriteData(game, calender, "Carpenter");
-          player.setCarpenter(true);
-          break;
-        }
-        if (role.compareTo("2") == 0) {
-          WriteData(game, calender, "Hunter");
-          player.setFoodMult(true);
-          break;
-        }
-        if (role.compareTo("3") == 0) {
-          WriteData(game, calender, "Trader");
-          player.setTradeRate(.8);
-          break;
-        }
-        if (role.compareTo("4") == 0) {
-          game.clearScreen();
-          game.RoleInfo();
-          String unused = scanner.nextLine();
-        }
-        game.clearScreen();
-        game.RolePick();
-        role = scanner.nextLine();
-    }
-  }
-
-  public void RolePick() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Many people have traveled the Silk Road");
-    System.out.println("What type of person are you?");
-    System.out.println("");
-    System.out.println(" 1. A Handy Carpenter");
-    System.out.println("");
-    System.out.println(" 2. An Experienced Hunter");
-    System.out.println("");
-    System.out.println(" 3. A Well Versed Trader");
-    System.out.println("");
-    System.out.println(" 4. More info?");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("What is your choice?");
-  }
-
-  public void RoleInfo() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("1. Carpenter");
-    System.out.println("Carpenters will be able to be the handymen when you travel");
-    System.out.println("meaning broken wheels and caulking a bout will be problems of the past");
-    System.out.println("");
-    System.out.println("2. Hunters");
-    System.out.println("Hunters get more food when they hunt which will");
-    System.out.println("help the survival of the group");
-    System.out.println("");
-    System.out.println("3. Trader");
-    System.out.println("Traders know the price of the things on the silk");
-    System.out.println("road meaning they will get the best price");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Type anything to return to choice menu");
-  }
-
-  public void People(Scanner scanner, Person p1, Person p2, Person p3, Person p4, Person p5, SilkRoad game, Time calender) {
-    String name = "initial";
-    String name2 = "";
-    while (true) {
-      if (name.compareTo("1") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(1, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p1.setName(name2);
-      }
-      if (name.compareTo("2") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(2, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p2.setName(name2);
-      }
-      if (name.compareTo("3") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(3, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p3.setName(name2);
-      }
-      if (name.compareTo("4") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(4, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p4.setName(name2);
-      }
-      if (name.compareTo("5") == 0) {
-        game.clearScreen();
-        game.GroupNamesDisplay2(5, p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-        name2 = scanner.nextLine();
-        p5.setName(name2);
-      }
-      if ((name.compareTo("R") == 0) && (p1.getName().compareTo("") != 0) && (p2.getName().compareTo("") != 0) && (p3.getName().compareTo("") != 0) && (p4.getName().compareTo("") != 0) && (p5.getName().compareTo("") != 0)) {
-        game.WriteData(game, calender, "P1: "+p1.getName()+"\nP2: "+p2.getName()+"\nP3: "+p3.getName()+"\nP4: "+p4.getName()+"\nP5: "+p5.getName());
-        break;
-      }
-      game.clearScreen();
-      game.GroupNamesDisplay1(p1.getName(), p2.getName(), p3.getName(), p4.getName(), p5.getName());
-      name = scanner.nextLine();
-    }
-  }
-
   public void FirstBuy(Scanner scanner, SilkRoad game) {
     game.clearScreen();
     game.PreBuyMenu();
@@ -303,65 +299,6 @@ public class SilkRoad {
   }
 
 
-  public void GroupNamesDisplay1(String name1, String name2, String name3, String name4, String name5) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("What will the members of your party be named?");
-    System.out.println("");
-    System.out.println("1. " +name1);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("2. " +name2);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("3. " +name3);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("4. " +name4);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("5. " +name5);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("When every party member is named, type 'R'");
-    System.out.println("");
-    System.out.println("Enter the corresponding number to change the");
-    System.out.println("party member's name:");
-
-  }
-
-  public void GroupNamesDisplay2(int num, String name1, String name2, String name3, String name4, String name5) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("What will the members of your party be named?");
-    System.out.println("");
-    System.out.println("1. " +name1);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("2. " +name2);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("3. " +name3);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("4. " +name4);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("5. " +name5);
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("What will member #"+num+" be called?");
-  }
 
   public void PreBuyMenu() {
     System.out.println("==================================================================================================================");
