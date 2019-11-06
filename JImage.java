@@ -44,10 +44,7 @@ f.setLocationRelativeTo(null);
       e.printStackTrace();
     }
   }
-  public static void main(String[] args){
-    new JImage();
-	System.out.println("BOP");
-  }
+  
   class MyJPanel extends JPanel{
     @Override
     public void paintComponent(Graphics g){

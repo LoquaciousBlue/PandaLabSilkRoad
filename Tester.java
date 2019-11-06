@@ -31,11 +31,7 @@ public class Tester {
 
     game.Start(frame, scanner, calender, game, player, p1, p2, p3, p4, p5);
 
-    game.FirstBuy(scanner, game);
-
     game.Buy(scanner, game, calender, player);
-
-    game.Season(scanner, calender, game);
 
     game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
