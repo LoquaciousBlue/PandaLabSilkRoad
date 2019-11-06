@@ -1,0 +1,49 @@
+import java.awt.*;
+ import java.applet.Applet;
+
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import javax.swing.Icon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+import javax.swing.UIManager;
+
+
+
+ public class buttonDir extends Applet {
+   public void init() {
+
+Panel p = new Panel();
+    	p.setLayout(new BorderLayout());
+
+     p.add(new Button("North"), BorderLayout.NORTH);
+     p.add(new Button("South"), BorderLayout.SOUTH);
+     p.add(new Button("East"), BorderLayout.EAST);
+     p.add(new Button("West"), BorderLayout.WEST);
+     p.add(new Button("Center"), BorderLayout.CENTER);
+
+
+
+        p.setVisible(true);
+	JFrame f = new JFrame("BOOF");
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(p);
+        f.pack();
+        f.setLocationRelativeTo(null);
+        f.setVisible(true);
+
+	
+   }
+public static void main(String[] args) {
+    new buttonDir().setVisible(true);
+  }
+ }
+
+

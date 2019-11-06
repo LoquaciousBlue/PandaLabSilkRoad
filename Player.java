@@ -15,12 +15,12 @@ public class Player {
   private double paceCoef;
   private double rationCoef;
   private int distance;
-  private int oxen;
+  private int camel;
   private boolean resting;
   private boolean storming;
 
-  public Player(int oxen, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, boolean FoodMult, double tradeRate, boolean Carpenter, double paceCoef, double rationCoef, int distance, boolean resting, boolean storming) {
-    this.oxen = oxen;
+  public Player(int camel, int food, int bullets, int clothing, int wheel, int axle, int tongue, double cash, int alive, boolean FoodMult, double tradeRate, boolean Carpenter, double paceCoef, double rationCoef, int distance, boolean resting, boolean storming) {
+    this.camel = camel;
     this.food = food;
     this.bullets = bullets;
     this.clothing = clothing;
@@ -68,8 +68,8 @@ public class Player {
     return storming;
   }
 
-  public int getOxen() {
-    return oxen;
+  public int getCamel() {
+    return camel;
   }
 
   public int getFood() {
@@ -177,8 +177,8 @@ public class Player {
     this.distance = distance;
   }
 
-  public void setOxen(int oxen) {
-    this.oxen = oxen;
+  public void setCamel(int camel) {
+    this.camel = camel;
   }
 
   public void spend(double dock) {
@@ -205,8 +205,8 @@ public class Player {
     this.bullets = bullets + a1;
   }
 
-  public void buyOxen(int Ox) {
-    this.oxen = oxen + Ox;
+  public void buyCamel(int cam) {
+    this.camel = camel + cam;
   }
 
   public void buyClothing(int c1) {
@@ -252,10 +252,10 @@ public class Player {
     }
   }
 
-  public void loseOxen(int Ox) {
-    this.oxen = oxen - Ox;
-    if (oxen < 0) {
-      oxen = 0;
+  public void loseCamel(int cam) {
+    this.camel = camel - cam;
+    if (camel < 0) {
+      camel = 0;
     }
   }
 

@@ -1,0 +1,232 @@
+//Imports are listed in full to show what's being used
+//could just import javax.swing.* and java.awt.* etc..
+import java.awt.EventQueue;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Container;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+ import java.awt.FlowLayout;
+import java.net.URL;
+ import java.io.File;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JButton;
+ 
+import javax.imageio.ImageIO;
+
+
+public class CardLayoutExample {
+    BufferedImage bi = null;
+    BufferedImage bi2 = null;
+
+	final Jbutton b;
+
+    int image = 0;
+
+
+JFrame guiFrame;
+CardLayout cards;
+JPanel cardPanel;
+public static void main(String[] args) {
+//Use the event dispatch thread for Swing components
+EventQueue.invokeLater(new Runnable()
+{
+@Override
+public void run()
+{
+new CardLayoutExample();
+}
+});
+}
+public CardLayoutExample() {
+guiFrame = new JFrame();
+
+
+
+
+
+
+
+
+
+//make sure the program exits when the frame closes
+guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+guiFrame.setTitle("CardLayout Example");
+guiFrame.setSize(800,800);
+//This will center the JFrame in the middle of the screen
+guiFrame.setLocationRelativeTo(null);
+guiFrame.setLayout(new BorderLayout());
+//creating a border to highlight the JPanel areas
+Border outline = BorderFactory.createLineBorder(Color.black);
+JPanel tabsPanel = new JPanel();
+tabsPanel.setBorder(outline);
+
+JButton b = new JButton("BOOP");
+	JButton c = new JButton("BEEP");
+	JButton d = new JButton("YEET"+image);
+	tabsPanel.add(b);
+	tabsPanel.add(c);
+	tabsPanel.add(d);
+
+
+
+JButton switchCards = new JButton("Switch Card");
+switchCards.setActionCommand("Switch Card");
+switchCards.addActionListener(new ActionListener()
+{
+@Override
+public void actionPerformed(ActionEvent event)
+{
+cards.next(cardPanel);
+//cards.show(cardPanel, "Vegetables");
+}
+});
+
+
+c.addActionListener(new ActionListener()
+{
+  public void actionPerformed(ActionEvent e)
+  {
+    // display/center the jdialog when the button is pressed
+    System.out.println("HELP");
+cards.show(cardPanel, "Fruits");
+  }
+});
+
+b.addActionListener(new ActionListener(){
+  public void actionPerformed(ActionEvent e)
+  {
+
+    System.out.println("TEST");
+cards.show(cardPanel, "Veggies");
+  }
+});
+
+d.addActionListener(new ActionListener()
+{
+  public void actionPerformed(ActionEvent e)
+  {
+	image = 1;
+	System.out.println(image);
+
+  }
+});
+
+
+tabsPanel.add(switchCards);
+guiFrame.add(tabsPanel,BorderLayout.NORTH);
+cards = new CardLayout();
+cardPanel = new JPanel();
+cardPanel.setLayout(cards);
+cards.show(cardPanel, "Fruits");
+JPanel firstCard = new JPanel();
+firstCard.setBackground(Color.GREEN);
+
+
+class MyJPanel extends JPanel{
+    @Override
+    public void paintComponent(Graphics g){
+      super.paintComponent(g);
+      g.drawImage(bi, 0, 0, this);
+    }
+  } 
+
+
+	String resource; 
+
+    try{
+	if (image == 0) {
+		resource = "/home/ealdrich/OregonTrail/ReadyPlayerTest.jpg";	
+	} else if (image == 1) {
+		resource = "/home/ealdrich/OregonTrail/YouTried.jpg";
+	} else {
+resource = "/home/ealdrich/OregonTrail/index.png";
+	}
+       bi = ImageIO.read(new File(resource));
+      MyJPanel p = new MyJPanel();
+      p.setPreferredSize(new Dimension(bi.getWidth(), bi.getHeight()));
+      firstCard.add(p);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+b.addActionListener(new ActionListener()
+{
+  public void actionPerformed(ActionEvent e)
+  {
+    // display/center the jdialog when the button is pressed
+    System.out.println("TEST");
+  }
+});	
+
+c.addActionListener(new ActionListener()
+{
+  public void actionPerformed(ActionEvent e)
+  {
+    // display/center the jdialog when the button is pressed
+    System.out.println("HELP");
+cards.next(cardPanel);
+  }
+});
+
+*/
+
+
+JPanel secondCard = new JPanel();
+secondCard.setBackground(Color.BLUE);
+
+/**
+    try{
+       bi2 = ImageIO.read(new File("/home/ealdrich/OregonTrail/YouTried.jpg"));
+      MyJPanel p2 = new MyJPanel();
+      p2.setPreferredSize(new Dimension((bi2).getWidth(), (bi2).getHeight()));
+      secondCard.add(p2);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+*/
+
+
+cardPanel.add(firstCard, "Fruits");
+cardPanel.add(secondCard, "Veggies");
+
+
+
+
+
+guiFrame.add(tabsPanel,BorderLayout.NORTH);
+guiFrame.add(cardPanel,BorderLayout.CENTER);
+guiFrame.setVisible(true);
+}
+
+}
