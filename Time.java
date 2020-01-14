@@ -35,7 +35,7 @@ public class Time {
 
   public void Choice1(int x) {
     if(x == 1) {
-      cities[6] = "";
+      cities[6] = "Boof";
       stores++;
       cities[7] = "Balch";
     } else {

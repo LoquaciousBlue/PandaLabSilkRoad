@@ -71,11 +71,7 @@ public class SilkRoad {
     StartScreen() {
       JPanel background = new JPanel();
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-<<<<<<< HEAD
       image.setIcon(new ImageIcon("StartScreen.jpg"));
-=======
-      image.setIcon(new ImageIcon("Town.jpg"));
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
       background.add(image);
       f.add(background);
       f.setResizable(false);
@@ -96,7 +92,6 @@ public class SilkRoad {
 
 
 
-<<<<<<< HEAD
 
       switch (i) {
         case 1: image.setIcon(new ImageIcon("StartScreen.jpg"));        //1-4 Start/End games
@@ -176,92 +171,6 @@ public class SilkRoad {
         f.repaint();
     }
 
-=======
-      switch (i) {
-        case 1: image.setIcon(new ImageIcon("Dock.jpg"));
-        break;
-        case 2: image.setIcon(new ImageIcon("Raft.jpg"));
-        break;
-        case 3: image.setIcon(new ImageIcon("Town.jpg"));
-        break;
-        case 4: image.setIcon(new ImageIcon("Thief.jpg"));
-        break;
-        case 5: image.setIcon(new ImageIcon("BoatRide.jpg"));
-        break;
-        case 6: image.setIcon(new ImageIcon("NormBush.jpg"));
-        break;
-        case 7: image.setIcon(new ImageIcon("NormNorm.jpg"));
-        break;
-        case 8: image.setIcon(new ImageIcon("SnowNorm.jpg"));
-        break;
-        case 9: image.setIcon(new ImageIcon("SnowTown.jpg"));
-        break;
-        case 10: image.setIcon(new ImageIcon("TownNear.jpg"));
-        break;
-        case 11: image.setIcon(new ImageIcon("YouTried.jpg"));
-        break;
-        case 12: image.setIcon(new ImageIcon("FoundCart.jpg"));
-        break;
-        case 13: image.setIcon(new ImageIcon("SnowFerry.jpg"));
-        break;
-        case 14: image.setIcon(new ImageIcon("SnowThief.jpg"));
-        break;
-        case 15: image.setIcon(new ImageIcon("SnowTrade.jpg"));
-        break;
-        case 16: image.setIcon(new ImageIcon("FailedTrip.jpg"));
-        break;
-        case 17: image.setIcon(new ImageIcon("FoundCamel.jpg"));
-        break;
-        case 18: image.setIcon(new ImageIcon("NightThief.jpg"));
-        break;
-        case 19: image.setIcon(new ImageIcon("SteamNorm.jpg"));
-        break;
-        case 20: image.setIcon(new ImageIcon("TraderNorm.jpg"));
-        break;
-        case 21: image.setIcon(new ImageIcon("WinterDock.jpg"));
-        break;
-        case 22: image.setIcon(new ImageIcon("StartScreen.jpg"));
-        break;
-        case 23: image.setIcon(new ImageIcon("CartFireNorm.jpg"));
-        break;
-        case 24: image.setIcon(new ImageIcon("CartFireSnow.jpg"));
-        break;
-        case 25: image.setIcon(new ImageIcon("NormQuestion.jpg"));
-        break;
-        case 26: image.setIcon(new ImageIcon("SnowNormNorm.jpg"));
-        break;
-        case 27: image.setIcon(new ImageIcon("SnowQuestion.jpg"));
-        break;
-        case 28: image.setIcon(new ImageIcon("SnowTownNear.jpg"));
-        break;
-        case 29: image.setIcon(new ImageIcon("SnowTreasure.jpg"));
-        break;
-        case 30: image.setIcon(new ImageIcon("TreasureNorm.jpg"));
-        break;
-        case 31: image.setIcon(new ImageIcon("NormGrass.jpg"));
-        break;
-        case 32: image.setIcon(new ImageIcon("RoadSplitNorm.jpg"));
-        break;
-        case 33: image.setIcon(new ImageIcon("RoadSplitSnow.jpg"));
-        break;
-        case 34: image.setIcon(new ImageIcon("SnowFoundCart.jpg"));
-        break;
-        case 35: image.setIcon(new ImageIcon("FoundCamelWinter.jpg"));
-        break;
-
-
-
-      }
-
-
-
-        f.revalidate();
-        f.repaint();
-
-    }
-
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
     public void closeFrame() {
         f.setVisible(false);
         f.dispose();
@@ -276,7 +185,6 @@ public class SilkRoad {
 
     StartScreen start = new StartScreen();
 
-<<<<<<< HEAD
 
   //  ImageIcon icon = new ImageIcon("index.png");
 
@@ -289,27 +197,12 @@ public class SilkRoad {
 
     start.changeImage(1);
 
-=======
-
-  //  ImageIcon icon = new ImageIcon("index.png");
-
-    String fname = "";
-
-    while (fname.compareTo("") == 0) {
-      fname = (String)JOptionPane.showInputDialog(frame, "Enter your first name",
-      "The Silk Road (First Name Prompt)", JOptionPane.QUESTION_MESSAGE);
-    }
-
-start.changeImage(1);
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
     String lname = "";
     while (lname.compareTo("") == 0) {
      lname = (String)JOptionPane.showInputDialog(frame, "Enter your last name",
     "The Silk Road (Last Name Prompt)", JOptionPane.QUESTION_MESSAGE);
   }
 
-<<<<<<< HEAD
   start.changeImage(1);
 
 
@@ -317,15 +210,6 @@ start.changeImage(1);
 
 
 
-=======
-  start.changeImage(2);
-
-
-  JFrame framer = new JFrame();
-
-
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
 
   int n = 4;
@@ -362,11 +246,7 @@ start.changeImage(1);
 
 
 
-<<<<<<< HEAD
     start.changeImage(1);
-=======
-    start.changeImage(3);
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
 
     int x = 0;
@@ -522,15 +402,11 @@ start.changeImage(1);
             game.WriteData(game, calender, "Fall");
           }
 
-<<<<<<< HEAD
           if (x == 0) {
             start.changeImage(4);
           } else {
             start.changeImage(3);
           }
-=======
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
           JOptionPane.showMessageDialog(null, "Before you embark on your journey, you will need to buy some" + " supplies.\nThe nearby local store should " +
           "have everything you need.\nThings you may need to buy include food, clothes, and ammunition for the members of your group.\nThe only requirement before you go on your trip is that everything in the party has their own set of clothes.\nOn top of those items " +
@@ -594,7 +470,6 @@ start.changeImage(1);
   }
 
   public void Buy(Scanner scanner, SilkRoad game, Time calender, Player player) {
-<<<<<<< HEAD
     StartScreen buy = new StartScreen();
 
     int z = calender.getSeason();
@@ -604,9 +479,6 @@ start.changeImage(1);
     } else {
       buy.changeImage(3);
     }
-=======
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
     game.clearScreen();
 
@@ -658,11 +530,8 @@ start.changeImage(1);
 
     JFrame frame = new JFrame();
 
-<<<<<<< HEAD
     System.out.println("days: "+calender.getTotalDays());
 
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
     while (x != 8 && initial > current){
       String a = "Food: "+(player.getFood()+fcfoodn);
       String b = "Clothes: "+(player.getClothing()+fcclothesn);
@@ -784,11 +653,8 @@ start.changeImage(1);
           game.WriteData(game, calender, "Initial Wheel: "+player.getWheel());
           game.WriteData(game, calender, "Initial Tongues: "+player.getTongue());
           game.WriteData(game, calender, "Initial Axles: "+player.getAxle());
-<<<<<<< HEAD
         } else {
           game.Buy(scanner, game, calender, player);
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
         }
       } else {
         if (initial > current) {
@@ -810,28 +676,13 @@ start.changeImage(1);
           game.WriteData(game, calender, "Bought Axle: "+fcaxlen);
       }
     }
-<<<<<<< HEAD
     buy.closeFrame();
-=======
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
   }
 
 
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
   public void checkKill(Person person, SilkRoad game, Time calender) {
 		if (person.getHealth() <= 0 && person.isAlive() == true) {
@@ -886,7 +737,6 @@ start.changeImage(1);
 
 
   public void TravelMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-<<<<<<< HEAD
     Random rand = new Random();
     int ss = calender.getSeason();
 
@@ -900,8 +750,6 @@ start.changeImage(1);
 
     traveling.changeImage(ss);
 
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
     int x = 12;
     JFrame travelFrame = new JFrame();
@@ -921,10 +769,6 @@ start.changeImage(1);
     String[] travel = {a, b, c, d, e, f, g, h};
 
     int flag = 0;
-<<<<<<< HEAD
-=======
-    while (true) {
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
       x = JOptionPane.showOptionDialog(travelFrame,//parent container of JOptionPane
           bitText,
           "Travel Menu",
@@ -938,10 +782,9 @@ start.changeImage(1);
 
           if (x == 0) {
             game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
-<<<<<<< HEAD
             if (calender.getLandmark() == 0) {
               game.clearScreen();
-              game.NewCityMenu(game, calender, scanner);
+              game.NewCityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
               calender.incStore();
               int firstLand = rand.nextInt(50)+50;
               calender.setLandmark(firstLand);
@@ -962,48 +805,33 @@ start.changeImage(1);
             player.setResting(false);
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
-=======
-            //flag = 1;
-          } else if (x == 1) {
-            //1 day rest
-            //flag = 1;
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
           } else if (x == 2) {
-            //map
-            //flag = 1;
+            game.MapRoad(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
           } else if (x == 3) {
             game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
-<<<<<<< HEAD
             traveling.closeFrame();
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
           } else if (x == 4) {
             game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
-<<<<<<< HEAD
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
             //flag = 1;
 
           } else if (x == 5) {
             game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
-<<<<<<< HEAD
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
-=======
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
             //flag = 1;
 
           } else if (x == 6) {
             game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
-<<<<<<< HEAD
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
@@ -1019,169 +847,137 @@ start.changeImage(1);
   }
 
   public void MapRoad(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nIn this town, you will be able to trade and buy from the locals.");
 
-=======
-            //flag = 1;
-
-          } else if (x == 7) {
-            //more info
-          }
-        }
-
-  }
-
-
-  public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-
-    String road = "initial";
-    while (true) {
-        if (road.compareTo("1") == 0) {
-          game.clearScreen();
-          game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("2") == 0) {
-          game.clearScreen();
-          game.AutoTravel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("3") == 0) {
-
-        }
-        if (road.compareTo("4") == 0) {
-          game.clearScreen();
-          game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("5") == 0) {
-          game.clearScreen();
-          game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("6") == 0) {
-          game.clearScreen();
-          game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("7") == 0) {
-            game.clearScreen();
-            game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("8") == 0) {
-          game.clearScreen();
-          game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        game.clearScreen();
-        game.OnRoadMenu();
-        road = scanner.nextLine();
+    String tested = calender.StringLandMark(calender.getStore()-1);
+    if(tested.compareTo("Rome") == 0) {
+      ImageIcon dab = new ImageIcon("SR Rome-Constantinople.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Constantinople") == 0) {
+      ImageIcon dab = new ImageIcon("SR Constantinople- Antioch.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Antioch") == 0) {
+      ImageIcon dab = new ImageIcon("SR Antioch- Dura-Europas.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Dura-Europas") == 0) {
+      ImageIcon dab = new ImageIcon("SR Dura-Europas- Qumis.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Qumis") == 0) {
+      tested = calender.StringLandMark(calender.getStore());
+      System.out.println(tested);
+      if(tested.compareTo("Merv") == 0) {
+        ImageIcon dab = new ImageIcon("SR Qumis- Merv.jpg");
+        JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      }
+      return;
+    } else if(tested.compareTo("Merv") == 0) {
+      ImageIcon dab = new ImageIcon("SR Merv- Samarkand.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Samarkand") == 0) {
+      ImageIcon dab = new ImageIcon("SR Samarkand- Kashgar.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Balch") == 0) {
+      ImageIcon dab = new ImageIcon("SR Balch- Kashgar.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Kashgar") == 0) {
+      tested = calender.StringLandMark(calender.getStore());
+      if(tested.compareTo("Aksu") == 0) {
+        ImageIcon dab = new ImageIcon("SR Kashgar- Aksu.jpg");
+        JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      } else {
+        ImageIcon dab = new ImageIcon("SR Kashgar- Hoton.jpg");
+        JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      }
+      return;
+    } else if(tested.compareTo("Aksu") == 0) {
+      ImageIcon dab = new ImageIcon("SR Aksu- Dunhuang.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Hoton") == 0) {
+      ImageIcon dab = new ImageIcon("SR Hoton- Dunhuang.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Anxi County") == 0) {
+      ImageIcon dab = new ImageIcon("SR Anxi County- Wuwei.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Wuwei") == 0) {
+      ImageIcon dab = new ImageIcon("SR Wuwei- Chang_an.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else if(tested.compareTo("Chang'an") == 0) {
+      ImageIcon dab = new ImageIcon("SR Chang_an- Luoyang.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+      return;
+    } else {
+      ImageIcon dab = new ImageIcon("SR Qumis- Balch.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     }
-  }
-
-
-/**
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu:");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Type Anything to travel a days worth of time");
-    System.out.println("Type 'Menu' for your on road Menu:");
-
-
-
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu:");
-    System.out.println("");
-    System.out.println("1. Return to travel menu");
-    System.out.println("");
-    System.out.println("2. Auto Travel");
-    System.out.println("");
-    System.out.println("3. Map");
-    System.out.println("");
-    System.out.println("4. Supplies & Members Status");
-    System.out.println("");
-    System.out.println("5. Set Pace");
-    System.out.println("");
-    System.out.println("6. Set Rations");
-    System.out.println("");
-    System.out.println("7. Rest");
-    System.out.println("");
-    System.out.println("8. Hunt");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Enter which action you want to perform:");
-
-*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  public void TravelMenu2(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    JOptionPane.showMessageDialog(null, person.getName()+" has died.");
-
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu: (Auto Traveling)");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
   }
 
   public void MapCity(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+
+    String tested = calender.StringLandMark(calender.getStore()-1);
+
+    if(tested.compareTo("Constantinople") == 0) {
+      ImageIcon dab = new ImageIcon("SR Constantinople.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Antioch") == 0) {
+      ImageIcon dab = new ImageIcon("SR Antioch.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Dura-Europas") == 0) {
+      ImageIcon dab = new ImageIcon("SR Dura-Europas.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Qumis") == 0) {
+      ImageIcon dab = new ImageIcon("SR Qumis.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Merv") == 0) {
+      ImageIcon dab = new ImageIcon("SR Merv.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Samarkand") == 0) {
+      ImageIcon dab = new ImageIcon("SR Samarkand.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Balch") == 0) {
+      ImageIcon dab = new ImageIcon("SR Balch.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Kashgar") == 0) {
+      ImageIcon dab = new ImageIcon("SR Kashgar.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Aksu") == 0) {
+      ImageIcon dab = new ImageIcon("SR Aksu.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Hoton") == 0) {
+      ImageIcon dab = new ImageIcon("SR Hoton.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Anxi County") == 0) {
+      ImageIcon dab = new ImageIcon("SR Anxi County.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Wuwei") == 0) {
+      ImageIcon dab = new ImageIcon("SR Wuwei.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Chang'an") == 0) {
+      ImageIcon dab = new ImageIcon("SR Chang_an.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Louyang") == 0) {
+      ImageIcon dab = new ImageIcon("SR Louyang.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    } else if(tested.compareTo("Dunhuang") == 0) {
+      ImageIcon dab = new ImageIcon("SR Dunhuang.jpg");
+      JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
+    }
+
+
 
   }
 
@@ -1304,10 +1100,13 @@ start.changeImage(1);
 
                 int l = rand.nextInt(100);
 
+                int p = 154;
+
+
                 JFrame fa = new JFrame();
 
                   String[] choice = {"Fording", "Caulk and Float", "Ferry", "Wait a Day", "More Info"};
-                  x = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
+                  p = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
                        "Travel Menu: "+calender.getDate()+"\nFood: "+player.getFood()+" lb\nWeather: "+ calender.weatherString(calender.getWeather()) +"\nYou've reached a water crossing. How do you want to cross it? Currently the water is "+y+" feet deep." ,
                       "Water Crossing",
                       JOptionPane.YES_NO_CANCEL_OPTION,
@@ -1316,7 +1115,7 @@ start.changeImage(1);
                       choice,//the titles of buttons
                       choice[1]);//default button title
 
-                      if (x == 0) {
+                      if (p == 0) {
                         if (y >= 3) {
                           if(l < 40) {
                             traveling.changeImage(12);
@@ -1338,7 +1137,7 @@ start.changeImage(1);
                             break;
                           }
                         }
-                      } else if (x == 1) {
+                      } else if (p == 1) {
                         if (y >= 5) {
                           if(l < 25) {
                             traveling.changeImage(12);
@@ -1360,7 +1159,7 @@ start.changeImage(1);
                             break;
                           }
                         }
-                      } else if (x == 2 && player.getCash() >= 20) {
+                      } else if (p == 2 && player.getCash() >= 20) {
                         player.spend(20);
                         if(l < 80) {
                           traveling.changeImage(10);
@@ -1371,7 +1170,7 @@ start.changeImage(1);
                           game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                           break;
                         }
-                      } else if (x == 3) {
+                      } else if (p == 3) {
                         game.checkKill(p1, game, calender);
                         game.checkKill(p2, game, calender);
                         game.checkKill(p3, game, calender);
@@ -1391,7 +1190,7 @@ start.changeImage(1);
 
 
               }
-
+            }
 
 
 
@@ -1407,8 +1206,9 @@ start.changeImage(1);
             player.setResting(false);
             game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
           } else if (x == 2) {
-            //map
-            //flag = 1;
+            game.MapCity(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
           } else if (x == 3) {
             game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -1453,7 +1253,7 @@ start.changeImage(1);
           }
 
 
-  }
+
 
 
   }
@@ -1488,7 +1288,6 @@ start.changeImage(1);
 
   }
 
-<<<<<<< HEAD
   public void Trading(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
     int x = 12;
@@ -1562,36 +1361,6 @@ start.changeImage(1);
 
 
 
-=======
-*/
-
-/*
-  public void TravelMenu4(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu: (Storm)");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-  }
-
-  */
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
   public void CriticalCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     if (p1.getHealth() < 20 && p1.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p1.getName()+" is in critical condition and needs to rest.");
@@ -1613,10 +1382,8 @@ start.changeImage(1);
 
 
   public void GameOver(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    while (true) {
       JOptionPane.showMessageDialog(null, " Good try! You made it to day "+calender.getTotalDays());
-    }
-
+        System.exit(0);
   }
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
@@ -1683,7 +1450,13 @@ start.changeImage(1);
 
     }
 
-    public void NewCityMenu(SilkRoad game, Time calender, Scanner scanner) {
+    public void NewCityMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+
+      if(calender.StringLandMark(calender.getStore()).compareTo("Louyang") == 0) {
+        JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nYou traversed the entire Silk Road!");
+        System.exit(0);
+      }
+
       JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nIn this town, you will be able to trade and buy from the locals.");
       WriteData(game, calender, "Made it to "+calender.StringLandMark(calender.getStore()));
     }
@@ -1704,20 +1477,6 @@ start.changeImage(1);
       if (p5.isAlive() == true) {
         naturalToll(game, p5, player, calender);
       }
-    }
-
-    public void StarvingMenu() {
-      System.out.println("==================================================================================================================");
-      System.out.println("");
-      System.out.println("Your party is out of food!");
-      System.out.println("");
-      System.out.println("Without food, your party will not be able to travel as fast and will be easily sespetible to illness.");
-      System.out.println("");
-      System.out.println("==================================================================================================================");
-      System.out.println("");
-      System.out.println("");
-      System.out.println("");
-      System.out.println("Type anything to acknowledge");
     }
 
 
@@ -2116,11 +1875,7 @@ start.changeImage(1);
       int food = rand.nextInt(player.getFood()+1);
       player.loseFood(food);
 
-<<<<<<< HEAD
       JOptionPane.showMessageDialog(null, "You cart caught on fire!\nYou lost these items in the fire:\n\nAmmunition: "+bulls+"\nClothing: "+cloths+"\nFood: "+food);
-=======
-      JOptionPane.showMessageDialog(null, "You cart caught on fire!\nYou lost these items in the fire:\n\nAmmunition: "+bulls+"\nClothing: "+cloths+"Food: "+food);
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
       WriteData(game, calender, "Fire caused party to lose "+bulls+" bullets, "+cloths+" clothes, and "+food+" pounds of food");
     }
@@ -2190,11 +1945,7 @@ start.changeImage(1);
 
         event = rand.nextInt(9);
         if(event == 0) {
-<<<<<<< HEAD
           //game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
-=======
-          game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
         } else if (event == 1) {
           game.Robbed(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 2) {
@@ -2230,15 +1981,9 @@ start.changeImage(1);
         if(calender.getLandmark()<=0) {
         calender.incStore();
         Random rand = new Random();
-<<<<<<< HEAD
         int firstLand = rand.nextInt(50)+50;
         calender.setLandmark(firstLand);
         }
-=======
-        int firstLand = rand.nextInt(50)+300;
-        calender.setLandmark(firstLand);
-      }
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
       //game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
       game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
     }
@@ -2588,11 +2333,7 @@ start.changeImage(1);
     }
 
     JOptionPane.showMessageDialog(null, "The Hunt didn't go well... "+whoops);
-<<<<<<< HEAD
     return;
-=======
-
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
 
   }
 
@@ -2820,11 +2561,7 @@ start.changeImage(1);
           doctor,//the titles of buttons
           doctor[1]);//default button title
 
-<<<<<<< HEAD
           if (x == 0 && player.getCash() >= 100) {
-=======
-          if (x == 0 && player.getCash() <= 99) {
->>>>>>> 3e3bbcd81876fd55ed652faee5a6f006d9c2d69e
             JOptionPane.showMessageDialog(null, "Thank you for your purchase!");
             WriteData(game, calender, "Paid to heal entire party at doctors");
             game.FullHeal(player, scanner, calender, game, p1, p2, p3, p4, p5);
