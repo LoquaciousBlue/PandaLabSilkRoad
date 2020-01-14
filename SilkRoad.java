@@ -71,7 +71,7 @@ public class SilkRoad {
     StartScreen() {
       JPanel background = new JPanel();
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      image.setIcon(new ImageIcon("Town.jpg"));
+      image.setIcon(new ImageIcon("StartScreen.jpg"));
       background.add(image);
       f.add(background);
       f.setResizable(false);
@@ -92,89 +92,84 @@ public class SilkRoad {
 
 
 
+
       switch (i) {
-        case 1: image.setIcon(new ImageIcon("Dock.jpg"));
+        case 1: image.setIcon(new ImageIcon("StartScreen.jpg"));        //1-4 Start/End games
         break;
-        case 2: image.setIcon(new ImageIcon("Raft.jpg"));
+        case 2: image.setIcon(new ImageIcon("YouTried.jpg"));
         break;
         case 3: image.setIcon(new ImageIcon("Town.jpg"));
         break;
-        case 4: image.setIcon(new ImageIcon("Thief.jpg"));
+        case 4: image.setIcon(new ImageIcon("SnowTown.jpg"));
         break;
-        case 5: image.setIcon(new ImageIcon("BoatRide.jpg"));
+        case 5: image.setIcon(new ImageIcon("RoadSplitNorm.jpg"));      //5-6 Split
         break;
-        case 6: image.setIcon(new ImageIcon("NormBush.jpg"));
+        case 6: image.setIcon(new ImageIcon("RoadSplitSnow.jpg"));
         break;
-        case 7: image.setIcon(new ImageIcon("NormNorm.jpg"));
+        case 7: image.setIcon(new ImageIcon("WinterDock.jpg")); //7-12 boat
         break;
-        case 8: image.setIcon(new ImageIcon("SnowNorm.jpg"));
+        case 8: image.setIcon(new ImageIcon("Dock.jpg"));
         break;
-        case 9: image.setIcon(new ImageIcon("SnowTown.jpg"));
+        case 9: image.setIcon(new ImageIcon("FailedTrip.jpg"));
         break;
-        case 10: image.setIcon(new ImageIcon("TownNear.jpg"));
+        case 10: image.setIcon(new ImageIcon("BoatRide.jpg"));
         break;
-        case 11: image.setIcon(new ImageIcon("YouTried.jpg"));
+        case 11: image.setIcon(new ImageIcon("SnowFerry.jpg"));
         break;
-        case 12: image.setIcon(new ImageIcon("FoundCart.jpg"));
+        case 12: image.setIcon(new ImageIcon("Raft.jpg"));  //
         break;
-        case 13: image.setIcon(new ImageIcon("SnowFerry.jpg"));
+        case 13: image.setIcon(new ImageIcon("Thief.jpg"));  //Norm 13-22
         break;
-        case 14: image.setIcon(new ImageIcon("SnowThief.jpg"));
+        case 14: image.setIcon(new ImageIcon("NormBush.jpg"));
         break;
-        case 15: image.setIcon(new ImageIcon("SnowTrade.jpg"));
+        case 15: image.setIcon(new ImageIcon("NormNorm.jpg"));
         break;
-        case 16: image.setIcon(new ImageIcon("FailedTrip.jpg"));
+        case 16: image.setIcon(new ImageIcon("WalkingGrass.jpg"));
         break;
-        case 17: image.setIcon(new ImageIcon("FoundCamel.jpg"));
+        case 17: image.setIcon(new ImageIcon("TreasureNorm.jpg"));
         break;
-        case 18: image.setIcon(new ImageIcon("NightThief.jpg"));
+        case 18: image.setIcon(new ImageIcon("TownNear.jpg"));
         break;
-        case 19: image.setIcon(new ImageIcon("SteamNorm.jpg"));
+        case 19: image.setIcon(new ImageIcon("FoundCart.jpg"));
         break;
-        case 20: image.setIcon(new ImageIcon("TraderNorm.jpg"));
+        case 20: image.setIcon(new ImageIcon("FoundCamel.jpg"));
         break;
-        case 21: image.setIcon(new ImageIcon("WinterDock.jpg"));
+        case 21: image.setIcon(new ImageIcon("TraderNorm.jpg"));
         break;
-        case 22: image.setIcon(new ImageIcon("StartScreen.jpg"));
+        case 22: image.setIcon(new ImageIcon("SteamNorm.jpg")); //
         break;
-        case 23: image.setIcon(new ImageIcon("CartFireNorm.jpg"));
+        case 23: image.setIcon(new ImageIcon("SnowTrade.jpg")); //23-29 snow
         break;
-        case 24: image.setIcon(new ImageIcon("CartFireSnow.jpg"));
+        case 24: image.setIcon(new ImageIcon("SnowNormNorm.jpg"));
         break;
-        case 25: image.setIcon(new ImageIcon("NormQuestion.jpg"));
+        case 25: image.setIcon(new ImageIcon("SnowTownNear.jpg"));
         break;
-        case 26: image.setIcon(new ImageIcon("SnowNormNorm.jpg"));
+        case 26: image.setIcon(new ImageIcon("SnowTreasure.jpg"));
         break;
-        case 27: image.setIcon(new ImageIcon("SnowQuestion.jpg"));
+        case 27: image.setIcon(new ImageIcon("SnowNorm.jpg"));
         break;
-        case 28: image.setIcon(new ImageIcon("SnowTownNear.jpg"));
+        case 28: image.setIcon(new ImageIcon("SnowFoundCart.jpg"));
         break;
-        case 29: image.setIcon(new ImageIcon("SnowTreasure.jpg"));
+        case 29: image.setIcon(new ImageIcon("FoundCamelWinter.jpg"));
         break;
-        case 30: image.setIcon(new ImageIcon("TreasureNorm.jpg"));
+        case 30: image.setIcon(new ImageIcon("SnowThief.jpg"));    //30+ unused assets
         break;
-        case 31: image.setIcon(new ImageIcon("NormGrass.jpg"));
+        case 31: image.setIcon(new ImageIcon("NormQuestion.jpg"));
         break;
-        case 32: image.setIcon(new ImageIcon("RoadSplitNorm.jpg"));
+        case 32: image.setIcon(new ImageIcon("CartFireSnow.jpg"));
         break;
-        case 33: image.setIcon(new ImageIcon("RoadSplitSnow.jpg"));
+        case 33: image.setIcon(new ImageIcon("CartFireNorm.jpg"));
         break;
-        case 34: image.setIcon(new ImageIcon("SnowFoundCart.jpg"));
+        case 34: image.setIcon(new ImageIcon("SnowQuestion.jpg"));
         break;
-        case 35: image.setIcon(new ImageIcon("FoundCamelWinter.jpg"));
+        case 35: image.setIcon(new ImageIcon("NightThief.jpg"));
         break;
-
-
 
       }
 
-
-
         f.revalidate();
         f.repaint();
-
     }
-
 
     public void closeFrame() {
         f.setVisible(false);
@@ -200,7 +195,7 @@ public class SilkRoad {
       "The Silk Road (First Name Prompt)", JOptionPane.QUESTION_MESSAGE);
     }
 
-start.changeImage(1);
+    start.changeImage(1);
 
     String lname = "";
     while (lname.compareTo("") == 0) {
@@ -208,7 +203,7 @@ start.changeImage(1);
     "The Silk Road (Last Name Prompt)", JOptionPane.QUESTION_MESSAGE);
   }
 
-  start.changeImage(2);
+  start.changeImage(1);
 
 
   JFrame framer = new JFrame();
@@ -251,7 +246,7 @@ start.changeImage(1);
 
 
 
-    start.changeImage(3);
+    start.changeImage(1);
 
 
     int x = 0;
@@ -407,7 +402,11 @@ start.changeImage(1);
             game.WriteData(game, calender, "Fall");
           }
 
-
+          if (x == 0) {
+            start.changeImage(4);
+          } else {
+            start.changeImage(3);
+          }
 
           JOptionPane.showMessageDialog(null, "Before you embark on your journey, you will need to buy some" + " supplies.\nThe nearby local store should " +
           "have everything you need.\nThings you may need to buy include food, clothes, and ammunition for the members of your group.\nThe only requirement before you go on your trip is that everything in the party has their own set of clothes.\nOn top of those items " +
@@ -471,7 +470,15 @@ start.changeImage(1);
   }
 
   public void Buy(Scanner scanner, SilkRoad game, Time calender, Player player) {
+    StartScreen buy = new StartScreen();
 
+    int z = calender.getSeason();
+
+    if (z == 0) {
+      buy.changeImage(4);
+    } else {
+      buy.changeImage(3);
+    }
 
     game.clearScreen();
 
@@ -522,6 +529,8 @@ start.changeImage(1);
     int x = 0;
 
     JFrame frame = new JFrame();
+
+    System.out.println("days: "+calender.getTotalDays());
 
     while (x != 8 && initial > current){
       String a = "Food: "+(player.getFood()+fcfoodn);
@@ -644,6 +653,8 @@ start.changeImage(1);
           game.WriteData(game, calender, "Initial Wheel: "+player.getWheel());
           game.WriteData(game, calender, "Initial Tongues: "+player.getTongue());
           game.WriteData(game, calender, "Initial Axles: "+player.getAxle());
+        } else {
+          game.Buy(scanner, game, calender, player);
         }
       } else {
         if (initial > current) {
@@ -665,16 +676,8 @@ start.changeImage(1);
           game.WriteData(game, calender, "Bought Axle: "+fcaxlen);
       }
     }
-
+    buy.closeFrame();
   }
-
-
-
-
-
-
-
-
 
 
 
@@ -734,6 +737,19 @@ start.changeImage(1);
 
 
   public void TravelMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    Random rand = new Random();
+    int ss = calender.getSeason();
+
+    if(ss == 0) {
+      ss = 23+rand.nextInt(7);
+    } else {
+      ss = 13+rand.nextInt(9);
+    }
+
+    StartScreen traveling = new StartScreen();
+
+    traveling.changeImage(ss);
+
 
     int x = 12;
     JFrame travelFrame = new JFrame();
@@ -753,7 +769,6 @@ start.changeImage(1);
     String[] travel = {a, b, c, d, e, f, g, h};
 
     int flag = 0;
-    while (true) {
       x = JOptionPane.showOptionDialog(travelFrame,//parent container of JOptionPane
           bitText,
           "Travel Menu",
@@ -767,10 +782,29 @@ start.changeImage(1);
 
           if (x == 0) {
             game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            if (calender.getLandmark() == 0) {
+              game.clearScreen();
+              game.NewCityMenu(game, calender, scanner);
+              calender.incStore();
+              int firstLand = rand.nextInt(50)+50;
+              calender.setLandmark(firstLand);
+              traveling.closeFrame();
+              game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+            //  game.CityInput(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          } else {
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          }
+
             //flag = 1;
           } else if (x == 1) {
-            //1 day rest
-            //flag = 1;
+            player.setResting(true);
+            game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            player.setResting(false);
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
 
           } else if (x == 2) {
             //map
@@ -778,228 +812,424 @@ start.changeImage(1);
 
           } else if (x == 3) {
             game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
           } else if (x == 4) {
             game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
             //flag = 1;
 
           } else if (x == 5) {
             game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
             //flag = 1;
 
           } else if (x == 6) {
             game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
             //flag = 1;
 
           } else if (x == 7) {
-            //more info
+            JOptionPane.showMessageDialog(null, "Traveling will allow you to progress one entire day.\nResting will allow your party to recover from illness, long travel, and other hazards on the road.\n"+
+            "Map will allow you to check your progress on the Silk Road. \nStatus will allow you to take inventory of your belongings and check on your party.\n" +
+            "Pace and Rations will allow you to change your parties speed and consumption of food. \nHunting will allow you to acquire food on the road.");
+            traveling.closeFrame();
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
           }
-        }
+  }
+
+  public void MapRoad(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nIn this town, you will be able to trade and buy from the locals.");
+
+  }
+
+  public void MapCity(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
   }
 
 
-  public void OnRoadInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
-    String road = "initial";
-    while (true) {
-        if (road.compareTo("1") == 0) {
-          game.clearScreen();
-          game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("2") == 0) {
-          game.clearScreen();
-          game.AutoTravel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("3") == 0) {
+  public void CityMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    Random rand = new Random();
+    int ss = calender.getSeason();
 
-        }
-        if (road.compareTo("4") == 0) {
-          game.clearScreen();
-          game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("5") == 0) {
-          game.clearScreen();
-          game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("6") == 0) {
-          game.clearScreen();
-          game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("7") == 0) {
-            game.clearScreen();
-            game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (road.compareTo("8") == 0) {
-          game.clearScreen();
-          game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        game.clearScreen();
-        game.OnRoadMenu();
-        road = scanner.nextLine();
+    if(ss == 0) {
+      ss = 4;
+    } else {
+      ss = 3;
     }
+
+    StartScreen traveling = new StartScreen();
+
+    traveling.changeImage(ss);
+
+
+    int x = 12;
+    JFrame travelFrame = new JFrame();
+
+    String a = "Travel";
+    //"<html><font face='Serif' size='5' color='black'>Travel";
+    //"Travel";
+    String b = "Rest";
+    String c = "Map";
+    String d = "General Status";
+    String e = "Set Pace";
+    String f = "Set Rations";
+    String g = "Doctor";
+    String h = "Shop";
+    String i = "Trade";
+    String j = "More Info";
+
+    String bitText = "City Menu:\n"+calender.getDate()+"\nWeather: "+ calender.weatherString(calender.getWeather()) + "\nHealth: "+ game.checkHealth(p1, p2, p3, p4, p5, game) + "\nFood: "+ player.getFood()+" lbs" + "\nTraveled Miles: "+calender.getDistance()+" miles" + "\nNext Landmark: "+calender.getLandmark()+" miles";
+    String[] travel = {a, b, c, d, e, f, g, h, i, j};
+
+    int flag = 0;
+      x = JOptionPane.showOptionDialog(travelFrame,//parent container of JOptionPane
+          bitText,
+          "Travel Menu",
+          JOptionPane.YES_NO_CANCEL_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,//do not use a custom Icon
+          travel,//the titles of buttons
+          travel[0]);//default button title
+        //  UIManager.put("OptionPane.buttonFont", new Font("Arial", Font.PLAIN, 5));
+
+
+          if (x == 0) {
+            if(calender.getStore() == 6) {
+
+              if(ss == 0) {
+                traveling.changeImage(5);
+              } else {
+                traveling.changeImage(6);
+              }
+
+
+              JFrame fa = new JFrame();
+
+                String[] choice = {"North Route", "South Route"};
+                x = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
+                    "There is a split in the road!\n Do you want to take the Northern route that is longer but easier to navigate or the southern route which is short but grueling?",
+                    "Road Split",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,//do not use a custom Icon
+                    choice,//the titles of buttons
+                    choice[1]);//default button title
+
+                    if (x == 0) {
+                      calender.Choice1(0);
+                    } else {
+                      calender.Choice1(1);
+                    }
+            }
+
+            if(calender.getStore() == 9) {
+
+              if(ss == 0) {
+                traveling.changeImage(5);
+              } else {
+                traveling.changeImage(6);
+              }
+
+
+              JFrame fa = new JFrame();
+
+                String[] choice = {"North Route", "South Route"};
+                x = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
+                    "There is a split in the road!\n Do you want to take the Northern route or the Southern route?",
+                    "Road Split",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,//do not use a custom Icon
+                    choice,//the titles of buttons
+                    choice[1]);//default button title
+
+                    if (x == 0) {
+                      calender.Choice2(1);
+                    } else {
+                      calender.Choice2(0);
+                    }
+            }
+
+            if(calender.getStore() == 3 || calender.getStore() == 10 || calender.getStore() == 14 ) {
+
+              if(ss == 0) {
+                traveling.changeImage(8);
+              } else {
+                traveling.changeImage(7);
+              }
+
+              while(true) {
+
+                int y = 2+rand.nextInt(7);
+
+                int l = rand.nextInt(100);
+
+                JFrame fa = new JFrame();
+
+                  String[] choice = {"Fording", "Caulk and Float", "Ferry", "Wait a Day", "More Info"};
+                  x = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
+                       "Travel Menu: "+calender.getDate()+"\nFood: "+player.getFood()+" lb\nWeather: "+ calender.weatherString(calender.getWeather()) +"\nYou've reached a water crossing. How do you want to cross it? Currently the water is "+y+" feet deep." ,
+                      "Water Crossing",
+                      JOptionPane.YES_NO_CANCEL_OPTION,
+                      JOptionPane.QUESTION_MESSAGE,
+                      null,//do not use a custom Icon
+                      choice,//the titles of buttons
+                      choice[1]);//default button title
+
+                      if (x == 0) {
+                        if (y >= 3) {
+                          if(l < 40) {
+                            traveling.changeImage(12);
+                            JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
+                            break;
+                          } else {
+                            traveling.changeImage(9);
+                            game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                            break;
+                          }
+                        } else {
+                          if(l < 80) {
+                            traveling.changeImage(12);
+                            JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
+                            break;
+                          } else {
+                            traveling.changeImage(9);
+                            game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                            break;
+                          }
+                        }
+                      } else if (x == 1) {
+                        if (y >= 5) {
+                          if(l < 25) {
+                            traveling.changeImage(12);
+                            JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
+                            break;
+                          } else {
+                            traveling.changeImage(9);
+                            game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                            break;
+                          }
+                        } else {
+                          if(l < 85) {
+                            traveling.changeImage(12);
+                            JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
+                            break;
+                          } else {
+                            traveling.changeImage(9);
+                            game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                            break;
+                          }
+                        }
+                      } else if (x == 2 && player.getCash() >= 20) {
+                        player.spend(20);
+                        if(l < 80) {
+                          traveling.changeImage(10);
+                          JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
+                          break;
+                        } else {
+                          traveling.changeImage(9);
+                          game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                          break;
+                        }
+                      } else if (x == 3) {
+                        game.checkKill(p1, game, calender);
+                        game.checkKill(p2, game, calender);
+                        game.checkKill(p3, game, calender);
+                        game.checkKill(p4, game, calender);
+                        game.checkKill(p5, game, calender);
+                        game.CriticalCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                        game.eat(player, scanner, game, p1, p2, p3, p4, p5);
+                        game.Tolling(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                        if (game.getTotalAliveMembers(p1, p2, p3, p4, p5) == 0) {
+                          game.GameOver(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                        }
+                        calender.newDay();
+                      } else if (x == 4) {
+                        JOptionPane.showMessageDialog(null, "Fording will allow you to cross shallow water with ease.\n" +
+                        "Caulking and Fording will allow for slightly deeper water crossing.\nA ferry will allow you to cross with consistent safety for $20.\nWaiting a day will put your party in an unrested state waiting for the best opportunity to cross.");
+                      }
+
+
+              }
+
+
+
+
+
+            traveling.closeFrame();
+            game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            //flag = 1;
+          } else if (x == 1) {
+            player.setResting(true);
+            game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            player.setResting(false);
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          } else if (x == 2) {
+            //map
+            //flag = 1;
+
+          } else if (x == 3) {
+            game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+          } else if (x == 4) {
+            game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+            //flag = 1;
+
+          } else if (x == 5) {
+            game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+            //flag = 1;
+
+          } else if (x == 6) {
+            game.Doctoring(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            //flag = 1;
+          } else if (x == 7) {
+            game.Buy(scanner, game, calender, player);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          } else if (x == 8) {
+            game.Trading(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+            //trade
+
+          } else if (x == 9) {
+            JOptionPane.showMessageDialog(null, "Traveling will allow you to progress one entire day.\nResting will allow your party to recover from illness, long travel, and other hazards on the road.\n"+
+            "Map will allow you to check your progress on the Silk Road. \nStatus will allow you to take inventory of your belongings and check on your party.\n" +
+            "Pace and Rations will allow you to change your parties speed and consumption of food. \nHunting will allow you to acquire food on the road.");
+            traveling.closeFrame();
+            game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          }
+
+
   }
 
 
-/**
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu:");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Type Anything to travel a days worth of time");
-    System.out.println("Type 'Menu' for your on road Menu:");
-
-
-
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu:");
-    System.out.println("");
-    System.out.println("1. Return to travel menu");
-    System.out.println("");
-    System.out.println("2. Auto Travel");
-    System.out.println("");
-    System.out.println("3. Map");
-    System.out.println("");
-    System.out.println("4. Supplies & Members Status");
-    System.out.println("");
-    System.out.println("5. Set Pace");
-    System.out.println("");
-    System.out.println("6. Set Rations");
-    System.out.println("");
-    System.out.println("7. Rest");
-    System.out.println("");
-    System.out.println("8. Hunt");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Enter which action you want to perform:");
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  public void TravelMenu2(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    JOptionPane.showMessageDialog(null, person.getName()+" has died.");
-
-
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu: (Auto Traveling)");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
   }
 
-  public void TravelMenu3(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu: (Resting)");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
+
+  public void BadCross(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+    Random rand = new Random();
+
+
+    int wheel = rand.nextInt(1);
+    player.loseWheel(1);
+
+    int axle = rand.nextInt(1);
+    player.loseAxle(1);
+
+    int tongue = rand.nextInt(1);
+    player.loseTongue(1);
+
+    int deadCamel = rand.nextInt(player.getCamel());
+    player.loseCamel(deadCamel);
+    int bulls = rand.nextInt(player.getBullets());
+    player.loseAmmo(bulls);
+    int cloths = rand.nextInt(player.getClothing());
+    player.loseClothing(cloths);
+    int food = rand.nextInt(player.getFood());
+    player.loseFood(food);
+
+    JOptionPane.showMessageDialog(null, "Your crossing didn't go well.\nYou lost these items in the cross:\n\n"+
+    "Ammunition: "+bulls+"\nClothing: "+cloths+"\nFood: "+food+"\nCamels: "+deadCamel+"\nWheels: "+wheel+"\nAxles: "+axle+"\nTongues: "+tongue);
+    WriteData(game, calender, "Bad cross caused party to lose "+bulls+" bullets, "+cloths+" clothes, "+food+" pounds of food, "+deadCamel+" number of camels, "+wheel+" wheels," +axle+" axles, and "+tongue+ " tongues.");
+
+
   }
 
-*/
+  public void Trading(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
-/*
-  public void TravelMenu4(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu: (Storm)");
-    System.out.println("");
-    System.out.println(calender.getDate());
-    System.out.println("");
-    System.out.println("Weather: "+ calender.weatherString(calender.getWeather()));
-    System.out.println("");
-    System.out.println("Health: "+ game.checkHealth(p1, p2, p3, p4, p5, game));
-    System.out.println("");
-    System.out.println("Food: "+ player.getFood()+" lbs");
-    System.out.println("");
-    System.out.println("Traveled Miles: "+calender.getDistance()+" miles");
-    System.out.println("");
-    System.out.println("Next Landmark: "+calender.getLandmark()+" miles");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
+    int x = 12;
+    JFrame travelFrame = new JFrame();
+    int mult = 1;
+    if(player.getTradeRate() == .8) {
+      mult = 2;
+    }
+
+    int a1 = 1+calender.getStore()/5;
+    int a2 = 20*mult;
+    int b1 = 1+calender.getStore()/5;
+    int b2 = 20*mult;
+    int c1 = 2/mult;
+    int c2 = 1;
+    int d1 = 2/mult;
+    int d2 = 1;
+    int e1 = 2/mult;
+    int e2 = 1;
+    int f1 = 1;
+    int f2 = 2*mult/2;
+
+    String a = ""+a1+" clothes for "+a2+" bullets";        //Clothes for bullets
+    String b = ""+b1+" clothes for "+b2+" food";          //Clothes for food
+    String c = ""+c1+" axle for "+c2+" tongue";           //Axle for tongue
+    String d = ""+d1+" tongue for "+d2+" wheel";      //Tongue for wheel
+    String e = ""+e1+" wheel for "+e2+" axle";      //Wheel for axle
+    String f = ""+f1+" camel for "+f2+" clothes";      //Camel for clothes
+    String g = "Not Today";
+
+
+    String bitText = "Here are your supplies. What trades would you be interested in today traveler?\nSupplies Status:\n" + "Food: "+player.getFood()+" lb  Clothes: "+player.getClothing()+" sets   Ammunition: "+player.getBullets()+"  Cash: $"+player.getCash()+ "\n" +
+    "Camel: "+player.getCamel()+"  Wheels: "+player.getWheel()+"   Axles: "+player.getAxle()+"  Tongues: "+player.getTongue()+"\n";
+    String[] travel = {a, b, c, d, e, f, g};
+    int flag = 0;
+      x = JOptionPane.showOptionDialog(travelFrame,//parent container of JOptionPane
+          bitText,
+          "Travel Menu",
+          JOptionPane.YES_NO_CANCEL_OPTION,
+          JOptionPane.QUESTION_MESSAGE,
+          null,//do not use a custom Icon
+          travel,//the titles of buttons
+          travel[0]);//default button title
+        //  UIManager.put("OptionPane.buttonFont", new Font("Arial", Font.PLAIN, 5));
+
+      if(x == 0 && player.getClothing() >= a1) {
+        player.loseClothing(a1);
+        player.buyAmmo(a2);
+      } else if (x == 1 && player.getClothing() >= b1) {
+        player.loseClothing(a1);
+        player.buyFood(b2);
+      } else if (x == 2 && player.getAxle() >= c1) {
+        player.loseAxle(c1);
+        player.buyTongue(c2);
+      } else if (x == 3 && player.getTongue() >= d1) {
+        player.loseTongue(d1);
+        player.buyWheel(d2);
+      } else if (x == 4 && player.getWheel() >= e1) {
+        player.loseWheel(e1);
+        player.buyAxle(e2);
+      } else if (x == 5 && player.getCamel() >= f1) {
+        player.loseCamel(f1);
+        player.buyClothing(f2);
+
+      } else {
+
+      }
+
   }
 
-  */
+
+
+
   public void CriticalCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     if (p1.getHealth() < 20 && p1.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p1.getName()+" is in critical condition and needs to rest.");
@@ -1028,6 +1258,20 @@ start.changeImage(1);
   }
 
     public void newDayStatusCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      Random rand = new Random();
+      int ss = calender.getSeason();
+
+      if(ss == 0) {
+        ss = 23+rand.nextInt(7);
+      } else {
+        ss = 13+rand.nextInt(9);
+      }
+
+      StartScreen status = new StartScreen();
+
+      status.changeImage(ss);
+
+
       game.checkKill(p1, game, calender);
       game.checkKill(p2, game, calender);
       game.checkKill(p3, game, calender);
@@ -1056,12 +1300,24 @@ start.changeImage(1);
         }
         calender.ProgressOnRoad(progress);
         calender.closerToLandMark(progress);
+
+        /*
         if (calender.getLandmark() == 0) {
           game.clearScreen();
           game.NewCityMenu(game, calender, scanner);
-          game.CityInput(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          calender.incStore();
+          Random rand = new Random();
+          int firstLand = rand.nextInt(50)+50;
+          calender.setLandmark(firstLand);
+          game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
+
+        //  game.CityInput(player, scanner, calender, game, p1, p2, p3, p4, p5);
         }
+
+        */
       }
+
+      status.closeFrame();
 
     }
 
@@ -1498,7 +1754,7 @@ start.changeImage(1);
       int food = rand.nextInt(player.getFood()+1);
       player.loseFood(food);
 
-      JOptionPane.showMessageDialog(null, "You cart caught on fire!\nYou lost these items in the fire:\n\nAmmunition: "+bulls+"\nClothing: "+cloths+"Food: "+food);
+      JOptionPane.showMessageDialog(null, "You cart caught on fire!\nYou lost these items in the fire:\n\nAmmunition: "+bulls+"\nClothing: "+cloths+"\nFood: "+food);
 
       WriteData(game, calender, "Fire caused party to lose "+bulls+" bullets, "+cloths+" clothes, and "+food+" pounds of food");
     }
@@ -1568,7 +1824,7 @@ start.changeImage(1);
 
         event = rand.nextInt(9);
         if(event == 0) {
-          game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
+          //game.Storm(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 1) {
           game.Robbed(player, scanner, calender, game, p1, p2, p3, p4, p5);
         } else if (event == 2) {
@@ -1604,43 +1860,15 @@ start.changeImage(1);
         if(calender.getLandmark()<=0) {
         calender.incStore();
         Random rand = new Random();
-        int firstLand = rand.nextInt(50)+300;
+        int firstLand = rand.nextInt(50)+50;
         calender.setLandmark(firstLand);
-      }
+        }
       //game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
       game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
     }
 
     }
 
-  public void OnRoadMenu() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            Travel Menu:");
-    System.out.println("");
-    System.out.println("1. Return to travel menu");
-    System.out.println("");
-    System.out.println("2. Auto Travel");
-    System.out.println("");
-    System.out.println("3. Map");
-    System.out.println("");
-    System.out.println("4. Supplies & Members Status");
-    System.out.println("");
-    System.out.println("5. Set Pace");
-    System.out.println("");
-    System.out.println("6. Set Rations");
-    System.out.println("");
-    System.out.println("7. Rest");
-    System.out.println("");
-    System.out.println("8. Hunt");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Enter which action you want to perform:");
-  }
 
   public void CityMenu() {
     System.out.println("==================================================================================================================");
@@ -1984,7 +2212,7 @@ start.changeImage(1);
     }
 
     JOptionPane.showMessageDialog(null, "The Hunt didn't go well... "+whoops);
-
+    return;
 
   }
 
@@ -2116,7 +2344,6 @@ start.changeImage(1);
       game.clearScreen();
       game.HuntFailsMenu(-4);
       player.loseAmmo(bulletsInt);
-      String huntfail2 = scanner.nextLine();
       game.WriteData(game, calender, "Failed at hunting");
       player.setStorming(true);
       game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -2213,7 +2440,7 @@ start.changeImage(1);
           doctor,//the titles of buttons
           doctor[1]);//default button title
 
-          if (x == 0 && player.getCash() <= 99) {
+          if (x == 0 && player.getCash() >= 100) {
             JOptionPane.showMessageDialog(null, "Thank you for your purchase!");
             WriteData(game, calender, "Paid to heal entire party at doctors");
             game.FullHeal(player, scanner, calender, game, p1, p2, p3, p4, p5);

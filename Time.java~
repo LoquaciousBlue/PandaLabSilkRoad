@@ -11,8 +11,6 @@ public class Time {
   private int totalDistance;
   private long starttime;
   private long taketime;
-  private String cities[] = {"Test", "Rome", "Constantinople", "Antioch", "Dura-Europas",
-  "Qumis", "FILLER_1", "FILLER_2", "Kashgar", "FILLER_3", "Dunhuang", "Anxi County", "Wuwei", "Chang'an", "Luoyang"};
 
 
   Random rand = new Random();
@@ -31,25 +29,6 @@ public class Time {
 
   public Time() {
     this(1,0,1,2,0,0,1,0,0);
-  }
-
-  public void Choice1(int x) {
-    if(x == 1) {
-      cities[6] = "";
-      stores++;
-      cities[7] = "Balch";
-    } else {
-      cities[6] = "Merv";
-      cities[7] = "Samarkand";
-    }
-  }
-
-  public void Choice2(int x) {
-    if(x == 1) {
-      cities[9] = "Aksu";
-    } else {
-      cities[9] = "Hoton";
-    }
   }
 
   public void setStart() {
@@ -119,9 +98,24 @@ public class Time {
 
   public String StringLandMark(int stores) {
     String cityname = "";
-
-    cityname = cities[stores];
-
+    if (stores == 1) {
+      cityname =  "Kashgar";
+    }
+    if (stores == 2) {
+      cityname =  "Merv";
+    }
+    if (stores == 3) {
+      cityname =  "Aleppo";
+    }
+    if (stores == 4) {
+      cityname =  "Mosul";
+    }
+    if (stores == 5) {
+      cityname =  "Sanarkand";
+    }
+    if (stores == 6) {
+      cityname =  "Xi'an";
+    }
     return cityname;
   }
 
@@ -136,8 +130,6 @@ public class Time {
   public void addStore() {
     stores++;
   }
-
-
 
   public int getDay() {
     return day;
