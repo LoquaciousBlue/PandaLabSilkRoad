@@ -1,0 +1,185 @@
+
+Time: 0:00 Name: Edwin Aldrich
+
+Time: 0:01 Hunter
+
+Time: 0:04 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:05 Summer
+
+Time: 0:26 First Buy:
+
+Time: 0:26 Initial Food: 900
+
+Time: 0:26 Initial Clothing: 5
+
+Time: 0:26 Initial Ammunition: 0
+
+Time: 0:26 Initial Camel: 10
+
+Time: 0:26 Initial Wheel: 7
+
+Time: 0:26 Initial Tongues: 4
+
+Time: 0:26 Initial Axles: 5
+
+Day: 3
+Time: 0:31 
+Found 213 pounds of food
+
+Day: 4
+Time: 0:32 
+Made it to Constantinople
+
+Day: 4
+Time: 0:35 
+Changed Rations to Filling
+
+Day: 4
+Time: 0:38 
+Player successfully crossed via caulking
+
+Day: 5
+Time: 0:41 
+Fixed tongue with spare tongue
+
+Day: 6
+Time: 0:42 
+Made it to Antioch
+
+Day: 8
+Time: 0:46 
+Made it to Dura-Europas
+
+Day: 9
+Time: 0:50 
+1  got Measles via not taking care of themself
+
+Day: 10
+Time: 0:51 
+Made it to Qumis
+
+Day: 10
+Time: 0:54 
+Player took the south route
+
+Day: 12
+Time: 0:57 
+Made it to Balch
+
+Day: 12
+Time: 0:58 
+Player decided to check the map
+
+Day: 13
+Time: 1:02 
+Player checked map
+
+Day: 14
+Time: 1:06 
+Made it to Kashgar
+
+Day: 14
+Time: 1:08 
+Player decided to check the map
+
+Day: 14
+Time: 1:12 
+Player took the south route
+
+Day: 15
+Time: 1:14 
+Player checked map
+
+Day: 16
+Time: 1:18 
+Made it to Hoton
+
+Day: 16
+Time: 1:20 
+Player decided to check the map
+
+Day: 16
+Time: 1:25 
+Player successfully crossed via ferry
+
+Day: 17
+Time: 1:27 
+Player checked map
+
+Day: 18
+Time: 1:31 
+Made it to Dunhuang
+
+Day: 18
+Time: 1:33 
+Player decided to check the map
+
+Day: 18
+Time: 1:37 
+Found 39 pounds of food
+
+Day: 19
+Time: 1:38 
+Player checked map
+
+Day: 20
+Time: 1:44 
+Made it to Anxi County
+
+Day: 21
+Time: 1:52 
+1  got small pox via not taking care of themself
+
+Day: 22
+Time: 1:53 
+Made it to Wuwei
+
+Day: 22
+Time: 1:59 
+Checked health, supplies, and party status
+
+Day: 22
+Time: 2:01 
+1  died
+
+Day: 24
+Time: 2:03 
+Made it to Chang'an
+
+Day: 24
+Time: 2:04 
+Player decided to check the map
+
+Day: 24
+Time: 2:11 
+Player unsuccessful at crossing via caulking
+
+Day: 24
+Time: 2:12 
+Bad cross caused party to lose 0 bullets, 3 clothes, 758 pounds of food, 2 number of camels, 0 wheels,1 axles, and 0 tongues.
+
+Day: 26
+Time: 2:38 
+
+Total Time Played: 2:20
+You DID make it to china
+Total Surviving Members: 4
+ 1.  1: 66
+ 2. 1 : 63
+ 3. 1 : 0
+ 4. 1 : 73
+ 5. 1 : 31
+Food: 31 lb
+Clothes: 2 sets
+Ammunition: 0
+Cash: $15.0
+Camel: 8
+Wheels: 7
+Axles: 4
+Tongues: 3

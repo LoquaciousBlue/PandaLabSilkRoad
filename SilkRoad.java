@@ -1567,7 +1567,7 @@ while(true) {
 
     public void NewCityMenu(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
-      if(calender.StringLandMark(calender.getStore()).compareTo("Louyang") == 0) {
+      if(calender.getStore() == 14) {
         JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nYou traversed the entire Silk Road!");
         int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
         String time = calender.getTime();
@@ -1780,7 +1780,7 @@ while(true) {
       player.buyAxle(Axles);
 
       JOptionPane.showMessageDialog(null, "You found an abandoned cart on the side of the road!\nYou were able to salvage:\n\nAmmunition: "+
-      + bulls + "\nClothing: "+cloths+"\nWheels: "+wheels+"\nTongues: "+tongues+"Axles: "+Axles);
+      + bulls + "\nClothing: "+cloths+"\nWheels: "+wheels+"\nTongues: "+tongues+"\nAxles: "+Axles);
 
 
       WriteData(game, calender, "Found a cart with "+bulls+" bullets, "+cloths+" clothes, "+wheels+" wheels, "+tongues+" tongues, and "+Axles+" axles");

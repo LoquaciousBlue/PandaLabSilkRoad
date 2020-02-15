@@ -1,0 +1,159 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:0 Carpenter
+
+Time: 0:3 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:4 Summer
+
+Time: 0:33 First Buy:
+
+Time: 0:33 Initial Food: 900
+
+Time: 0:33 Initial Clothing: 5
+
+Time: 0:33 Initial Ammunition: 0
+
+Time: 0:33 Initial Camel: 10
+
+Time: 0:33 Initial Wheel: 7
+
+Time: 0:33 Initial Tongues: 4
+
+Time: 0:33 Initial Axles: 5
+
+Time: 0:36 Found 3 Camel
+
+Day: 4
+Time: 0:39 
+Made it to Constantinople
+
+Day: 4
+Time: 0:45 
+Player successfully crossed via ferry
+
+Day: 5
+Time: 0:49 
+Found a cart with 95 bullets, 2 clothes, 0 wheels, 0 tongues, and 0 axles
+
+Day: 6
+Time: 1:19 
+Made it to Antioch
+
+Day: 7
+Time: 1:23 
+Found $306
+
+Day: 8
+Time: 1:25 
+Made it to Dura-Europas
+
+Day: 10
+Time: 1:29 
+Made it to Qumis
+
+Day: 10
+Time: 1:33 
+Player took the south route
+
+Day: 11
+Time: 1:36 
+Found a cart with 77 bullets, 2 clothes, 0 wheels, 1 tongues, and 0 axles
+
+Day: 11
+Time: 1:38 
+1  got small pox via not taking care of themself
+
+Day: 12
+Time: 1:39 
+Made it to Balch
+
+Day: 13
+Time: 1:44 
+1  got Measles via not taking care of themself
+
+Day: 14
+Time: 1:44 
+Made it to Kashgar
+
+Day: 14
+Time: 1:46 
+Player decided to check the map
+
+Day: 14
+Time: 1:53 
+Paid to heal entire party at doctors
+
+Day: 14
+Time: 1:55 
+Player took the south route
+
+Day: 16
+Time: 1:57 
+Made it to Hoton
+
+Day: 16
+Time: 1:58 
+Player unsuccessful at crossing via caulking
+
+Day: 16
+Time: 2:1 
+Bad cross caused party to lose 26 bullets, 0 clothes, 384 pounds of food, 8 number of camels, 2 wheels,1 axles, and 1 tongues.
+
+Day: 18
+Time: 2:5 
+Made it to Dunhuang
+
+Day: 18
+Time: 2:10 
+Found a cart with 7 bullets, 5 clothes, 1 wheels, 1 tongues, and 1 axles
+
+Day: 20
+Time: 2:12 
+Made it to Anxi County
+
+Day: 20
+Time: 2:15 
+1  got small pox via not taking care of themself
+
+Day: 22
+Time: 2:17 
+Made it to Wuwei
+
+Day: 23
+Time: 2:22 
+Found a cart with 97 bullets, 7 clothes, 1 wheels, 0 tongues, and 1 axles
+
+Day: 24
+Time: 2:22 
+Made it to Chang'an
+
+Day: 24
+Time: 2:27 
+Player successfully crossed via caulking
+
+Day: 25
+Time: 2:30 
+1  got Bubonic Plague via not taking care of themself
+
+Day: 26
+Time: 2:31 
+Made it to Luoyang
+
+Day: 26
+Time: 2:33 
+Player decided to rest
+
+Day: 27
+Time: 2:34 
+Player decided to check the map
+
+Day: 27
+Time: 2:36 
+Player decided to check the map

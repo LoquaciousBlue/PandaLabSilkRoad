@@ -64,7 +64,11 @@ public class Time {
     int digit1and2 = (int)time/60;
     int digit3and4 = (int)time%60;
 
-    returnable = digit1and2+":"+digit3and4;
+    if(digit3and4 <= 9) {
+      returnable = digit1and2+":0"+digit3and4;
+    } else {
+      returnable = digit1and2+":"+digit3and4;
+    }
 
     return returnable;
   }

@@ -1,0 +1,201 @@
+
+Time: 0:00 Name: Edwin Aldrich
+
+Time: 0:01 Carpenter
+
+Time: 0:04 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:05 Summer
+
+Time: 0:27 First Buy:
+
+Time: 0:27 Initial Food: 1000
+
+Time: 0:27 Initial Clothing: 5
+
+Time: 0:27 Initial Ammunition: 0
+
+Time: 0:27 Initial Camel: 10
+
+Time: 0:27 Initial Wheel: 7
+
+Time: 0:27 Initial Tongues: 4
+
+Time: 0:27 Initial Axles: 5
+
+Day: 3
+Time: 0:31 
+1  got small pox via not taking care of themself
+
+Day: 4
+Time: 0:32 
+Made it to Constantinople
+
+Day: 4
+Time: 0:39 
+Player decided to wait a day
+
+Day: 5
+Time: 0:41 
+Player decided to wait a day
+
+Day: 6
+Time: 0:42 
+Player successfully crossed via caulking
+
+Day: 8
+Time: 0:45 
+Made it to Antioch
+
+Day: 8
+Time: 0:48 
+Broken axle repaired via Carpenter ability
+
+Day: 10
+Time: 0:50 
+Made it to Dura-Europas
+
+Day: 11
+Time: 0:53 
+Player checked map
+
+Day: 11
+Time: 0:56 
+Player chose to rest today
+
+Day: 12
+Time: 0:58 
+Player chose to rest today
+
+Day: 14
+Time: 1:00 
+Made it to Qumis
+
+Day: 14
+Time: 1:03 
+Player took the south route
+
+Day: 15
+Time: 1:06 
+Changed Rations to Filling
+
+Day: 15
+Time: 1:09 
+ 1 got Measles via not taking care of themself
+
+Day: 16
+Time: 1:11 
+Made it to Balch
+
+Day: 17
+Time: 1:15 
+1  died
+
+Day: 17
+Time: 1:15 
+Found $287
+
+Day: 18
+Time: 1:17 
+Made it to Kashgar
+
+Day: 18
+Time: 1:24 
+Paid to heal entire party at doctors
+
+Day: 18
+Time: 1:26 
+Player took the south route
+
+Day: 20
+Time: 1:28 
+Made it to Hoton
+
+Day: 20
+Time: 1:32 
+Player successfully crossed via ferry
+
+Day: 21
+Time: 1:36 
+Found 2 Camel
+
+Day: 22
+Time: 1:36 
+Made it to Dunhuang
+
+Day: 22
+Time: 1:38 
+Player decided to check the map
+
+Day: 23
+Time: 1:44 
+Player checked map
+
+Day: 24
+Time: 1:48 
+Made it to Anxi County
+
+Day: 24
+Time: 1:51 
+Player decided to check the map
+
+Day: 24
+Time: 1:54 
+ 1 got Bubonic Plague via not taking care of themself
+
+Day: 25
+Time: 1:56 
+Player checked map
+
+Day: 26
+Time: 2:01 
+Made it to Wuwei
+
+Day: 26
+Time: 2:03 
+1  got Measles via not taking care of themself
+
+Day: 27
+Time: 2:05 
+Player checked map
+
+Day: 28
+Time: 2:09 
+Made it to Chang'an
+
+Day: 28
+Time: 2:11 
+Player decided to check the map
+
+Day: 28
+Time: 2:16 
+Player successfully crossed via ferry
+
+Day: 29
+Time: 2:20 
+1  got Bubonic Plague via not taking care of themself
+
+Day: 30
+Time: 2:26 
+
+Total Time Played: 2:23
+You DID make it to china
+Total Surviving Members: 4
+ 1.  1: 58
+ 2. 1 : 89
+ 3. 1 : 97
+ 4. 1 : 70
+ 5. 1 : 0
+Food: 604 lb
+Clothes: 5 sets
+Ammunition: 0
+Cash: $157.0
+Camel: 12
+Wheels: 7
+Axles: 5
+Tongues: 4

@@ -1,0 +1,125 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:1 Carpenter
+
+Time: 0:3 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:5 Spring
+
+Time: 0:26 First Buy:
+
+Time: 0:26 Initial Food: 1000
+
+Time: 0:26 Initial Clothing: 5
+
+Time: 0:26 Initial Ammunition: 0
+
+Time: 0:26 Initial Camel: 10
+
+Time: 0:26 Initial Wheel: 7
+
+Time: 0:26 Initial Tongues: 4
+
+Time: 0:26 Initial Axles: 5
+
+Day: 4
+Time: 0:32 
+Made it to Constantinople
+
+Day: 4
+Time: 0:35 
+Player unsuccessful at crossing via caulking
+
+Day: 4
+Time: 0:37 
+Bad cross caused party to lose 0 bullets, 3 clothes, 568 pounds of food, 9 number of camels, 0 wheels,0 axles, and 0 tongues.
+
+Day: 6
+Time: 0:40 
+Made it to Antioch
+
+Day: 6
+Time: 0:42 
+1  got Bubonic Plague via not taking care of themself
+
+Day: 8
+Time: 0:44 
+Made it to Dura-Europas
+
+Day: 10
+Time: 0:46 
+Made it to Qumis
+
+Day: 10
+Time: 0:48 
+Player took the south route
+
+Day: 10
+Time: 0:49 
+Found 259 pounds of food
+
+Day: 11
+Time: 0:58 
+Checked health, supplies, and party status
+
+Day: 12
+Time: 1:0 
+Made it to Balch
+
+Day: 15
+Time: 1:3 
+Made it to Kashgar
+
+Day: 15
+Time: 1:5 
+Player took the south route
+
+Day: 18
+Time: 1:8 
+Made it to Hoton
+
+Day: 18
+Time: 1:17 
+Player decided to wait a day
+
+Day: 19
+Time: 1:19 
+Player successfully crossed via caulking
+
+Day: 20
+Time: 1:24 
+1  died
+
+Day: 20
+Time: 1:25 
+Found 3 Camel
+
+Day: 21
+Time: 1:26 
+Made it to Dunhuang
+
+Day: 21
+Time: 1:28 
+Player decided to check the map
+
+Day: 21
+Time: 1:35 
+Checked health, supplies, and party status
+
+Day: 23
+Time: 1:38 
+Made it to Anxi County
+
+Day: 25
+Time: 1:42 
+Made it to Wuwei
+
+Day: 27
+Time: 1:46 
+Made it to Chang'an

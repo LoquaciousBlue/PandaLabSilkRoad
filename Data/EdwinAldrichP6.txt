@@ -1,0 +1,69 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:1 Hunter
+
+Time: 0:3 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:4 Summer
+
+Time: 0:18 First Buy:
+
+Time: 0:18 Initial Food: 900
+
+Time: 0:18 Initial Clothing: 5
+
+Time: 0:18 Initial Ammunition: 0
+
+Time: 0:18 Initial Camel: 10
+
+Time: 0:18 Initial Wheel: 4
+
+Time: 0:18 Initial Tongues: 1
+
+Time: 0:18 Initial Axles: 2
+
+Day: 4
+Time: 0:22 
+Made it to Constantinople
+
+Day: 4
+Time: 0:26 
+Player successfully crossed via caulking
+
+Day: 6
+Time: 0:29 
+Made it to Antioch
+
+Day: 6
+Time: 0:31 
+Found $176
+
+Day: 8
+Time: 0:36 
+Made it to Dura-Europas
+
+Day: 10
+Time: 0:45 
+
+Total Time Played: 0:41
+You DID make it to china
+Total Surviving Members: 5
+ 1.  1: 88
+ 2. 1 : 88
+ 3. 1 : 89
+ 4. 1 : 88
+ 5. 1 : 90
+Food: 765 lb
+Clothes: 5 sets
+Ammunition: 0
+Cash: $301.0
+Camel: 10
+Wheels: 4
+Axles: 2
+Tongues: 1
