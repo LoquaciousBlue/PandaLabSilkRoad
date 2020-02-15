@@ -822,7 +822,7 @@ while(true) {
               game.clearScreen();
               game.NewCityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
               calender.incStore();
-              int firstLand = 5+(3*calender.getStore());
+              int firstLand = 120+(12*calender.getStore());
               calender.setLandmark(firstLand);
               traveling.closeFrame();
               game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
