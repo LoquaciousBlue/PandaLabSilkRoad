@@ -1,0 +1,69 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:1 Carpenter
+
+Time: 0:4 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:6 Spring
+
+Time: 0:24 First Buy:
+
+Time: 0:24 Initial Food: 900
+
+Time: 0:24 Initial Clothing: 5
+
+Time: 0:24 Initial Ammunition: 0
+
+Time: 0:24 Initial Camel: 10
+
+Time: 0:24 Initial Wheel: 7
+
+Time: 0:24 Initial Tongues: 4
+
+Time: 0:24 Initial Axles: 5
+
+Day: 4
+Time: 0:29 
+Made it to Constantinople
+
+Day: 4
+Time: 0:34 
+Player unsuccessful at crossing via caulking
+
+Day: 4
+Time: 0:38 
+Bad cross caused party to lose 0 bullets, 3 clothes, 552 pounds of food, 4 number of camels, 1 wheels,0 axles, and 0 tongues.
+
+Day: 4
+Time: 0:39 
+1  got Bubonic Plague via not taking care of themself
+
+Day: 5
+Time: 0:42 
+1  got Measles via not taking care of themself
+
+Day: 6
+Time: 0:43 
+Made it to Antioch
+
+Day: 8
+Time: 0:48 
+Made it to Dura-Europas
+
+Day: 8
+Time: 0:50 
+ 1 got Measles via not taking care of themself
+
+Day: 10
+Time: 0:52 
+Made it to Qumis
+
+Day: 10
+Time: 0:58 
+Player took the south route

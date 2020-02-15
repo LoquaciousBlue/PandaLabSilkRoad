@@ -1,0 +1,95 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:9 Hunter
+
+Time: 0:14 
+P1:  1
+P2: 2 
+P3: 2 
+P4: 2 
+P5: 2 
+
+Time: 0:16 Spring
+
+Time: 0:41 Initial Food: 100
+
+Time: 0:41 Initial Clothing: 10
+
+Time: 0:41 Initial Ammunition: 2000
+
+Time: 0:41 Initial Camel: 3
+
+Time: 0:41 Initial Wheel: 5
+
+Time: 0:41 Initial Tongues: 2
+
+Time: 0:41 Initial Axles: 3
+
+Day: 4
+Time: 0:47 
+Fixed tongue with spare tongue
+
+Day: 5
+Time: 0:50 
+Fire caused party to lose 369 bullets, 6 clothes, and 8 pounds of food
+
+Day: 6
+Time: 0:51 
+Made it to Constantinople
+
+Day: 6
+Time: 1:21 
+Bought Food: 5
+
+Day: 6
+Time: 1:21 
+Bought Clothing: 0
+
+Day: 6
+Time: 1:21 
+Bought Ammunition: 0
+
+Day: 6
+Time: 1:21 
+Bought Camel: 0
+
+Day: 6
+Time: 1:21 
+Bought Wheel: 0
+
+Day: 6
+Time: 1:21 
+Bought Tongues: 0
+
+Day: 6
+Time: 1:21 
+Bought Axle: 0
+
+Day: 6
+Time: 1:28 
+Bought Food: 0
+
+Day: 6
+Time: 1:28 
+Bought Clothing: 0
+
+Day: 6
+Time: 1:28 
+Bought Ammunition: 0
+
+Day: 6
+Time: 1:28 
+Bought Camel: 0
+
+Day: 6
+Time: 1:28 
+Bought Wheel: 0
+
+Day: 6
+Time: 1:28 
+Bought Tongues: 2
+
+Day: 6
+Time: 1:28 
+Bought Axle: 0

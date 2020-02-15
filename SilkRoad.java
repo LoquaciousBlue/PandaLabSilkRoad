@@ -18,9 +18,9 @@ import javax.swing.SwingConstants;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
- import java.awt.FlowLayout;
+import java.awt.FlowLayout;
 import java.net.URL;
- import java.io.File;
+import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -71,7 +71,7 @@ public class SilkRoad {
     StartScreen() {
       JPanel background = new JPanel();
       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      image.setIcon(new ImageIcon("StartScreen.jpg"));
+      image.setIcon(new ImageIcon(getClass().getResource("StartScreen.jpg")));
       background.add(image);
       f.add(background);
       f.setResizable(false);
@@ -94,75 +94,75 @@ public class SilkRoad {
 
 
       switch (i) {
-        case 1: image.setIcon(new ImageIcon("StartScreen.jpg"));        //1-4 Start/End games
+        case 1: image.setIcon(new ImageIcon(getClass().getResource("StartScreen.jpg")));        //1-4 Start/End games
         break;
-        case 2: image.setIcon(new ImageIcon("YouTried.jpg"));
+        case 2: image.setIcon(new ImageIcon(getClass().getResource("YouTried.jpg")));
         break;
-        case 3: image.setIcon(new ImageIcon("Town.jpg"));
+        case 3: image.setIcon(new ImageIcon(getClass().getResource("Town.jpg")));
         break;
-        case 4: image.setIcon(new ImageIcon("SnowTown.jpg"));
+        case 4: image.setIcon(new ImageIcon(getClass().getResource("SnowTown.jpg")));
         break;
-        case 5: image.setIcon(new ImageIcon("RoadSplitNorm.jpg"));      //5-6 Split
+        case 5: image.setIcon(new ImageIcon(getClass().getResource("RoadSplitNorm.jpg")));      //5-6 Split
         break;
-        case 6: image.setIcon(new ImageIcon("RoadSplitSnow.jpg"));
+        case 6: image.setIcon(new ImageIcon(getClass().getResource("RoadSplitSnow.jpg")));
         break;
-        case 7: image.setIcon(new ImageIcon("WinterDock.jpg")); //7-12 boat
+        case 7: image.setIcon(new ImageIcon(getClass().getResource("WinterDock.jpg"))); //7-12 boat
         break;
-        case 8: image.setIcon(new ImageIcon("Dock.jpg"));
+        case 8: image.setIcon(new ImageIcon(getClass().getResource("Dock.jpg")));
         break;
-        case 9: image.setIcon(new ImageIcon("FailedTrip.jpg"));
+        case 9: image.setIcon(new ImageIcon(getClass().getResource("FailedTrip.jpg")));
         break;
-        case 10: image.setIcon(new ImageIcon("BoatRide.jpg"));
+        case 10: image.setIcon(new ImageIcon(getClass().getResource("BoatRide.jpg")));
         break;
-        case 11: image.setIcon(new ImageIcon("SnowFerry.jpg"));
+        case 11: image.setIcon(new ImageIcon(getClass().getResource("SnowFerry.jpg")));
         break;
-        case 12: image.setIcon(new ImageIcon("Raft.jpg"));  //
+        case 12: image.setIcon(new ImageIcon(getClass().getResource("Raft.jpg")));  //
         break;
-        case 13: image.setIcon(new ImageIcon("Thief.jpg"));  //Norm 13-22
+        case 13: image.setIcon(new ImageIcon(getClass().getResource("Thief.jpg")));  //Norm 13-22
         break;
-        case 14: image.setIcon(new ImageIcon("NormBush.jpg"));
+        case 14: image.setIcon(new ImageIcon(getClass().getResource("NormBush.jpg")));
         break;
-        case 15: image.setIcon(new ImageIcon("NormNorm.jpg"));
+        case 15: image.setIcon(new ImageIcon(getClass().getResource("NormNorm.jpg")));
         break;
-        case 16: image.setIcon(new ImageIcon("WalkingGrass.jpg"));
+        case 16: image.setIcon(new ImageIcon(getClass().getResource("WalkingGrass.jpg")));
         break;
-        case 17: image.setIcon(new ImageIcon("TreasureNorm.jpg"));
+        case 17: image.setIcon(new ImageIcon(getClass().getResource("TreasureNorm.jpg")));
         break;
-        case 18: image.setIcon(new ImageIcon("TownNear.jpg"));
+        case 18: image.setIcon(new ImageIcon(getClass().getResource("TownNear.jpg")));
         break;
-        case 19: image.setIcon(new ImageIcon("FoundCart.jpg"));
+        case 19: image.setIcon(new ImageIcon(getClass().getResource("FoundCart.jpg")));
         break;
-        case 20: image.setIcon(new ImageIcon("FoundCamel.jpg"));
+        case 20: image.setIcon(new ImageIcon(getClass().getResource("FoundCamel.jpg")));
         break;
-        case 21: image.setIcon(new ImageIcon("TraderNorm.jpg"));
+        case 21: image.setIcon(new ImageIcon(getClass().getResource("TraderNorm.jpg")));
         break;
-        case 22: image.setIcon(new ImageIcon("SteamNorm.jpg")); //
+        case 22: image.setIcon(new ImageIcon(getClass().getResource("SteamNorm.jpg"))); //
         break;
-        case 23: image.setIcon(new ImageIcon("SnowTrade.jpg")); //23-29 snow
+        case 23: image.setIcon(new ImageIcon(getClass().getResource("SnowTrade.jpg"))); //23-29 snow
         break;
-        case 24: image.setIcon(new ImageIcon("SnowNormNorm.jpg"));
+        case 24: image.setIcon(new ImageIcon(getClass().getResource("SnowNormNorm.jpg")));
         break;
-        case 25: image.setIcon(new ImageIcon("SnowTownNear.jpg"));
+        case 25: image.setIcon(new ImageIcon(getClass().getResource("SnowTownNear.jpg")));
         break;
-        case 26: image.setIcon(new ImageIcon("SnowTreasure.jpg"));
+        case 26: image.setIcon(new ImageIcon(getClass().getResource("SnowTreasure.jpg")));
         break;
-        case 27: image.setIcon(new ImageIcon("SnowNorm.jpg"));
+        case 27: image.setIcon(new ImageIcon(getClass().getResource("SnowNorm.jpg")));
         break;
-        case 28: image.setIcon(new ImageIcon("SnowFoundCart.jpg"));
+        case 28: image.setIcon(new ImageIcon(getClass().getResource("SnowFoundCart.jpg")));
         break;
-        case 29: image.setIcon(new ImageIcon("FoundCamelWinter.jpg"));
+        case 29: image.setIcon(new ImageIcon(getClass().getResource("FoundCamelWinter.jpg")));
         break;
-        case 30: image.setIcon(new ImageIcon("SnowThief.jpg"));    //30+ unused assets
+        case 30: image.setIcon(new ImageIcon(getClass().getResource("SnowThief.jpg")));    //30+ unused assets
         break;
-        case 31: image.setIcon(new ImageIcon("NormQuestion.jpg"));
+        case 31: image.setIcon(new ImageIcon(getClass().getResource("NormQuestion.jpg")));
         break;
-        case 32: image.setIcon(new ImageIcon("CartFireSnow.jpg"));
+        case 32: image.setIcon(new ImageIcon(getClass().getResource("CartFireSnow.jpg")));
         break;
-        case 33: image.setIcon(new ImageIcon("CartFireNorm.jpg"));
+        case 33: image.setIcon(new ImageIcon(getClass().getResource("CartFireNorm.jpg")));
         break;
-        case 34: image.setIcon(new ImageIcon("SnowQuestion.jpg"));
+        case 34: image.setIcon(new ImageIcon(getClass().getResource("SnowQuestion.jpg")));
         break;
-        case 35: image.setIcon(new ImageIcon("NightThief.jpg"));
+        case 35: image.setIcon(new ImageIcon(getClass().getResource("NightThief.jpg")));
         break;
 
       }
@@ -191,8 +191,8 @@ public class SilkRoad {
     String fname = "";
 
     while (fname.compareTo("") == 0) {
-      fname = (String)JOptionPane.showInputDialog(frame, "Enter your first name",
-      "The Silk Road (First Name Prompt)", JOptionPane.QUESTION_MESSAGE);
+      fname = (String)JOptionPane.showInputDialog(frame, "Enter your first name:",
+      "The Silk Road", JOptionPane.QUESTION_MESSAGE);
     }
 
     start.changeImage(1);
@@ -200,7 +200,7 @@ public class SilkRoad {
     String lname = "";
     while (lname.compareTo("") == 0) {
      lname = (String)JOptionPane.showInputDialog(frame, "Enter your last name",
-    "The Silk Road (Last Name Prompt)", JOptionPane.QUESTION_MESSAGE);
+    "The Silk Road", JOptionPane.QUESTION_MESSAGE);
   }
 
   start.changeImage(1);
@@ -209,44 +209,66 @@ public class SilkRoad {
   JFrame framer = new JFrame();
 
 
-
-
+  String ability = "";
+  String[] options = {"Newbie", "Practice", "Expert"};
 
   int n = 4;
+
+while(true) {
   while (n == 4) {
-    String[] options = {"Newbie", "Practice", "Expert"};
 
-    n = JOptionPane.showOptionDialog(framer,//parent container of JOptionPane
-        "What is your level of experience?",
-        "The Silk Road (Role)",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,//do not use a custom Icon
-        options,//the titles of buttons
-        options[0]);//default button title
-  }
-
+     n = JOptionPane.showOptionDialog(framer,//parent container of JOptionPane
+         "What is your level of experience with the Silk Road?",
+         "The Silk Road",
+         JOptionPane.YES_NO_CANCEL_OPTION,
+         JOptionPane.QUESTION_MESSAGE,
+         null,//do not use a custom Icon
+         options,//the titles of buttons
+         options[0]);//default button title
+   }
 
 
 
-    String ability = "";
 
-    if (n  == 0) {
-      ability = "N";
-    }
-    if (n == 1) {
-      ability = "P";
-    }
-    if (n == 2) {
-      ability = "E";
-    }
+     if (n  == 0) {
+       ability = "N";
+       break;
+     }
+     if (n == 1) {
+       ability = "P";
+       break;
+     }
+     if (n == 2) {
+       ability = "E";
+       break;
+     }
 
+}
 
 
 
 
 
     start.changeImage(1);
+
+    File theDir = new File("Data");
+
+    if (!theDir.exists()) {
+        System.out.println("creating directory: " + theDir.getName());
+        boolean result = false;
+
+        try{
+            theDir.mkdir();
+            result = true;
+        }
+        catch(SecurityException se){
+            //handle it
+        }
+        if(result) {
+            System.out.println("DIR created");
+        }
+    }
+
 
 
     int x = 0;
@@ -255,14 +277,14 @@ public class SilkRoad {
 
     int flag = 1;
 
-    File tmpDir = new File(filename);
+    File tmpDir = new File(theDir, filename);
 
     while(flag == 1) {
         if(tmpDir.exists()) {
           x++;
           num = "" + x;
           filename = ""+fname+lname+ability+num+".txt";
-          tmpDir = new File(filename);
+          tmpDir = new File(theDir, filename);
         } else {
           flag = 0;
         }
@@ -270,7 +292,7 @@ public class SilkRoad {
 
     game.setName(filename);
     try {
-    	     File file = new File(filename);
+    	     File file = new File(theDir, filename);
     	     boolean fvar = file.createNewFile();
     	     if (fvar){
     	          System.out.println("File has been created successfully");
@@ -409,9 +431,9 @@ public class SilkRoad {
           }
 
           JOptionPane.showMessageDialog(null, "Before you embark on your journey, you will need to buy some" + " supplies.\nThe nearby local store should " +
-          "have everything you need.\nThings you may need to buy include food, clothes, and ammunition for the members of your group.\nThe only requirement before you go on your trip is that everything in the party has their own set of clothes.\nOn top of those items " +
-          "for the members of your party, you'll need to buy stuff for your cart\nThis will include camel(s) to pull the cart, as well " +
-          "as possibly spare cart parts.\nYour cart will start off with 4 wheels, 1 tongue, and 2 axles");
+          "have everything you need.\nThings you may need to buy include food, clothes, and ammunition for the members of your group.\nOn top of those items " +
+          "for the members of your party, you'll need to buy stuff for your cart\nAll of your party will need 1 clothing before you leave Rome.\nThis will include camel(s) to pull the cart, as well " +
+          "as possibly spare cart parts.\nYour cart will start off with 4 wheels, 1 tongue, and 2 axles.\nThe only requirement before you go on your trip is that everyone in the party has their own set of clothes.");
 
 
         start.closeFrame();
@@ -426,7 +448,8 @@ public class SilkRoad {
     BufferedWriter writer = null;
     try
     {
-        writer = new BufferedWriter(new FileWriter(game.getName(), true));
+        String name = "Data/"+game.getName();
+        writer = new BufferedWriter(new FileWriter(name, true));
         if (calender.getStart() == 0) {
           calender.setStart();
         }
@@ -530,9 +553,7 @@ public class SilkRoad {
 
     JFrame frame = new JFrame();
 
-    System.out.println("days: "+calender.getTotalDays());
-
-    while (x != 8 && initial > current){
+    while (x != 9){
       String a = "Food: "+(player.getFood()+fcfoodn);
       String b = "Clothes: "+(player.getClothing()+fcclothesn);
       String c = "Ammunition: "+(player.getBullets()+fcbulletn)*20;
@@ -551,7 +572,7 @@ public class SilkRoad {
           shop[0]);//default button title
 
           if (x == 0) {
-            foodn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getFood() + "lbs. It costs "+foodCost+" per pound of food. You currently have $"+player.getCash()+"\nHow much do you want to buy?",
+            foodn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getFood() + "lbs. It costs $"+foodCost+" per pound of food. You currently have $"+player.getCash()+"\nHow much do you want to buy?",
             "Shop (Food)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(foodn) == true) {
                cfoodn = Integer.parseInt(foodn);
@@ -561,7 +582,7 @@ public class SilkRoad {
             }
           }
           if (x == 1) {
-            clothesn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getClothing() + " sets of clothes. It costs "+clothesCost+" per set. You currently have $"+player.getCash()+"\nHow many sets do you want to buy?",
+            clothesn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getClothing() + " sets of clothes. It costs $"+clothesCost+" per set. You currently have $"+player.getCash()+"\nHow many sets do you want to buy?",
             "Shop (Clothes)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(clothesn) == true) {
                cclothesn = Integer.parseInt(clothesn);
@@ -571,7 +592,7 @@ public class SilkRoad {
             }
           }
           if (x == 2) {
-            bulletn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getBullets() + " boxes of Ammunition (20 Ammunition). It costs "+bulletCost+" per box of ammunition. You currently have $"+player.getCash()+"\nHow many boxes do you want to buy?",
+            bulletn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getBullets() + " boxes of Ammunition (20 Ammunition). It costs $"+bulletCost+" per box of ammunition. You currently have $"+player.getCash()+"\nHow many boxes do you want to buy?",
             "Shop (Ammunition)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(bulletn) == true) {
                cbulletn = Integer.parseInt(bulletn);
@@ -582,18 +603,18 @@ public class SilkRoad {
           }
 
           if (x == 3) {
-            oxn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getCamel() + " camels. It costs "+camelCost+" per camel. You currently have $"+player.getCash()+"\nHow many do you want to buy?",
+            oxn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getCamel() + " camels. It costs $"+camelCost+" per camel. You currently have $"+player.getCash()+"\nThe max number of camels that you can buy is 10.\nHow many do you want to buy?",
             "Shop (Camels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(oxn) == true) {
                coxn = Integer.parseInt(oxn);
-              if (coxn >= 0) {
+              if (coxn >= 0 && (coxn + player.getCamel()) <= 10 ) {
                 fcoxn = coxn;
               }
             }
           }
 
           if (x == 4) {
-            wheeln = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getWheel() + " wheels. It costs "+wheelCost+" per wheel. You currently have $"+player.getCash()+"\nThe max number of wheels that you can buy is 3."+"\nHow many do you want to buy?",
+            wheeln = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getWheel() + " wheels. It costs $"+wheelCost+" per wheel. You currently have $"+player.getCash()+"\nThe max number of wheels that you can buy is 3."+"\nHow many do you want to buy?",
             "Shop (Wheels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(wheeln) == true) {
                cwheeln = Integer.parseInt(wheeln);
@@ -604,7 +625,7 @@ public class SilkRoad {
           }
 
           if (x == 5) {
-            tonguen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getTongue() + " tongues. It costs "+tongueCost+" per tongue. You currently have $"+player.getCash()+"\nThe max number of tongues that you can buy is 3."+"\nHow many do you want to buy?",
+            tonguen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getTongue() + " tongues. It costs $"+tongueCost+" per tongue. You currently have $"+player.getCash()+"\nThe max number of tongues that you can buy is 3."+"\nHow many do you want to buy?",
             "Shop (Wheels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(tonguen) == true) {
                ctonguen = Integer.parseInt(tonguen);
@@ -615,7 +636,7 @@ public class SilkRoad {
           }
 
           if (x == 6) {
-            axlen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getAxle() + " axles. It costs "+axleCost+" per axle. You currently have $"+player.getCash()+"\nThe max number of tongues that you can buy is 3."+"\nHow many do you want to buy?",
+            axlen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getAxle() + " axles. It costs $"+axleCost+" per axle. You currently have $"+player.getCash()+"\nThe max number of tongues that you can buy is 3."+"\nHow many do you want to buy?",
             "Shop (Wheels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(axlen) == true) {
               caxlen = Integer.parseInt(axlen);
@@ -626,57 +647,72 @@ public class SilkRoad {
           }
           if (x == 7) {
             JOptionPane.showMessageDialog(null, "Food is necessary to keep your group moving along. Without food, your party will get sick or worse.\n" +
-            "Clothes are needed to keep your party warm. Without clothing, your party will get sick or" +
-             "worse.\nAmmunition is needed to hunt animals for food.\nCamel are needed to pull the wagon. Without them," +
+            "Clothes are needed to keep your party warm. Without clothing, your party will get sick and" +
+             "die.\nAmmunition is needed to hunt animals for food.\nCamels are needed to pull the wagon. Without them," +
              " you will be going at a snails pace.\nWheels, Tongues, and Axels are spare parts for the wagon incase other parts break.\nIf you can't replace the part, you won't be getting anywhere fast.");
           }
           current = fcfoodn*foodCost + clothesCost*fcclothesn + bulletCost*fcbulletn + camelCost*fcoxn + tongueCost*fctonguen + wheelCost*fcwheeln + axleCost*fcaxlen;
-    }
+          if(x == 8) {
+            boolean check = true;
+            if (initial <= current) {
+              JOptionPane.showMessageDialog(null, "You don't have enough funds for that!");
+              check = false;
+            }
+            if (calender.getTotalDays() == 1) {
+              if (check == true && ((fcclothesn + player.getClothing()) >= 5)) {
+                player.buyFood(fcfoodn);
+                player.buyClothing(fcclothesn);
+                player.buyAmmo(fcbulletn*20);
+                player.buyCamel(fcoxn);
+                player.buyWheel(fcwheeln);
+                player.buyTongue(fctonguen);
+                player.buyAxle(fcaxlen);
+                player.spend(current);
+                current = 0;
+                game.WriteData(game, calender, "First Buy:");
+                game.WriteData(game, calender, "Initial Food: "+player.getFood());
+                game.WriteData(game, calender, "Initial Clothing: "+player.getClothing());
+                game.WriteData(game, calender, "Initial Ammunition: "+player.getBullets());
+                game.WriteData(game, calender, "Initial Camel: "+player.getCamel());
+                game.WriteData(game, calender, "Initial Wheel: "+player.getWheel());
+                game.WriteData(game, calender, "Initial Tongues: "+player.getTongue());
+                game.WriteData(game, calender, "Initial Axles: "+player.getAxle());
+                x=10;
+                buy.closeFrame();
+              }
+            } else {
+              if (check == true) {
+                player.buyFood(fcfoodn);
+                player.buyClothing(fcclothesn);
+                player.buyAmmo(fcbulletn*20);
+                player.buyCamel(fcoxn);
+                player.buyWheel(fcwheeln);
+                player.buyTongue(fctonguen);
+                player.buyAxle(fcaxlen);
+                player.spend(current);
+                current = 0;
+                game.WriteData(game, calender, "At a shop and bought: ");
+                game.WriteData(game, calender, "Bought Food: "+fcfoodn);
+                game.WriteData(game, calender, "Bought Clothing: "+fcclothesn);
+                game.WriteData(game, calender, "Bought Ammunition: "+fcbulletn*20);
+                game.WriteData(game, calender, "Bought Camel: "+fcoxn);
+                game.WriteData(game, calender, "Bought Wheel: "+fcwheeln);
+                game.WriteData(game, calender, "Bought Tongues: "+fctonguen);
+                game.WriteData(game, calender, "Bought Axle: "+fcaxlen);
+                x=10;
+                buy.closeFrame();
 
-
-
-      if (calender.getTotalDays() == 1) {
-        if (initial >= current && ((fcclothesn + player.getClothing()) >= 5)) {
-          player.buyFood(fcfoodn);
-          player.buyClothing(fcclothesn);
-          player.buyAmmo(fcbulletn*20);
-          player.buyCamel(fcoxn);
-          player.buyWheel(fcwheeln);
-          player.buyTongue(fctonguen);
-          player.buyAxle(fcaxlen);
-          player.spend(current);
-          current = 0;
-          game.WriteData(game, calender, "Initial Food: "+player.getFood());
-          game.WriteData(game, calender, "Initial Clothing: "+player.getClothing());
-          game.WriteData(game, calender, "Initial Ammunition: "+player.getBullets());
-          game.WriteData(game, calender, "Initial Camel: "+player.getCamel());
-          game.WriteData(game, calender, "Initial Wheel: "+player.getWheel());
-          game.WriteData(game, calender, "Initial Tongues: "+player.getTongue());
-          game.WriteData(game, calender, "Initial Axles: "+player.getAxle());
-        } else {
-          game.Buy(scanner, game, calender, player);
+            }
+          }
         }
-      } else {
-        if (initial > current) {
-          player.buyFood(fcfoodn);
-          player.buyClothing(fcclothesn);
-          player.buyAmmo(fcbulletn*20);
-          player.buyCamel(fcoxn);
-          player.buyWheel(fcwheeln);
-          player.buyTongue(fctonguen);
-          player.buyAxle(fcaxlen);
-          player.spend(current);
-          current = 0;
-          game.WriteData(game, calender, "Bought Food: "+fcfoodn);
-          game.WriteData(game, calender, "Bought Clothing: "+fcclothesn);
-          game.WriteData(game, calender, "Bought Ammunition: "+fcbulletn*20);
-          game.WriteData(game, calender, "Bought Camel: "+fcoxn);
-          game.WriteData(game, calender, "Bought Wheel: "+fcwheeln);
-          game.WriteData(game, calender, "Bought Tongues: "+fctonguen);
-          game.WriteData(game, calender, "Bought Axle: "+fcaxlen);
-      }
+        if (x == 10) {
+          break;
+        }
     }
-    buy.closeFrame();
+
+
+
+
   }
 
 
@@ -786,7 +822,7 @@ public class SilkRoad {
               game.clearScreen();
               game.NewCityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
               calender.incStore();
-              int firstLand = rand.nextInt(50)+50;
+              int firstLand = 5+(3*calender.getStore());
               calender.setLandmark(firstLand);
               traveling.closeFrame();
               game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -799,6 +835,7 @@ public class SilkRoad {
 
             //flag = 1;
           } else if (x == 1) {
+            game.WriteData(game, calender, "Player chose to rest today");
             player.setResting(true);
             game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
@@ -807,6 +844,7 @@ public class SilkRoad {
 
 
           } else if (x == 2) {
+            game.WriteData(game, calender, "Player checked map");
             game.MapRoad(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -815,20 +853,16 @@ public class SilkRoad {
             game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
-
           } else if (x == 4) {
             game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
-            //flag = 1;
 
           } else if (x == 5) {
             game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             game.TravelMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
-
-            //flag = 1;
 
           } else if (x == 6) {
             game.Hunting(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -850,73 +884,73 @@ public class SilkRoad {
 
     String tested = calender.StringLandMark(calender.getStore()-1);
     if(tested.compareTo("Rome") == 0) {
-      ImageIcon dab = new ImageIcon("SR Rome-Constantinople.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Rome-Constantinople.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Constantinople") == 0) {
-      ImageIcon dab = new ImageIcon("SR Constantinople- Antioch.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Constantinople- Antioch.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Antioch") == 0) {
-      ImageIcon dab = new ImageIcon("SR Antioch- Dura-Europas.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Antioch- Dura-Europas.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Dura-Europas") == 0) {
-      ImageIcon dab = new ImageIcon("SR Dura-Europas- Qumis.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Dura-Europas- Qumis.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Qumis") == 0) {
       tested = calender.StringLandMark(calender.getStore());
-      System.out.println(tested);
+    //  System.out.println(tested);
       if(tested.compareTo("Merv") == 0) {
-        ImageIcon dab = new ImageIcon("SR Qumis- Merv.jpg");
+        ImageIcon dab = new ImageIcon(getClass().getResource("SR Qumis- Merv.jpg"));
         JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       }
       return;
     } else if(tested.compareTo("Merv") == 0) {
-      ImageIcon dab = new ImageIcon("SR Merv- Samarkand.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Merv- Samarkand.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Samarkand") == 0) {
-      ImageIcon dab = new ImageIcon("SR Samarkand- Kashgar.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Samarkand- Kashgar.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Balch") == 0) {
-      ImageIcon dab = new ImageIcon("SR Balch- Kashgar.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Balch- Kashgar.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Kashgar") == 0) {
       tested = calender.StringLandMark(calender.getStore());
       if(tested.compareTo("Aksu") == 0) {
-        ImageIcon dab = new ImageIcon("SR Kashgar- Aksu.jpg");
+        ImageIcon dab = new ImageIcon(getClass().getResource("SR Kashgar- Aksu.jpg"));
         JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       } else {
-        ImageIcon dab = new ImageIcon("SR Kashgar- Hoton.jpg");
+        ImageIcon dab = new ImageIcon(getClass().getResource("SR Kashgar- Hoton.jpg"));
         JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       }
       return;
     } else if(tested.compareTo("Aksu") == 0) {
-      ImageIcon dab = new ImageIcon("SR Aksu- Dunhuang.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Aksu- Dunhuang.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Hoton") == 0) {
-      ImageIcon dab = new ImageIcon("SR Hoton- Dunhuang.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Hoton- Dunhuang.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Anxi County") == 0) {
-      ImageIcon dab = new ImageIcon("SR Anxi County- Wuwei.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Anxi County- Wuwei.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Wuwei") == 0) {
-      ImageIcon dab = new ImageIcon("SR Wuwei- Chang_an.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Wuwei- Chang_an.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else if(tested.compareTo("Chang'an") == 0) {
-      ImageIcon dab = new ImageIcon("SR Chang_an- Luoyang.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Chang_an- Luoyang.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
       return;
     } else {
-      ImageIcon dab = new ImageIcon("SR Qumis- Balch.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Qumis- Balch.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     }
 
@@ -931,49 +965,49 @@ public class SilkRoad {
     String tested = calender.StringLandMark(calender.getStore()-1);
 
     if(tested.compareTo("Constantinople") == 0) {
-      ImageIcon dab = new ImageIcon("SR Constantinople.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Constantinople.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Antioch") == 0) {
-      ImageIcon dab = new ImageIcon("SR Antioch.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Antioch.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Dura-Europas") == 0) {
-      ImageIcon dab = new ImageIcon("SR Dura-Europas.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Dura-Europas.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Qumis") == 0) {
-      ImageIcon dab = new ImageIcon("SR Qumis.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Qumis.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Merv") == 0) {
-      ImageIcon dab = new ImageIcon("SR Merv.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Merv.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Samarkand") == 0) {
-      ImageIcon dab = new ImageIcon("SR Samarkand.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Samarkand.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Balch") == 0) {
-      ImageIcon dab = new ImageIcon("SR Balch.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Balch.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Kashgar") == 0) {
-      ImageIcon dab = new ImageIcon("SR Kashgar.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Kashgar.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Aksu") == 0) {
-      ImageIcon dab = new ImageIcon("SR Aksu.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Aksu.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Hoton") == 0) {
-      ImageIcon dab = new ImageIcon("SR Hoton.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Hoton.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Anxi County") == 0) {
-      ImageIcon dab = new ImageIcon("SR Anxi County.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Anxi County.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Wuwei") == 0) {
-      ImageIcon dab = new ImageIcon("SR Wuwei.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Wuwei.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Chang'an") == 0) {
-      ImageIcon dab = new ImageIcon("SR Chang_an.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Chang_an.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Louyang") == 0) {
-      ImageIcon dab = new ImageIcon("SR Louyang.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Louyang.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     } else if(tested.compareTo("Dunhuang") == 0) {
-      ImageIcon dab = new ImageIcon("SR Dunhuang.jpg");
+      ImageIcon dab = new ImageIcon(getClass().getResource("SR Dunhuang.jpg"));
       JOptionPane.showMessageDialog(null, "","Map",JOptionPane.INFORMATION_MESSAGE,dab);
     }
 
@@ -1031,11 +1065,11 @@ public class SilkRoad {
 
           if (x == 0) {
             if(calender.getStore() == 6) {
-
+              ss = calender.getSeason();
               if(ss == 0) {
-                traveling.changeImage(5);
-              } else {
                 traveling.changeImage(6);
+              } else {
+                traveling.changeImage(5);
               }
 
 
@@ -1052,18 +1086,20 @@ public class SilkRoad {
                     choice[1]);//default button title
 
                     if (x == 0) {
+                      game.WriteData(game, calender, "Player took the north route");
                       calender.Choice1(0);
                     } else {
+                      game.WriteData(game, calender, "Player took the south route");
                       calender.Choice1(1);
                     }
             }
 
             if(calender.getStore() == 9) {
-
+              ss = calender.getSeason();
               if(ss == 0) {
-                traveling.changeImage(5);
-              } else {
                 traveling.changeImage(6);
+              } else {
+                traveling.changeImage(5);
               }
 
 
@@ -1080,21 +1116,24 @@ public class SilkRoad {
                     choice[1]);//default button title
 
                     if (x == 0) {
+                      game.WriteData(game, calender, "Player took the north route");
                       calender.Choice2(1);
                     } else {
+                      game.WriteData(game, calender, "Player took the south route");
                       calender.Choice2(0);
                     }
             }
 
             if(calender.getStore() == 3 || calender.getStore() == 10 || calender.getStore() == 14 ) {
-
+              ss = calender.getSeason();
+              traveling.changeImage(8);
               if(ss == 0) {
-                traveling.changeImage(8);
-              } else {
                 traveling.changeImage(7);
               }
 
               while(true) {
+
+
 
                 int y = 2+rand.nextInt(7);
 
@@ -1107,7 +1146,8 @@ public class SilkRoad {
 
                   String[] choice = {"Fording", "Caulk and Float", "Ferry", "Wait a Day", "More Info"};
                   p = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
-                       "Travel Menu: "+calender.getDate()+"\nFood: "+player.getFood()+" lb\nWeather: "+ calender.weatherString(calender.getWeather()) +"\nYou've reached a water crossing. How do you want to cross it? Currently the water is "+y+" feet deep." ,
+                       "Travel Menu: "+calender.getDate()+"\nFood: "+player.getFood()+" lb\nWeather: "+ calender.weatherString(calender.getWeather()) +
+                       "\nHealth: "+ game.checkHealth(p1, p2, p3, p4, p5, game) + "\nMoney: " + player.getCash() + "\nYou've reached a water crossing. How do you want to cross it? Currently the water is "+y+" feet deep." ,
                       "Water Crossing",
                       JOptionPane.YES_NO_CANCEL_OPTION,
                       JOptionPane.QUESTION_MESSAGE,
@@ -1118,43 +1158,58 @@ public class SilkRoad {
                       if (p == 0) {
                         if (y >= 3) {
                           if(l < 40) {
+                            game.WriteData(game, calender, "Player successfully crossed via fording");
                             traveling.changeImage(12);
                             JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
                             break;
                           } else {
                             traveling.changeImage(9);
+                            game.WriteData(game, calender, "Player unsuccessful at crossing via fording");
                             game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                             break;
                           }
                         } else {
                           if(l < 80) {
+                            game.WriteData(game, calender, "Player successfully crossed via fording");
                             traveling.changeImage(12);
                             JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
                             break;
                           } else {
                             traveling.changeImage(9);
+                            game.WriteData(game, calender, "Player unsuccessful at crossing via fording");
                             game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                             break;
                           }
                         }
                       } else if (p == 1) {
+                        int fordnum = 0;
+                        if(player.getCarpenter() == true) {
+                          fordnum = 7;
+                        }
+                        int z;
                         if (y >= 5) {
-                          if(l < 25) {
+                          z = 25 + fordnum;
+                          if(l < z) {
+                            game.WriteData(game, calender, "Player successfully crossed via caulking");
                             traveling.changeImage(12);
                             JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
                             break;
                           } else {
                             traveling.changeImage(9);
+                            game.WriteData(game, calender, "Player unsuccessful at crossing via caulking");
                             game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                             break;
                           }
                         } else {
-                          if(l < 85) {
+                          z = 85 + fordnum;
+                          if(l < z) {
+                            game.WriteData(game, calender, "Player successfully crossed via caulking");
                             traveling.changeImage(12);
                             JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
                             break;
                           } else {
                             traveling.changeImage(9);
+                            game.WriteData(game, calender, "Player unsuccessful at crossing via caulking");
                             game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                             break;
                           }
@@ -1162,11 +1217,13 @@ public class SilkRoad {
                       } else if (p == 2 && player.getCash() >= 20) {
                         player.spend(20);
                         if(l < 80) {
+                          game.WriteData(game, calender, "Player successfully crossed via ferry");
                           traveling.changeImage(10);
                           JOptionPane.showMessageDialog(null, "You were able to cross the river safely");
                           break;
                         } else {
                           traveling.changeImage(9);
+                          game.WriteData(game, calender, "Player unsuccessful at crossing via ferry");
                           game.BadCross(player, scanner, calender, game, p1, p2, p3, p4, p5);
                           break;
                         }
@@ -1179,13 +1236,17 @@ public class SilkRoad {
                         game.CriticalCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
                         game.eat(player, scanner, game, p1, p2, p3, p4, p5);
                         game.Tolling(player, scanner, calender, game, p1, p2, p3, p4, p5);
+                        game.WriteData(game, calender, "Player decided to wait a day");
                         if (game.getTotalAliveMembers(p1, p2, p3, p4, p5) == 0) {
+                          traveling.changeImage(2);
                           game.GameOver(player, scanner, calender, game, p1, p2, p3, p4, p5);
                         }
                         calender.newDay();
                       } else if (x == 4) {
                         JOptionPane.showMessageDialog(null, "Fording will allow you to cross shallow water with ease.\n" +
                         "Caulking and Fording will allow for slightly deeper water crossing.\nA ferry will allow you to cross with consistent safety for $20.\nWaiting a day will put your party in an unrested state waiting for the best opportunity to cross.");
+                      } else {
+                        JOptionPane.showMessageDialog(null, "You don't have enough money for the Ferry.");
                       }
 
 
@@ -1201,15 +1262,16 @@ public class SilkRoad {
             //flag = 1;
           } else if (x == 1) {
             player.setResting(true);
+            game.WriteData(game, calender, "Player decided to rest");
             game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             player.setResting(false);
             game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
           } else if (x == 2) {
+            game.WriteData(game, calender, "Player decided to check the map");
             game.MapCity(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
             game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
-
           } else if (x == 3) {
             game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
             traveling.closeFrame();
@@ -1262,22 +1324,24 @@ public class SilkRoad {
   public void BadCross(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     Random rand = new Random();
 
+    int wheel = rand.nextInt((player.getWheel()+1)/2);
+    player.loseWheel(wheel);
 
-    int wheel = rand.nextInt(1);
-    player.loseWheel(1);
+    int axle = rand.nextInt((player.getAxle()+1)/2);
+    player.loseAxle(axle);
 
-    int axle = rand.nextInt(1);
-    player.loseAxle(1);
-
-    int tongue = rand.nextInt(1);
-    player.loseTongue(1);
+    int tongue = rand.nextInt((player.getTongue()+1)/2);
+    player.loseTongue(tongue);
 
     int deadCamel = rand.nextInt(player.getCamel());
     player.loseCamel(deadCamel);
-    int bulls = rand.nextInt(player.getBullets());
+
+    int bulls = rand.nextInt(player.getBullets()+1);
     player.loseAmmo(bulls);
+
     int cloths = rand.nextInt(player.getClothing());
     player.loseClothing(cloths);
+
     int food = rand.nextInt(player.getFood());
     player.loseFood(food);
 
@@ -1310,12 +1374,12 @@ public class SilkRoad {
     int f1 = 1;
     int f2 = 2*mult/2;
 
-    String a = ""+a1+" clothes for "+a2+" bullets";        //Clothes for bullets
-    String b = ""+b1+" clothes for "+b2+" food";          //Clothes for food
-    String c = ""+c1+" axle for "+c2+" tongue";           //Axle for tongue
-    String d = ""+d1+" tongue for "+d2+" wheel";      //Tongue for wheel
-    String e = ""+e1+" wheel for "+e2+" axle";      //Wheel for axle
-    String f = ""+f1+" camel for "+f2+" clothes";      //Camel for clothes
+    String a = ""+a1+" clothes >> "+a2+" bullets";        //Clothes for bullets
+    String b = ""+b1+" clothes >> "+b2+" food";          //Clothes for food
+    String c = ""+c1+" axle >> "+c2+" tongue";           //Axle for tongue
+    String d = ""+d1+" tongue >> "+d2+" wheel";      //Tongue for wheel
+    String e = ""+e1+" wheel >> "+e2+" axle";      //Wheel for axle
+    String f = ""+f1+" camel >> "+f2+" clothes";      //Camel for clothes
     String g = "Not Today";
 
 
@@ -1336,21 +1400,32 @@ public class SilkRoad {
       if(x == 0 && player.getClothing() >= a1) {
         player.loseClothing(a1);
         player.buyAmmo(a2);
+        game.WriteData(game, calender, "Player decided to trade "+a1+" clothes for "+a2+" bullets");
+
       } else if (x == 1 && player.getClothing() >= b1) {
         player.loseClothing(a1);
         player.buyFood(b2);
+        game.WriteData(game, calender, "Player decided to trade "+b1+" clothes for "+b2+" food");
+
       } else if (x == 2 && player.getAxle() >= c1) {
         player.loseAxle(c1);
         player.buyTongue(c2);
+        game.WriteData(game, calender, "Player decided to trade "+c1+" axle for "+c2+" tongue");
+
       } else if (x == 3 && player.getTongue() >= d1) {
         player.loseTongue(d1);
         player.buyWheel(d2);
+        game.WriteData(game, calender, "Player decided to trade "+d1+" tongue for "+d2+" wheel");
+
       } else if (x == 4 && player.getWheel() >= e1) {
         player.loseWheel(e1);
         player.buyAxle(e2);
+        game.WriteData(game, calender, "Player decided to trade "+e1+" wheel for "+e2+" axle");
+
       } else if (x == 5 && player.getCamel() >= f1) {
         player.loseCamel(f1);
         player.buyClothing(f2);
+        game.WriteData(game, calender, "Player decided to trade "+f1+" camel for "+f2+" clothes");
 
       } else {
 
@@ -1362,27 +1437,66 @@ public class SilkRoad {
 
 
   public void CriticalCheck(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    if (p1.getHealth() < 20 && p1.isAlive() == true) {
+    if (p1.getHealth() < 15 && p1.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p1.getName()+" is in critical condition and needs to rest.");
     }
-    if (p2.getHealth() < 20 && p2.isAlive() == true) {
+    if (p2.getHealth() < 15 && p2.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p2.getName()+" is in critical condition and needs to rest.");
     }
-    if (p3.getHealth() < 20 && p3.isAlive() == true) {
+    if (p3.getHealth() < 15 && p3.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p3.getName()+" is in critical condition and needs to rest.");
-
     }
-    if (p4.getHealth() < 20 && p4.isAlive() == true) {
+    if (p4.getHealth() < 15 && p4.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p4.getName()+" is in critical condition and needs to rest.");
     }
-    if (p5.getHealth() < 20 && p5.isAlive() == true) {
+    if (p5.getHealth() < 15 && p5.isAlive() == true) {
       JOptionPane.showMessageDialog(null, p5.getName()+" is in critical condition and needs to rest.");
     }
+
+
   }
 
 
   public void GameOver(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-      JOptionPane.showMessageDialog(null, " Good try! You made it to day "+calender.getTotalDays());
+      JOptionPane.showMessageDialog(null, " Everyone in your party died. Good try! You made it to day "+calender.getTotalDays());
+
+      int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
+      String time = calender.getTime();
+      JOptionPane.showMessageDialog(null, " Please record this data:\n" +
+      "\nTotal Time Played: " +time+
+      "\nYou DIDN'T make it to china" +
+      "\nTotal Surviving Members: " +totalAlive+
+      "\nMember - Health" +
+      "\n 1. "+p1.getName()+": "+p1.getHealth()+
+      "\n 2. "+p2.getName()+": "+p2.getHealth()+
+      "\n 3. "+p3.getName()+": "+p3.getHealth()+
+      "\n 4. "+p4.getName()+": "+p4.getHealth()+
+      "\n 5. "+p5.getName()+": "+p5.getHealth()+
+      "\nFood: "+player.getFood()+" lb" +
+      "\nClothes: "+player.getClothing()+" sets" +
+      "\nAmmunition: "+player.getBullets()+
+      "\nCash: $"+player.getCash()+
+      "\nCamel: "+player.getCamel()+
+      "\nWheels: "+player.getWheel()+
+      "\nAxles: "+player.getAxle()+
+      "\nTongues: "+player.getTongue());
+
+      WriteData(game, calender, "\nTotal Time Played: " +time+
+      "\nYou DIDN'T make it to china" +
+      "\nTotal Surviving Members: " +totalAlive+
+      "\n 1. "+p1.getName()+": "+p1.getHealth()+
+      "\n 2. "+p2.getName()+": "+p2.getHealth()+
+      "\n 3. "+p3.getName()+": "+p3.getHealth()+
+      "\n 4. "+p4.getName()+": "+p4.getHealth()+
+      "\n 5. "+p5.getName()+": "+p5.getHealth()+
+      "\nFood: "+player.getFood()+" lb" +
+      "\nClothes: "+player.getClothing()+" sets" +
+      "\nAmmunition: "+player.getBullets()+
+      "\nCash: $"+player.getCash()+
+      "\nCamel: "+player.getCamel()+
+      "\nWheels: "+player.getWheel()+
+      "\nAxles: "+player.getAxle()+
+      "\nTongues: "+player.getTongue());
         System.exit(0);
   }
 
@@ -1417,6 +1531,7 @@ public class SilkRoad {
       game.Tolling(player, scanner, calender, game, p1, p2, p3, p4, p5);
 
       if (game.getTotalAliveMembers(p1, p2, p3, p4, p5) == 0) {
+        status.changeImage(2);
         game.GameOver(player, scanner, calender, game, p1, p2, p3, p4, p5);
       }
 
@@ -1454,7 +1569,44 @@ public class SilkRoad {
 
       if(calender.StringLandMark(calender.getStore()).compareTo("Louyang") == 0) {
         JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nYou traversed the entire Silk Road!");
-        System.exit(0);
+        int totalAlive = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
+        String time = calender.getTime();
+        JOptionPane.showMessageDialog(null, " Please record this data:\n" +
+        "\nTotal Time Played: " +time+
+        "\nYou MADE IT to china" +
+        "\nTotal Surviving Members: " +totalAlive+
+        "\nMember - Health" +
+        "\n 1. "+p1.getName()+": "+p1.getHealth()+
+        "\n 2. "+p2.getName()+": "+p2.getHealth()+
+        "\n 3. "+p3.getName()+": "+p3.getHealth()+
+        "\n 4. "+p4.getName()+": "+p4.getHealth()+
+        "\n 5. "+p5.getName()+": "+p5.getHealth()+
+        "\nFood: "+player.getFood()+" lb" +
+        "\nClothes: "+player.getClothing()+" sets" +
+        "\nAmmunition: "+player.getBullets()+
+        "\nCash: $"+player.getCash()+
+        "\nCamel: "+player.getCamel()+
+        "\nWheels: "+player.getWheel()+
+        "\nAxles: "+player.getAxle()+
+        "\nTongues: "+player.getTongue());
+
+        WriteData(game, calender, "\nTotal Time Played: " +time+
+        "\nYou DID make it to china" +
+        "\nTotal Surviving Members: " +totalAlive+
+        "\n 1. "+p1.getName()+": "+p1.getHealth()+
+        "\n 2. "+p2.getName()+": "+p2.getHealth()+
+        "\n 3. "+p3.getName()+": "+p3.getHealth()+
+        "\n 4. "+p4.getName()+": "+p4.getHealth()+
+        "\n 5. "+p5.getName()+": "+p5.getHealth()+
+        "\nFood: "+player.getFood()+" lb" +
+        "\nClothes: "+player.getClothing()+" sets" +
+        "\nAmmunition: "+player.getBullets()+
+        "\nCash: $"+player.getCash()+
+        "\nCamel: "+player.getCamel()+
+        "\nWheels: "+player.getWheel()+
+        "\nAxles: "+player.getAxle()+
+        "\nTongues: "+player.getTongue());
+          System.exit(0);
       }
 
       JOptionPane.showMessageDialog(null, "You made it to "+calender.StringLandMark(calender.getStore())+"\nIn this town, you will be able to trade and buy from the locals.");
@@ -1616,7 +1768,7 @@ public class SilkRoad {
 
     public void FoundCart(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int bulls = rand.nextInt(235);
+      int bulls = rand.nextInt((235-(5*calender.getStore())));
       player.buyAmmo(bulls);
       int cloths = rand.nextInt(10);
       player.buyClothing(cloths);
@@ -1675,7 +1827,7 @@ public class SilkRoad {
 
     public void FindFood(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int food = 1+rand.nextInt(400);
+      int food = 1+rand.nextInt((400-(10*calender.getStore())));
       player.buyFood(food);
       String vegetables = "a field of berry bushes";
       if (calender.getSeason() == 0) {
@@ -1689,8 +1841,9 @@ public class SilkRoad {
 
     public void FindTreasure(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int cash = rand.nextInt(400);
+      int cash = rand.nextInt((400-(10*calender.getStore())));
       player.makeMoney(cash);
+      WriteData(game, calender, "Found $"+cash+"");
 
       JOptionPane.showMessageDialog(null, "You found a chest of money while traveling!\nYou were able to add $" +cash+ " to your supplies");
     }
@@ -1701,46 +1854,15 @@ public class SilkRoad {
 
     }
 
-    public void Storm(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-      Random rand = new Random();
-
-      int storm = 1+rand.nextInt(7);
-
-      game.StormMenu(storm);
-      WriteData(game, calender, "A storm for "+storm+" days occurs");
-
-      player.setStorming(true);
-      for(int i = 0; storm > i; i++) {
-        game.clearScreen();
-        //game.TravelMenu4(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        try
-        {
-            Thread.sleep(2000);
-        }
-        catch(InterruptedException ex)
-        {
-            Thread.currentThread().interrupt();
-        }
-        game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
-
-      }
-      game.clearScreen();
-    //  game.TravelMenu4(player, scanner, calender, game, p1, p2, p3, p4, p5);
-      try
-      {
-          Thread.sleep(2000);
-      }
-      catch(InterruptedException ex)
-      {
-          Thread.currentThread().interrupt();
-      }
-      player.setStorming(false);
-    }
 
     public void Robbed(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int playercashInt = (int) Math.round(player.getCash());
-      int robbedInt = rand.nextInt(playercashInt);
+      int playercashInt = (int) Math.round((player.getCash()/2));
+      int robbedInt = rand.nextInt(playercashInt)+(5*calender.getStore());
+      double spend = (double) robbedInt;
+      if(robbedInt > player.getCash()) {
+        spend = (double) player.getCash();
+      }
       player.spend(robbedInt);
 
       JOptionPane.showMessageDialog(null, "In the night, a thief came and robbed you.\nThe thief was able to take off with $" +robbedInt+ "!");
@@ -1770,7 +1892,7 @@ public class SilkRoad {
         p3.setMeasles(true);
         p4.setMeasles(true);
         p5.setMeasles(true);
-        WriteData(game, calender, "Everyone in the party got getMeasles");
+        WriteData(game, calender, "Everyone in the party got Measles");
       }
       if (illness == 2) {
         sickness = "Smallpox";
@@ -1853,9 +1975,10 @@ public class SilkRoad {
 
     public void DeadCamel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int deadCamel = rand.nextInt(player.getCamel()+1);
+      int deadCamel = rand.nextInt(((player.getCamel()/2)+((calender.getStore())%5)));
 
-      if (deadCamel == player.getCamel()) {
+      if (deadCamel >= player.getCamel()) {
+        deadCamel = player.getCamel();
         JOptionPane.showMessageDialog(null, "Oh no! All your camels died due to illness and you're going to have to walk.");
         WriteData(game, calender, "All camels succumed to illness");
       } else {
@@ -1868,12 +1991,18 @@ public class SilkRoad {
 
     public void CartFire(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int bulls = rand.nextInt(player.getBullets()+1);
+      int bulls = rand.nextInt(player.getBullets()+1+(5*calender.getStore()));
+      if(bulls > player.getBullets()) {
+        bulls = player.getBullets();
+      }
       player.loseAmmo(bulls);
       int cloths = rand.nextInt(player.getClothing()+1);
       player.loseClothing(cloths);
-      int food = rand.nextInt(player.getFood()+1);
+      int food = rand.nextInt(player.getFood()+1+(5*calender.getStore()));
       player.loseFood(food);
+      if(bulls > player.getBullets()) {
+        bulls = player.getBullets();
+      }
 
       JOptionPane.showMessageDialog(null, "You cart caught on fire!\nYou lost these items in the fire:\n\nAmmunition: "+bulls+"\nClothing: "+cloths+"\nFood: "+food);
 
@@ -1924,7 +2053,7 @@ public class SilkRoad {
 
     public void RandomEvent(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int event = rand.nextInt(10);
+      int event = rand.nextInt(15);
       if (event == 7) { // good event
         game.clearScreen();
         event = rand.nextInt(4);
@@ -1981,7 +2110,7 @@ public class SilkRoad {
         if(calender.getLandmark()<=0) {
         calender.incStore();
         Random rand = new Random();
-        int firstLand = rand.nextInt(50)+50;
+        int firstLand = 100+(12*calender.getStore());
         calender.setLandmark(firstLand);
         }
       //game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -1990,70 +2119,6 @@ public class SilkRoad {
 
     }
 
-
-  public void CityMenu() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("                            City Menu:");
-    System.out.println("");
-    System.out.println("1. Return to travel menu");
-    System.out.println("");
-    System.out.println("2. Auto Travel");
-    System.out.println("");
-    System.out.println("3. Map");
-    System.out.println("");
-    System.out.println("4. Supplies & Members Status");
-    System.out.println("");
-    System.out.println("5. Set Pace");
-    System.out.println("");
-    System.out.println("6. Set Rations");
-    System.out.println("");
-    System.out.println("7. Rest");
-    System.out.println("");
-    System.out.println("8. Shop");
-    System.out.println("");
-    System.out.println("9. Trade");
-    System.out.println("");
-    System.out.println("10. Doctor");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Enter which action you want to perform:");
-  }
-
-  public void AutoTravelMenu() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("By auto-traveling, you will travel for a set number of days");
-    System.out.println("You should note that you won't have access to the travel menu during this period");
-    System.out.println("You will still be informed of random events or coming across a city");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Type a number to travel that many days.");
-    System.out.println("Type 'Menu' if you want to return");
-  }
-
-  public void RestMenu() {
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("By resting, you will allow members of your party to heal from ailments");
-    System.out.println("You should note that you won't have access to the travel menu during this period");
-    System.out.println("You will still be informed of random events or coming across a city");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("==================================================================================================================");
-    System.out.println("");
-    System.out.println("");
-    System.out.println("Type a number to rest that many days.");
-    System.out.println("Type 'Menu' if you want to return");
-  }
 
   public String getStatus(SilkRoad game, Scanner scanner, Person person) {
     int status = person.getHealth();
@@ -2121,105 +2186,28 @@ public class SilkRoad {
     }
 
     JOptionPane.showMessageDialog(null, "Members Status:  "+totalAlive+"/5 of your members are alive\n\n" +
-    p1.getName()+": "+alive1 +"\n" + game.getStatus(game, scanner, p1) + "" + p1.getHealth() +
+    p1.getName()+": "+alive1 +"\n" + game.getStatus(game, scanner, p1) +
     "\nBubonic Plague: "+p1.getBubonicPlague()+"    Smallpox: "+p1.getSmallpox()+"   Measles: "+p1.getMeasles() +
-    "\n" + p2.getName()+": "+alive2 +"\n" + game.getStatus(game, scanner, p2) + "" + p2.getHealth() +
+    "\n" + p2.getName()+": "+alive2 +"\n" + game.getStatus(game, scanner, p2) +
     "\nBubonic Plague: "+p2.getBubonicPlague()+"    Smallpox: "+p2.getSmallpox()+"   Measles: "+p2.getMeasles() +
-    "\n" + p3.getName()+": "+alive3 + "\n" + game.getStatus(game, scanner, p3) + "" + p3.getHealth() +
+    "\n" + p3.getName()+": "+alive3 + "\n" + game.getStatus(game, scanner, p3) +
     "\nBubonic Plague: "+p3.getBubonicPlague()+"    Smallpox: "+p3.getSmallpox()+"   Measles: "+p3.getMeasles() +
-    "\n" + p4.getName()+": "+alive4 + "\n" + game.getStatus(game, scanner, p4) + "" + p4.getHealth() +
+    "\n" + p4.getName()+": "+alive4 + "\n" + game.getStatus(game, scanner, p4) +
     "\nBubonic Plague: "+p4.getBubonicPlague()+"    Smallpox: "+p4.getSmallpox()+"   Measles: "+p4.getMeasles() +
-    "\n" + p5.getName()+": "+alive5 + "\n" + game.getStatus(game, scanner, p5) + "" + p5.getHealth() +
+    "\n" + p5.getName()+": "+alive5 + "\n" + game.getStatus(game, scanner, p5) +
     "\nBubonic Plague: "+p5.getBubonicPlague()+"    Smallpox: "+p5.getSmallpox()+"   Measles: "+p5.getMeasles() +
     "\n\nSupplies Status:\n" + "Food: "+player.getFood()+" lb  Clothes: "+player.getClothing()+" sets   Ammunition: "+player.getBullets()+"  Cash: $"+player.getCash()+ "\n" +
     "Camel: "+player.getCamel()+"  Wheels: "+player.getWheel()+"   Axles: "+player.getAxle()+"  Tongues: "+player.getTongue()+"\n" +
     "\nPace: "+pace+ "\nRations: "+ration);
 
 
-    WriteData(game, calender, "Checked health and party status");
+    WriteData(game, calender, "Checked health, supplies, and party status");
 
   }
 
   public void Status(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
     game.StatusMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
   }
-
-  public void AutoTravel(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    game.AutoTravelMenu();
-    String travel = scanner.nextLine();
-    if (travel.compareTo("Menu") == 0) {
-      return;
-    }
-    if (isInteger(travel) != true) {
-      return;
-    }
-    int traveldays = Integer.parseInt(travel);
-    game.WriteData(game, calender, "Decided to AutoTravel for "+traveldays+" days");
-    for(int i = 0; traveldays > i; i++) {
-      game.clearScreen();
-      //game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
-      try
-      {
-          Thread.sleep(2000);
-      }
-      catch(InterruptedException ex)
-      {
-          Thread.currentThread().interrupt();
-      }
-      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
-
-    }
-    game.clearScreen();
-    //game.TravelMenu2(player, scanner, calender, game, p1, p2, p3, p4, p5);
-    try
-    {
-        Thread.sleep(2000);
-    }
-    catch(InterruptedException ex)
-    {
-        Thread.currentThread().interrupt();
-    }
-  }
-
-
-  public void Rest(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-    game.RestMenu();
-    String rest = scanner.nextLine();
-    if (rest.compareTo("Menu") == 0) {
-      return;
-    }
-    if (isInteger(rest) != true) {
-      return;
-    }
-    int restdays = Integer.parseInt(rest);
-    game.WriteData(game, calender, "Decided to rest for "+restdays+" days");
-    player.setResting(true);
-    for(int i = 0; restdays > i; i++) {
-      game.clearScreen();
-    //  game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
-      try
-      {
-          Thread.sleep(2000);
-      }
-      catch(InterruptedException ex)
-      {
-          Thread.currentThread().interrupt();
-      }
-      game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
-    }
-    game.clearScreen();
-    //game.TravelMenu3(player, scanner, calender, game, p1, p2, p3, p4, p5);
-    try
-    {
-        Thread.sleep(2000);
-    }
-    catch(InterruptedException ex)
-    {
-        Thread.currentThread().interrupt();
-    }
-    player.setResting(false);
-  }
-
 
   public void Pace(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
@@ -2231,7 +2219,7 @@ public class SilkRoad {
 
           n = JOptionPane.showOptionDialog(framer,//parent container of JOptionPane
               "Pacing your travel is important. Traveling too slowly may result in encumbering bad weather and poor time.\nTravel too fast and you may risk the well being of your party",
-              "The Silk Road (Pace)",
+              "The Silk Road",
               JOptionPane.YES_NO_CANCEL_OPTION,
               JOptionPane.QUESTION_MESSAGE,
               null,//do not use a custom Icon
@@ -2289,7 +2277,7 @@ public class SilkRoad {
 
       n = JOptionPane.showOptionDialog(framer,//parent container of JOptionPane
           "Rationing your food is important. Having good portions helps travelers health.\nAlthough, eating too much can result in a lack of food",
-          "The Silk Road (Rations)",
+          "The Silk Road",
           JOptionPane.YES_NO_CANCEL_OPTION,
           JOptionPane.QUESTION_MESSAGE,
           null,//do not use a custom Icon
@@ -2465,7 +2453,7 @@ public class SilkRoad {
       game.clearScreen();
       game.HuntFailsMenu(-4);
       player.loseAmmo(bulletsInt);
-      game.WriteData(game, calender, "Failed at hunting");
+      game.WriteData(game, calender, "Failed at hunting. Used ammo and got 0 lb of food.");
       player.setStorming(true);
       game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
       player.setStorming(false);
@@ -2493,57 +2481,6 @@ public class SilkRoad {
 
 
 
-
-
-
-  public void CityInput(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
-
-    String city = "initial";
-    while (true) {
-        if (city.compareTo("1") == 0) {
-          game.clearScreen();
-          game.Travel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("2") == 0) {
-          game.clearScreen();
-          game.AutoTravel(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("3") == 0) {
-
-        }
-        if (city.compareTo("4") == 0) {
-          game.clearScreen();
-          game.Status(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("5") == 0) {
-          game.clearScreen();
-          game.Pace(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("6") == 0) {
-          game.clearScreen();
-          game.Rations(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("7") == 0) {
-            game.clearScreen();
-            game.Rest(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        if (city.compareTo("8") == 0) {
-          game.clearScreen();
-          game.Buy(scanner, game, calender, player);
-        }
-        if (city.compareTo("9") == 0) {
-          game.clearScreen();
-          //game.Trade(scanner, game, calender, player);
-        }
-        if (city.compareTo("10") == 0) {
-          game.clearScreen();
-          game.Doctoring(player, scanner, calender, game, p1, p2, p3, p4, p5);
-        }
-        game.clearScreen();
-        game.CityMenu();
-        city = scanner.nextLine();
-    }
-  }
 
 
   public void Doctoring(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {

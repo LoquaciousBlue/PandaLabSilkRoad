@@ -1,0 +1,60 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:2 Trader
+
+Time: 0:11 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:12 Spring
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:1 Hunter
+
+Time: 0:13 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:13 Winter
+
+Time: 0:35 Initial Food: 0
+
+Time: 0:35 Initial Clothing: 5
+
+Time: 0:35 Initial Ammunition: 0
+
+Time: 0:35 Initial Camel: 0
+
+Time: 0:35 Initial Wheel: 4
+
+Time: 0:35 Initial Tongues: 1
+
+Time: 0:35 Initial Axles: 2
+
+Day: 6
+Time: 0:41 
+1  got Measles via not taking care of themself
+
+Day: 14
+Time: 0:47 
+ 1 got Measles via not taking care of themself
+
+Day: 16
+Time: 0:53 
+1  died
+
+Day: 18
+Time: 0:55 
+1  got Measles via not taking care of themself
+
+Day: 19
+Time: 0:56 
+Made it to Constantinople

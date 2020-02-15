@@ -1,0 +1,55 @@
+
+Time: 0:0 Name: Edwin Aldrich
+
+Time: 0:1 Hunter
+
+Time: 0:4 
+P1:  1
+P2: 1 
+P3: 1 
+P4: 1 
+P5: 1 
+
+Time: 0:5 Spring
+
+Time: 0:31 Initial Food: 100
+
+Time: 0:31 Initial Clothing: 10
+
+Time: 0:31 Initial Ammunition: 4000
+
+Time: 0:31 Initial Camel: 5
+
+Time: 0:31 Initial Wheel: 5
+
+Time: 0:31 Initial Tongues: 2
+
+Time: 0:31 Initial Axles: 3
+
+Time: 0:37 Successful at hunting. Got 250 pounds of food
+
+Time: 0:38 Fixed tongue with spare tongue
+
+Day: 3
+Time: 0:45 
+No tongues to repair cart
+
+Day: 5
+Time: 0:48 
+Found 81 pounds of food
+
+Day: 8
+Time: 0:52 
+Robbed of $23
+
+Day: 19
+Time: 1:1 
+Fire caused party to lose 2189 bullets, 8 clothes, and 28 pounds of food
+
+Day: 20
+Time: 1:3 
+No tongues to repair cart
+
+Day: 22
+Time: 1:7 
+1  got Bubonic Plague via not taking care of themself
