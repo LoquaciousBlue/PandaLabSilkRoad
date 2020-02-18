@@ -315,7 +315,7 @@ while(true) {
                               "Hunter",
                               "Trader", "More Info"};
           x = JOptionPane.showOptionDialog(frame2,//parent container of JOptionPane
-              "Many people have traveled the Silk Road. What type of person are you?",
+              "Many people of various backgrounds have traveled the Silk Road. What occupational background do you have?",
               "Role",
               JOptionPane.YES_NO_CANCEL_OPTION,
               JOptionPane.QUESTION_MESSAGE,
@@ -432,8 +432,8 @@ while(true) {
 
           JOptionPane.showMessageDialog(null, "Before you embark on your journey, you will need to buy some" + " supplies.\nThe nearby local store should " +
           "have everything you need.\nThings you may need to buy include food, clothes, and ammunition for the members of your group.\nOn top of those items " +
-          "for the members of your party, you'll need to buy stuff for your cart\nAll of your party will need 1 clothing before you leave Rome.\nThis will include camel(s) to pull the cart, as well " +
-          "as possibly spare cart parts.\nYour cart will start off with 4 wheels, 1 tongue, and 2 axles.\nThe only requirement before you go on your trip is that everyone in the party has their own set of clothes.");
+          "for the members of your party, you'll need to buy stuff for your cart.\nThese things include camel(s) to pull the cart, as well " +
+          "as possibly spare cart parts.\nYour cart will start off with 4 wheels, 1 tongue, and 2 axles.\nThe only requirement before you go on your trip is that everyone in the party has their own clothes.");
 
 
         start.closeFrame();
@@ -511,7 +511,7 @@ while(true) {
 
     double bulletCost = player.getTradeRate()*(2+.25*(calender.getStore()-1));
 
-    double camelCost = player.getTradeRate()*(40+5*(calender.getStore()-1));
+    double camelCost = player.getTradeRate()*(65+5*(calender.getStore()-1));
 
     double tongueCost = player.getTradeRate()*(10+2*(calender.getStore()-1));
 
@@ -603,11 +603,11 @@ while(true) {
           }
 
           if (x == 3) {
-            oxn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getCamel() + " camels. It costs $"+camelCost+" per camel. You currently have $"+player.getCash()+"\nThe max number of camels that you can buy is 10.\nHow many do you want to buy?",
+            oxn = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getCamel() + " camels. It costs $"+camelCost+" per camel. You currently have $"+player.getCash()+"\nThe max number of camels that you can buy is 8.\nHow many do you want to buy?",
             "Shop (Camels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(oxn) == true) {
                coxn = Integer.parseInt(oxn);
-              if (coxn >= 0 && (coxn + player.getCamel()) <= 10 ) {
+              if (coxn >= 0 && (coxn + player.getCamel()) <= 8 ) {
                 fcoxn = coxn;
               }
             }
@@ -636,7 +636,7 @@ while(true) {
           }
 
           if (x == 6) {
-            axlen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getAxle() + " axles. It costs $"+axleCost+" per axle. You currently have $"+player.getCash()+"\nThe max number of tongues that you can buy is 3."+"\nHow many do you want to buy?",
+            axlen = (String)JOptionPane.showInputDialog(frame, "You currently have " + player.getAxle() + " axles. It costs $"+axleCost+" per axle. You currently have $"+player.getCash()+"\nThe max number of axles that you can buy is 3."+"\nHow many do you want to buy?",
             "Shop (Wheels)", JOptionPane.QUESTION_MESSAGE);
             if (isInteger(axlen) == true) {
               caxlen = Integer.parseInt(axlen);
@@ -648,7 +648,7 @@ while(true) {
           if (x == 7) {
             JOptionPane.showMessageDialog(null, "Food is necessary to keep your group moving along. Without food, your party will get sick or worse.\n" +
             "Clothes are needed to keep your party warm. Without clothing, your party will get sick and" +
-             "die.\nAmmunition is needed to hunt animals for food.\nCamels are needed to pull the wagon. Without them," +
+             " die.\nAmmunition is needed to hunt animals for food.\nCamels are needed to pull the wagon. Without them," +
              " you will be going at a snails pace.\nWheels, Tongues, and Axels are spare parts for the wagon incase other parts break.\nIf you can't replace the part, you won't be getting anywhere fast.");
           }
           current = fcfoodn*foodCost + clothesCost*fcclothesn + bulletCost*fcbulletn + camelCost*fcoxn + tongueCost*fctonguen + wheelCost*fcwheeln + axleCost*fcaxlen;
@@ -822,7 +822,7 @@ while(true) {
               game.clearScreen();
               game.NewCityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
               calender.incStore();
-              int firstLand = 120+(12*calender.getStore());
+              int firstLand = 120+(15*calender.getStore());
               calender.setLandmark(firstLand);
               traveling.closeFrame();
               game.CityMenu(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -1153,7 +1153,7 @@ while(true) {
                       JOptionPane.QUESTION_MESSAGE,
                       null,//do not use a custom Icon
                       choice,//the titles of buttons
-                      choice[1]);//default button title
+                      choice[3]);//default button title
 
                       if (p == 0) {
                         if (y >= 3) {
@@ -1214,8 +1214,8 @@ while(true) {
                             break;
                           }
                         }
-                      } else if (p == 2 && player.getCash() >= 20) {
-                        player.spend(20);
+                      } else if (p == 2 && player.getCash() >= 50) {
+                        player.spend(50);
                         if(l < 80) {
                           game.WriteData(game, calender, "Player successfully crossed via ferry");
                           traveling.changeImage(10);
@@ -1243,10 +1243,10 @@ while(true) {
                         }
                         calender.newDay();
                       } else if (x == 4) {
-                        JOptionPane.showMessageDialog(null, "Fording will allow you to cross shallow water with ease.\n" +
-                        "Caulking and Fording will allow for slightly deeper water crossing.\nA ferry will allow you to cross with consistent safety for $20.\nWaiting a day will put your party in an unrested state waiting for the best opportunity to cross.");
+                        JOptionPane.showMessageDialog(null, "Fording will allow you to cross shallow water with ease. This type of crossing is consistent year round when dealing with shallow water.\n" +
+                        "Caulking and Fording will allow for slightly deeper water crossing compared to Fording. Also, having a Carpenter will make this process easier.\nA ferry will allow you to cross with relative safety for $50.\nWaiting a day will put your party in an unrested state waiting for the best opportunity to cross.");
                       } else {
-                        JOptionPane.showMessageDialog(null, "You don't have enough money for the Ferry.");
+                        JOptionPane.showMessageDialog(null, "You don't have enough money for the Ferry. It costs $50 to use the Ferry.");
                       }
 
 
@@ -1464,7 +1464,7 @@ while(true) {
       String time = calender.getTime();
       JOptionPane.showMessageDialog(null, " Please record this data:\n" +
       "\nTotal Time Played: " +time+
-      "\nYou DIDN'T make it to china" +
+      "\nYou DIDN'T make it to China" +
       "\nTotal Surviving Members: " +totalAlive+
       "\nMember - Health" +
       "\n 1. "+p1.getName()+": "+p1.getHealth()+
@@ -1482,7 +1482,7 @@ while(true) {
       "\nTongues: "+player.getTongue());
 
       WriteData(game, calender, "\nTotal Time Played: " +time+
-      "\nYou DIDN'T make it to china" +
+      "\nYou DIDN'T make it to China" +
       "\nTotal Surviving Members: " +totalAlive+
       "\n 1. "+p1.getName()+": "+p1.getHealth()+
       "\n 2. "+p2.getName()+": "+p2.getHealth()+
@@ -1573,7 +1573,7 @@ while(true) {
         String time = calender.getTime();
         JOptionPane.showMessageDialog(null, " Please record this data:\n" +
         "\nTotal Time Played: " +time+
-        "\nYou MADE IT to china" +
+        "\nYou MADE IT to China" +
         "\nTotal Surviving Members: " +totalAlive+
         "\nMember - Health" +
         "\n 1. "+p1.getName()+": "+p1.getHealth()+
@@ -1591,7 +1591,7 @@ while(true) {
         "\nTongues: "+player.getTongue());
 
         WriteData(game, calender, "\nTotal Time Played: " +time+
-        "\nYou DID make it to china" +
+        "\nYou DID make it to China" +
         "\nTotal Surviving Members: " +totalAlive+
         "\n 1. "+p1.getName()+": "+p1.getHealth()+
         "\n 2. "+p2.getName()+": "+p2.getHealth()+
@@ -1614,20 +1614,21 @@ while(true) {
     }
 
     public void Tolling(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
+      int total = game.getTotalAliveMembers(p1, p2, p3, p4, p5);
       if (p1.isAlive() == true) {
-        naturalToll(game, p1, player, calender);
+        naturalToll(game, p1, player, calender, total);
       }
       if (p2.isAlive() == true) {
-        naturalToll(game, p2, player, calender);
+        naturalToll(game, p2, player, calender, total);
       }
       if (p3.isAlive() == true) {
-        naturalToll(game, p3, player, calender);
+        naturalToll(game, p3, player, calender, total);
       }
       if (p4.isAlive() == true) {
-        naturalToll(game, p4, player, calender);
+        naturalToll(game, p4, player, calender, total);
       }
       if (p5.isAlive() == true) {
-        naturalToll(game, p5, player, calender);
+        naturalToll(game, p5, player, calender, total);
       }
     }
 
@@ -1646,70 +1647,76 @@ while(true) {
       JOptionPane.showMessageDialog(null, "Resting has allowed "+person.getName()+" to heal.\nNow they don't have "+illness);
     }
 
-    public void naturalToll(SilkRoad game, Person person, Player player, Time calender) {
+    public void naturalToll(SilkRoad game, Person person, Player player, Time calender, int totalAlive) {
       Random rand = new Random();
       Scanner scanner = new Scanner(System.in);
-      int healthNum = rand.nextInt(3);
-      double healthmod = (-1*(player.getRationCoef()-4))*2*player.getPaceCoef();
-      int healthmodInt = 0;
-      if (healthNum == 0) {
-        healthmodInt = (int) Math.round(1.5*healthmod);
-      } else if (healthNum == 1) {
-        healthmodInt = (int) Math.round(.5*healthmod);
-      } else {
-        healthmodInt = (int) Math.round(0);
-      }
-      person.decHealth(healthmodInt);
-
-      if (person.getBubonicPlague() == true) {
-        person.decHealth(6);
-      }
-      if (person.getSmallpox() == true) {
-        person.decHealth(6);
-      }
-      if (person.getMeasles() == true) {
-        person.decHealth(6);
-      }
-
-
-      healthmod = ((10-Math.round(person.getHealth())/10)/5);
-      if (calender.getSeason() == 0 || calender.getSeason() == 2) {
-        healthmod += 1;
-      }
-      if ((player.getClothing()-3)<=0) {
-        healthmod +=2;
-      }
-      for (int i = 0; healthmod > i; i++) {
-        int illnessRNG = rand.nextInt(95);
-        if (person.getBubonicPlague() == false && illnessRNG == 10) {
-          person.setBubonicPlague(true);
-
-          JOptionPane.showMessageDialog(null, person.getName()+" has contracted Bubonic Plague.");
-
-          WriteData(game, calender, person.getName()+ " got Bubonic Plague via not taking care of themself");
-          break;
+      if(person.isAlive() == true) {
+        int healthNum = rand.nextInt(3);
+        double healthmod = (-1*(player.getRationCoef()-4))*2*player.getPaceCoef();
+        int healthmodInt = 0;
+        if (healthNum == 0) {
+          healthmodInt = (int) Math.round(1.5*healthmod);
+        } else if (healthNum == 1) {
+          healthmodInt = (int) Math.round(.5*healthmod);
+        } else {
+          healthmodInt = (int) Math.round(0);
         }
-        illnessRNG = rand.nextInt(95);
-        if (person.getMeasles() == false && illnessRNG == 10) {
-          person.setMeasles(true);
+        person.decHealth(healthmodInt);
 
-          JOptionPane.showMessageDialog(null, person.getName()+" has contracted Measles.");
-
-          WriteData(game, calender, person.getName()+ " got Measles via not taking care of themself");
-
-          break;
+        if (person.getBubonicPlague() == true) {
+          person.decHealth(6);
+        }
+        if (person.getSmallpox() == true) {
+          person.decHealth(6);
+        }
+        if (person.getMeasles() == true) {
+          person.decHealth(6);
         }
 
-        illnessRNG = rand.nextInt(95);
-        if (person.getSmallpox() == false && illnessRNG == 10) {
-          person.setSmallpox(true);
+        if(totalAlive > player.getClothing()) {
+          person.decHealth((totalAlive-player.getClothing()));
+        }
 
-          JOptionPane.showMessageDialog(null, person.getName()+" has contracted Small pox.");
+        healthmod = ((10-Math.round(person.getHealth())/10)/5);
+        if (calender.getSeason() == 0 || calender.getSeason() == 2) {
+          healthmod += 1;
+        }
+        if ((player.getClothing()-3)<=0) {
+          healthmod +=2;
+        }
+        for (int i = 0; healthmod > i; i++) {
+          int illnessRNG = rand.nextInt(95);
+          if (person.getBubonicPlague() == false && illnessRNG == 10) {
+            person.setBubonicPlague(true);
 
-          WriteData(game, calender, person.getName()+ " got small pox via not taking care of themself");
+            JOptionPane.showMessageDialog(null, person.getName()+" has contracted Bubonic Plague.");
 
+            WriteData(game, calender, person.getName()+ " got Bubonic Plague via not taking care of themself");
+            break;
+          }
+          illnessRNG = rand.nextInt(95);
+          if (person.getMeasles() == false && illnessRNG == 10) {
+            person.setMeasles(true);
+
+            JOptionPane.showMessageDialog(null, person.getName()+" has contracted Measles.");
+
+            WriteData(game, calender, person.getName()+ " got Measles via not taking care of themself");
+
+            break;
+          }
+
+          illnessRNG = rand.nextInt(95);
+          if (person.getSmallpox() == false && illnessRNG == 10) {
+            person.setSmallpox(true);
+
+            JOptionPane.showMessageDialog(null, person.getName()+" has contracted Small pox.");
+
+            WriteData(game, calender, person.getName()+ " got small pox via not taking care of themself");
+
+          }
         }
       }
+
     }
 
 
@@ -1717,41 +1724,44 @@ while(true) {
       Scanner scanner = new Scanner(System.in);
       int healthNum = rand.nextInt(3);
       int healed = 0;
-      if (healthNum == 0) {
-        healed = (int) Math.round(3.5*player.getRationCoef());
-        person.incHealth(healed);
-      } else if (healthNum == 1) {
-        healed = (int) Math.round(2.5*player.getRationCoef());
-        person.incHealth(healed);
-      } else {
-        healed = (int) Math.round(1.5*player.getRationCoef());
-        person.incHealth(healed);
-      }
-      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
-      if (healthNum >= 8) {
-        if (person.getBubonicPlague() == true) {
-          person.setBubonicPlague(false);
-          WriteData(game, calender, person.getName()+" cured of bubonic plague via rest");
-          game.healed("Bubonic Plague", person);
+      if(person.isAlive() == true) {
+        if (healthNum == 0) {
+          healed = (int) Math.round(3.5*player.getRationCoef());
+          person.incHealth(healed);
+        } else if (healthNum == 1) {
+          healed = (int) Math.round(2.5*player.getRationCoef());
+          person.incHealth(healed);
+        } else {
+          healed = (int) Math.round(1.5*player.getRationCoef());
+          person.incHealth(healed);
         }
-      }
-      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
-      if (healthNum >= 8) {
-        if (person.getSmallpox() == true) {
-          person.setSmallpox(false);
-          WriteData(game, calender, person.getName()+" cured of smallpox via rest");
-          game.healed("Smallpox", person);
+        healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
+        if (healthNum >= 8) {
+          if (person.getBubonicPlague() == true) {
+            person.setBubonicPlague(false);
+            WriteData(game, calender, person.getName()+" cured of bubonic plague via rest");
+            game.healed("Bubonic Plague", person);
+          }
+        }
+        healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
+        if (healthNum >= 8) {
+          if (person.getSmallpox() == true) {
+            person.setSmallpox(false);
+            WriteData(game, calender, person.getName()+" cured of smallpox via rest");
+            game.healed("Smallpox", person);
+          }
+        }
+
+        healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
+        if (healthNum >= 8) {
+          if (person.getMeasles() == true) {
+            person.setMeasles(false);
+            WriteData(game, calender, person.getName()+" cured of measles via rest");
+            game.healed("Measles", person);
+          }
         }
       }
 
-      healthNum = (int) Math.round(player.getRationCoef()+rand.nextInt(10));
-      if (healthNum >= 8) {
-        if (person.getMeasles() == true) {
-          person.setMeasles(false);
-          WriteData(game, calender, person.getName()+" cured of measles via rest");
-          game.healed("Measles", person);
-        }
-      }
 
     }
 
@@ -1841,7 +1851,7 @@ while(true) {
 
     public void FindTreasure(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
       Random rand = new Random();
-      int cash = rand.nextInt((400-(10*calender.getStore())));
+      int cash = rand.nextInt((250-(10*calender.getStore())));
       player.makeMoney(cash);
       WriteData(game, calender, "Found $"+cash+"");
 
@@ -2110,7 +2120,7 @@ while(true) {
         if(calender.getLandmark()<=0) {
         calender.incStore();
         Random rand = new Random();
-        int firstLand = 100+(12*calender.getStore());
+        int firstLand = 120+(15*calender.getStore());
         calender.setLandmark(firstLand);
         }
       //game.newDayStatusCheck(player, scanner, calender, game, p1, p2, p3, p4, p5);
@@ -2338,8 +2348,8 @@ while(true) {
 
     JFrame frameh = new JFrame();
     String bullets = (String)JOptionPane.showInputDialog(frameh, "Hunting will be a key way to sustain yourself while on the road."+
-        "\nBefore hunting, you must allocate a certain amount of ammunition to the hunt" +
-        "\nIt's important to note that when you hunt, you can only take 50 lbs- of food" +
+        "\nBefore hunting, you must allocate a certain amount of ammunition to the hunt." +
+        "\nIt's important to note that when you hunt, you can only salvage 50 lbs of food per person in your party." +
         "\nYou have: "+player.getBullets()+" ammunition",
       "Hunting", JOptionPane.QUESTION_MESSAGE);
 
@@ -2485,12 +2495,13 @@ while(true) {
 
   public void Doctoring(Player player, Scanner scanner, Time calender, SilkRoad game, Person p1, Person p2, Person p3, Person p4, Person p5) {
 
+    double cost = 100+10*calender.getStore();
     int x = 2;
     JFrame fa = new JFrame();
 
       String[] doctor = {"Heal", "No Heal"};
       x = JOptionPane.showOptionDialog(fa,//parent container of JOptionPane
-          "By visiting the doctor, we can ensure your entire party is in tip-top shape for their next journey.\nThe cost to heal your party is $100.\nType a 'Heal' to receive medial treatment for your party.",
+          "By visiting the doctor, we can ensure your entire party is in tip-top shape for their next journey.\nThe cost to heal your party is $"+cost+".\nType a 'Heal' to receive medial treatment for your party.",
           "Doctor",
           JOptionPane.YES_NO_CANCEL_OPTION,
           JOptionPane.QUESTION_MESSAGE,
@@ -2498,11 +2509,11 @@ while(true) {
           doctor,//the titles of buttons
           doctor[1]);//default button title
 
-          if (x == 0 && player.getCash() >= 100) {
+          if (x == 0 && player.getCash() >= cost) {
             JOptionPane.showMessageDialog(null, "Thank you for your purchase!");
             WriteData(game, calender, "Paid to heal entire party at doctors");
             game.FullHeal(player, scanner, calender, game, p1, p2, p3, p4, p5);
-            player.spend(100);
+            player.spend(cost);
           } else {
             return;
           }
